@@ -27,6 +27,11 @@ import { RegisterpageComponent } from "./pages/examples/registerpage/registerpag
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { ClassicboxComponent } from "./pages/boxes/classicbox/classicbox.component";
 
+import { ClassicgamepageComponent } from "./pages/gamepages/classicgamepage/classicgamepage.component";
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -52,6 +57,7 @@ import { ClassicboxComponent } from "./pages/boxes/classicbox/classicbox.compone
     // BsDatepickerModule.forRoot(),
     // CarouselModule.forRoot(),
     // ModalModule.forRoot()
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

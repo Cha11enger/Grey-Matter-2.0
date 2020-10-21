@@ -12,6 +12,7 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { ClassicboxComponent } from "./pages/boxes/classicbox/classicbox.component";
+import { ClassicgamepageComponent } from "./pages/gamepages/classicgamepage/classicgamepage.component";
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterpageComponent },
   { path: "landing", component: LandingpageComponent },
-  { path: "classicbox", component: ClassicboxComponent }
+  { path: "classicbox", component: ClassicboxComponent },
+  { path: "classicgamepage", component: ClassicgamepageComponent }
 ];
 
 @NgModule({
