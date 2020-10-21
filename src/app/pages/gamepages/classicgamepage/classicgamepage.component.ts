@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, Input} from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import Chart from "chart.js";
 
@@ -7,7 +7,6 @@ import Chart from "chart.js";
   templateUrl: "classicgamepage.component.html",
   styleUrls: ['classicgamepage.component.css']
 })
-
 export class ClassicgamepageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   constructor(private http: HttpClient) {
