@@ -29,6 +29,9 @@ import { ClassicboxComponent } from "./pages/boxes/classicbox/classicbox.compone
 
 import { ClassicgamepageComponent } from "./pages/gamepages/classicgamepage/classicgamepage.component";
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -54,6 +57,7 @@ import { ClassicgamepageComponent } from "./pages/gamepages/classicgamepage/clas
     // BsDatepickerModule.forRoot(),
     // CarouselModule.forRoot(),
     // ModalModule.forRoot()
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
