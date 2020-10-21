@@ -22,6 +22,7 @@ import { ProfilepageComponent } from "./examples/profilepage/profilepage.compone
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { ClassicboxComponent } from "./boxes/classicbox/classicbox.component";
+import { ClassicgamepageComponent } from "./gamepages/classicgamepage/classicgamepage.component";
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -50,14 +51,16 @@ import { HttpClientModule } from '@angular/common/http';
     ProfilepageComponent,
     RegisterpageComponent,
     LandingpageComponent,
-    ClassicboxComponent
+    ClassicboxComponent,
+    ClassicgamepageComponent
   ],
   exports: [
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
     LandingpageComponent,
-    ClassicboxComponent
+    ClassicboxComponent,
+    ClassicgamepageComponent
   ],
   providers: []
 })

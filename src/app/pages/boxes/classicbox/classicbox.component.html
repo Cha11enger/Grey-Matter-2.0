@@ -157,7 +157,9 @@
               />             
               
                <button type="button" (click)="checkPlayerCode(player1.value, 'playerOne');" class="btn btn-primary btn-simple">Play</button>
-        
+               <div *ngIf="isVerified" class="alert alert-success box-msg" role="alert">
+                <a [routerLink]="['/classicgamepage']" target="_blank"><strong>Start Game</strong></a>
+             </div>
             </div>
           </div>
         </div>

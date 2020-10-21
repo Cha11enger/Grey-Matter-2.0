@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import Chart from "chart.js";
 
 @Component({
-  selector: "app-classicbox",
-  templateUrl: "classicbox.component.html"
+  selector: "app-classicgamepage",
+  templateUrl: "classicgamepage.component.html"
 })
-export class ClassicboxComponent implements OnInit, OnDestroy {
+export class ClassicgamepageComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   returnText = 'hi';
 
