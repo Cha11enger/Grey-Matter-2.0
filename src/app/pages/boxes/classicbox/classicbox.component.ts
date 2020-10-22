@@ -19,6 +19,7 @@ export class ClassicboxComponent implements OnInit, OnDestroy {
   constructor(private http: HttpClient) {
    this.isVerified = false;
   }
+ // var database = firebase.database();
 
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];

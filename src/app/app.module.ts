@@ -28,7 +28,9 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
 import { ClassicboxComponent } from "./pages/boxes/classicbox/classicbox.component";
 
 import { ClassicgamepageComponent } from "./pages/gamepages/classicgamepage/classicgamepage.component";
-
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 
 
@@ -51,12 +53,13 @@ import { ClassicgamepageComponent } from "./pages/gamepages/classicgamepage/clas
     // TooltipModule.forRoot(),
     // CollapseModule.forRoot(),
     // TabsModule.forRoot(),
-    PagesModule
+    PagesModule,
     // PaginationModule.forRoot(),
     // AlertModule.forRoot(),
     // BsDatepickerModule.forRoot(),
     // CarouselModule.forRoot(),
     // ModalModule.forRoot()
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'Boxes')
   
   ],
   providers: [],
