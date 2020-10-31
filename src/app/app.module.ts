@@ -33,7 +33,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
-
+import { IndexService } from "./pages/index/index.service";
 
 @NgModule({
   declarations: [
@@ -64,7 +64,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     AngularFireDatabaseModule
   
   ],
-  providers: [],
+  providers: [IndexService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

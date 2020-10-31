@@ -37,6 +37,7 @@ export class AppComponent implements OnInit {
   onSubmit() {
     this.db.list('items').push({ content: this.itemValue});
     this.itemValue = '';
+   // this.
   }
 
   @HostListener("window:scroll", ["$event"])
