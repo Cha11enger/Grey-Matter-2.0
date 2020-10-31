@@ -62,7 +62,7 @@ export class IndexComponent implements OnInit, OnDestroy {
     record['playerNumber'] = this.playerNumber;
     record['code'] = this.playerCode;
 
-    this.indexservice.add_value_db(record);
+    this.indexservice.add_value_db(record)
     
     /*.then( res -> {
 
@@ -73,6 +73,6 @@ export class IndexComponent implements OnInit, OnDestroy {
     }).catch( error->{
       console.log(error);
     })
-    )*/
+    ) */
   }
 }
