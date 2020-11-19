@@ -23,6 +23,9 @@ import { RegisterpageComponent } from "./examples/registerpage/registerpage.comp
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { ClassicboxComponent } from "./boxes/classicbox/classicbox.component";
 import { ClassicgamepageComponent } from "./gamepages/classicgamepage/classicgamepage.component";
+import { ClassicgamepageComponent1 } from "./gamepages/classicgamepage1/classicgamepage1.component";
+import { ClassicgamepageComponent2 } from "./gamepages/classicgamepage2/classicgamepage2.component";
+import { ClassicgamepageComponent3 } from "./gamepages/classicgamepage3/classicgamepage3.component";
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -96,7 +99,10 @@ import {OverlayModule} from '@angular/cdk/overlay';
     RegisterpageComponent,
     LandingpageComponent,
     ClassicboxComponent,
-    ClassicgamepageComponent
+    ClassicgamepageComponent,
+    ClassicgamepageComponent1,
+    ClassicgamepageComponent2,
+    ClassicgamepageComponent3
   ],
   exports: [
     IndexComponent,
@@ -105,6 +111,9 @@ import {OverlayModule} from '@angular/cdk/overlay';
     LandingpageComponent,
     ClassicboxComponent,
     ClassicgamepageComponent,
+    ClassicgamepageComponent1,
+    ClassicgamepageComponent2,
+    ClassicgamepageComponent3,
     A11yModule,
     ClipboardModule,
     CdkStepperModule,

@@ -107,15 +107,6 @@
   
 
   
-  <div class="page-header">
-    <section class="section section-lg section-coins">
-    <img src="assets/img/login2.png"  />
-  </section>
-  </div>
-  
-
-
-  
  
   <section class="section section-lg section-coins">
     <img class="path" src="assets/img/path3.png" />
@@ -125,25 +116,58 @@
         <div class="col-md-4">
           <hr class="line-info" />
 
-          <h1>
-            Enter player passcode
-            <span class="text-info"> sent by email </span>
-          </h1>
+         instructions on zoom
         </div>
-      </div>
-      <div class="row">
+        <br><br>
+        
+          <div class="card card-coin card-plain">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                  <h2>
+                    Enter Team Code recieved            
+                  </h2>
+                  <hr class="line-primary" />
+                  <input
+                  class="form-control"
+                  placeholder="teamcode"
+                  type="text"
+                  (focus)="focus = true"
+                  (blur)="focus = false"
+                  #teamcode
+                       />
+                  <button type="button" (click)="checkTeamCode(teamcode.value, 'classic');" class="btn btn-primary btn-simple">Play</button>
+
+                </div>
+              </div>
+             
+            </div>
+           </div>
+         
+
+        
+  
+</div>
+
+      <div class="row" *ngIf="isApproved">
         <div class="col-md-4">
           <div class="card card-coin card-plain">
             <div class="card-body">
               <div class="row">
                 <div class="col-md-12 text-center">
                   <h4 class="text-uppercase">Player 1</h4>
-                  <span> Enter passcode </span>
+                  <span> </span>
                   <hr class="line-primary" />
+                  <div class="btn btn-primary btn-simple">
+                    <a [routerLink]="['/classicgamepage1']" target="_blank" >
+                      
+                      <strong>Start Game</strong></a>
+                 </div>
                 </div>
               </div>
              
             </div>
+<!--
             <div class="card-footer text-center ">
 
               <input
@@ -155,12 +179,13 @@
                 #player1
                
               />             
-              
+           
                <button type="button" (click)="checkPlayerCode(player1.value, 'playerOne');" class="btn btn-primary btn-simple">Play</button>
-               <div *ngIf="isVerified" class="alert alert-success box-msg" role="alert">
+               <div *ngIf="isVerified" class="btn btn-primary btn-simple">
                 <a [routerLink]="['/classicgamepage']" target="_blank"><strong>Start Game</strong></a>
              </div>
             </div>
+          -->
           </div>
         </div>
         <div class="col-md-4">
@@ -170,12 +195,16 @@
               <div class="row">
                 <div class="col-md-12 text-center">
                   <h4 class="text-uppercase">Player 2</h4>
-                  <span> Enter passcode </span>
+                  <span></span>
                   <hr class="line-success" />
+                  <div class="btn btn-success btn-simple">
+                    <a [routerLink]="['/classicgamepage2']" target="_blank"><strong>Start Game</strong></a>
+                 </div>
                 </div>
               </div>
              
             </div>
+            <!--
             <div class="card-footer text-center">
              
               <input
@@ -191,6 +220,7 @@
                <button type="button" (click)="checkPlayerCode(player2.value, 'playerTwo');" class="btn btn-success btn-simple">Play</button>
         
             </div>
+          -->
           </div>
         </div>
         <div class="col-md-4">
@@ -199,12 +229,16 @@
               <div class="row">
                 <div class="col-md-12 text-center">
                   <h4 class="text-uppercase">Player 3</h4>
-                  <span> Enter passcode </span>
+                  <span> </span>
                   <hr class="line-info" />
+                  <div class="btn btn-info btn-simple">
+                    <a [routerLink]="['/classicgamepage3']" target="_blank"><strong>Start Game</strong></a>
+                 </div>
                 </div>
               </div>
             
             </div>
+             <!--
             <div class="card-footer text-center">
              
               <input
@@ -220,8 +254,12 @@
                <button type="button" (click)="checkPlayerCode(player3.value, 'playerThree');" class="btn btn-info btn-simple">Play</button>
         
             </div>
+          -->
           </div>
         </div>
+      </div>
+      <div class="row" *ngIf="isError"> 
+        Please enter correct code
       </div>
     </div>
   </section>

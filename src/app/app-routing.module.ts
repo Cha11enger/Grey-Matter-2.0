@@ -13,6 +13,9 @@ import { RegisterpageComponent } from "./pages/examples/registerpage/registerpag
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { ClassicboxComponent } from "./pages/boxes/classicbox/classicbox.component";
 import { ClassicgamepageComponent } from "./pages/gamepages/classicgamepage/classicgamepage.component";
+import { ClassicgamepageComponent1 } from "./pages/gamepages/classicgamepage1/classicgamepage1.component";
+import { ClassicgamepageComponent2 } from "./pages/gamepages/classicgamepage2/classicgamepage2.component";
+import { ClassicgamepageComponent3 } from "./pages/gamepages/classicgamepage3/classicgamepage3.component";
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -23,7 +26,10 @@ const routes: Routes = [
   { path: "register", component: RegisterpageComponent },
   { path: "landing", component: LandingpageComponent },
   { path: "classicbox", component: ClassicboxComponent },
-  { path: "classicgamepage", component: ClassicgamepageComponent }
+  { path: "classicgamepage", component: ClassicgamepageComponent },
+  { path: "classicgamepage1", component: ClassicgamepageComponent1 },
+  { path: "classicgamepage2", component: ClassicgamepageComponent2 },
+  { path: "classicgamepage3", component: ClassicgamepageComponent3 }
 ];
 
 @NgModule({
