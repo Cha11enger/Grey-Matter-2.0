@@ -319,8 +319,62 @@
 </div>
 
 <!--
+  CLASSIC LEADERBOARD
 -->
 
+<div class="section">
+  <div class="container">
+    <div class="title"><h3>Classic Leaderboard !</h3><h4>Are you there yet?!</h4></div>
+    
+    <div class="container">
+      <table class="table table-responsive table-striped" >
+        <tr>
+          <th>Rank</th>
+          <th>Team Name</th>
+          <th>TIme</th>
+        </tr>
+     <!--   <tr *ngFor="let row of rows ">
+       <i class="fa" 
+    [ngClass]="{'fa-sort': column != 'CategoryID', 
+                        'fa-sort-asc': (column == 'CategoryID' && !isDesc), 
+                        'fa-sort-desc': (column == 'CategoryID' && isDesc) }"
+    aria-hidden="true"> </i>
+
+
+    
+body
+{
+    counter-reset: Serial;           /* Set the Serial counter to 0 */
+}
+
+table
+{
+    border-collapse: separate;
+}
+
+tr td:first-child:before
+{
+  counter-increment: Serial;      /* Increment the Serial counter */
+  content: "Serial is: " counter(Serial); /* Display the counter */
+}
+
+
+     -->
+     <tr *ngFor="let row of rows ; let i = index " [ngClass] = "{'fa-sort-asc': column != time}">
+          
+          <td>{{i+1}}</td>
+          <td>{{row.teamname}}</td>
+          <td>{{row.time}}</td>
+        </tr>
+      </table>
+      <div>
+
+  </div>
+</div>
+
+<!--   
+
+-->
 
         <div class="row" >
           <div class="col-sm-3 col-6 spacing">

@@ -104,24 +104,53 @@
   </div>
 </nav>
 <div class="wrapper">
-  
-
- 
   <section class="section section-lg section-coins">
-    <img class="path" src="assets/img/path3.png" />
+   
 
     <div class="container">
-      <div class="example-box" cdkDragBoundary=".section" cdkDrag>
-        Drag me around
-        
+  <h1>CONGRATULATIONS !!</h1>
+          <h2>
+            Enter Team Code recieved and TEAMNAME to enter LEADERBOARD           
+          </h2>
+  <div class="card card-coin card-plain">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12 text-center">
+         
+          <h2>
+           Team Code Recieved        
+          </h2>
+          
+          <input
+          class="form-control"
+          placeholder="teamcode"
+          type="text"
+          (focus)="focus = true"
+          (blur)="focus = false"
+          #teamcode1
+               />
+
+          <hr class="line-primary" />
+          <h2>
+            Team A team name      
+           </h2>
+           
+           <input
+           class="form-control"
+           placeholder="teamname"
+           type="text"
+           (focus)="focus = true"
+           (blur)="focus = false"
+           #teamname
+                />
+          <button type="button" (click)="teamEndTime(teamcode1.value, teamname.value);" class="btn btn-primary btn-simple">Update Leaderboard</button>
+
+        </div>
       </div>
+     
     </div>
-    <div class="example-boundary">
-      <div class="example-box" cdkDragBoundary=".section" cdkDrag>
-        test
-      </div>
-    </div>
-  </section>
- 
+   </div>
+ </div>
+ </section>
 </div>
 

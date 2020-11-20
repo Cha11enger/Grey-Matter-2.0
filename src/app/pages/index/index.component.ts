@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import noUiSlider from "nouislider";
 import { IndexService } from './index.service'
+import { DatePipe } from '@angular/common';
+import { Timestamp } from 'rxjs';
 
 @Component({
   selector: "app-index",
@@ -18,8 +20,13 @@ export class IndexComponent implements OnInit, OnDestroy {
   playerNumber : String;
   playerCode : String;
 
+  //public rows: Array<{rank: '0', teamname: '', time: ''}> = [];
+  public rows: Array<any> = [];
 
-  constructor( public indexservice: IndexService) {}
+
+  constructor( public indexservice: IndexService) {
+    this.displayLeaderBoard()
+  }
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
   }
@@ -63,7 +70,7 @@ export class IndexComponent implements OnInit, OnDestroy {
     record['code'] = this.playerCode;
 
     this.indexservice.add_value_db(record)
-    
+
     /*.then( res -> {
 
       this.playerNumber = '';
@@ -75,4 +82,53 @@ export class IndexComponent implements OnInit, OnDestroy {
     })
     ) */
   }
+
+  displayLeaderBoard(){
+    var temprow = [];
+   var rank;
+   var teamname;
+   var time;
+   var seconds ;
+   var d1,d2;
+   this.indexservice.fireservice.collection('player keys').valueChanges().subscribe(result =>{
+    
+    
+     result.forEach(function (value) {
+       if(value['timeset'] != undefined &&  value['timeset'] != null && value['timeset'] != "" && value['timeset'] == 'done')
+        {
+          console.log( value );
+         
+         teamname = value['teamname'];
+      
+         d1 = new Date(value['endtime']);
+         
+         console.log( d1);
+          d2 = new Date(value['starttime']);
+          console.log( d2);
+
+         seconds = (d1 - d2) / 1000;
+         time = seconds/60;
+         console.log( time );
+          rank = 1;
+      // rows1: Array<{rank: number, teamname: string, time: number}> = [];
+     var one =  {rank: rank, teamname: teamname, time: time};
+    
+       temprow.push( one );    
+       console.log("final array ----   " + temprow );
+       console.log( temprow );
+
+        }
+
+         });
+     
+     });
+   
+ this.rows = temprow;
+ console.log( "ROWSSSS" );
+ console.log( this.rows );
+  }
+
+ 
+
+
 }
