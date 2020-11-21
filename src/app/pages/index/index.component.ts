@@ -18,14 +18,14 @@ export class IndexComponent implements OnInit, OnDestroy {
   date = new Date();
   pagination = 3;
   pagination1 = 1;
-  playerNumber : String;
-  playerCode : String;
+  playerNumber: String;
+  playerCode: String;
 
   //public rows: Array<{rank: '0', teamname: '', time: ''}> = [];
   public rows: Array<any> = [];
 
 
-  constructor( public indexservice: IndexService) {
+  constructor(public indexservice: IndexService) {
     this.displayLeaderBoard()
   }
   scrollToDownload(element: any) {
@@ -37,33 +37,33 @@ export class IndexComponent implements OnInit, OnDestroy {
 
     var slider = document.getElementById("sliderRegular");
 
-  //  noUiSlider.create(slider, {
-   //   start: 40,
+    //  noUiSlider.create(slider, {
+    //   start: 40,
     //  connect: false,
-     // range: {
-   //     min: 0,
-   //     max: 100
-  //    }
-  //  });
+    // range: {
+    //     min: 0,
+    //     max: 100
+    //    }
+    //  });
 
     var slider2 = document.getElementById("sliderDouble");
 
-  //  noUiSlider.create(slider2, {
-  //    start: [20, 60],
-  //    connect: true,
-  //    range: {
-   //     min: 0,
-   //     max: 100
-   //   }
-  //  });
-    this.dbWriteFunction();
+    //  noUiSlider.create(slider2, {
+    //    start: [20, 60],
+    //    connect: true,
+    //    range: {
+    //     min: 0,
+    //     max: 100
+    //   }
+    //  });
+    // this.dbWriteFunction();
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("index-page");
   }
-
-  dbWriteFunction(){
+/*
+  dbWriteFunction() {
     let record = {};
     this.playerNumber = '3';
     this.playerCode = 'yoyoyoyoyooy';
@@ -81,75 +81,74 @@ export class IndexComponent implements OnInit, OnDestroy {
     }).catch( error->{
       console.log(error);
     })
-    ) */
-  }
+    ) */ /*
+  }   */
 
-  displayLeaderBoard(){
+  displayLeaderBoard() {
     var temprow = [];
-   var rank;
-   var teamname;
-   var time;
-   var seconds ;
-   var d1,d2;
-   this.indexservice.fireservice.collection('player keys').valueChanges().subscribe(result =>{
-    
-    
-     result.forEach(function (value) {
-       if(value['timeset'] != undefined &&  value['timeset'] != null && value['timeset'] != "" && value['timeset'] == 'done')
-        {
-          console.log( value );
-         
-         teamname = value['teamname'];
-      
-         d1 = new Date(value['endtime']);
-         
-         console.log( d1);
-          d2 = new Date(value['starttime']);
-          console.log( d2);
+    var rank;
+    var teamname;
+    var time;
+    var seconds;
+    var d1, d2;
+    this.indexservice.fireservice.collection('player keys').valueChanges().subscribe(result => {
 
-         seconds = (d1 - d2) / 1000;
-         time = seconds/60;
-         console.log( time );
+
+      result.forEach(function (value) {
+        if (value['timeset'] != undefined && value['timeset'] != null && value['timeset'] != "" && value['timeset'] == 'done') {
+        //  console.log(value);
+
+          teamname = value['teamname'];
+
+          d1 = new Date(value['endtime']);
+
+         // console.log(d1);
+          d2 = new Date(value['starttime']);
+        //  console.log(d2);
+
+          seconds = (d1 - d2) / 1000;
+          time = seconds / 60;
+        //  console.log(time);
           rank = 1;
-      // rows1: Array<{rank: number, teamname: string, time: number}> = [];
-     var one =  {rank: rank, teamname: teamname, time: time};
-    
-       temprow.push( one );    
-      
-      
+          // rows1: Array<{rank: number, teamname: string, time: number}> = [];
+          var one = { rank: rank, teamname: teamname, time: time };
+
+          temprow.push(one);
+
+
 
         }
 
-         });
-     
-     });
-     console.log( temprow );
+      });
+
+    });
+ //   console.log(temprow);
     // temprow.sort((a, b) => a.time - b.time); 
-     
+
     // var sortedArray = temprow.sort(function(a,b){
     //   console.log(a,b);
-   //   return a.time >b.time?1:a.time <b.time?-1:0
-  //   })
-  //   console.log(sortedArray);
-   //  temprow.sort((a,b) => a.time.rendered.localeCompare(b.time.rendered));
-  
-   function compareFirstNames( a, b ) {
-    if ( a.time < b.time ){
-      return -1;
+    //   return a.time >b.time?1:a.time <b.time?-1:0
+    //   })
+    //   console.log(sortedArray);
+    //  temprow.sort((a,b) => a.time.rendered.localeCompare(b.time.rendered));
+
+    function compareFirstNames(a, b) {
+      if (a.time < b.time) {
+        return -1;
+      }
+      if (a.time > b.time) {
+        return 1;
+      }
+      return 0;
     }
-    if ( a.time > b.time ){
-      return 1;
-    }
-    return 0;
-  }
-  temprow.sort( compareFirstNames );
-      console.log(temprow);
- this.rows = temprow;
- console.log( "ROWSSSS" );
- console.log( this.rows );
+    temprow.sort(compareFirstNames);
+   // console.log(temprow);
+    this.rows = temprow;
+  //  console.log("ROWSSSS");
+  //  console.log(this.rows);
   }
 
- 
+
 
 
 }
