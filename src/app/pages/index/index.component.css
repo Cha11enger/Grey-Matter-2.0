@@ -6,3 +6,18 @@
 .cont{
     width: 60% !important;
 }
+/* Hide scrollbar for chrome */
+.scroll::-webkit-scrollbar {
+    display: none;
+    width: max-content;
+  }
+  
+  /* Hide scrollbar for IE and Edge */
+  .scroll {
+    -ms-overflow-style: none;
+    
+  }
+  .tableformat{
+    display: inline-block !important;
+    width: 100% !important;
+  }

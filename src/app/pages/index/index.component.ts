@@ -3,6 +3,7 @@ import noUiSlider from "nouislider";
 import { IndexService } from './index.service'
 import { DatePipe } from '@angular/common';
 import { Timestamp } from 'rxjs';
+import { Pipe, PipeTransform } from '@angular/core'
 
 @Component({
   selector: "app-index",
@@ -114,15 +115,35 @@ export class IndexComponent implements OnInit, OnDestroy {
      var one =  {rank: rank, teamname: teamname, time: time};
     
        temprow.push( one );    
-       console.log("final array ----   " + temprow );
-       console.log( temprow );
+      
+      
 
         }
 
          });
      
      });
-   
+     console.log( temprow );
+    // temprow.sort((a, b) => a.time - b.time); 
+     
+    // var sortedArray = temprow.sort(function(a,b){
+    //   console.log(a,b);
+   //   return a.time >b.time?1:a.time <b.time?-1:0
+  //   })
+  //   console.log(sortedArray);
+   //  temprow.sort((a,b) => a.time.rendered.localeCompare(b.time.rendered));
+  
+   function compareFirstNames( a, b ) {
+    if ( a.time < b.time ){
+      return -1;
+    }
+    if ( a.time > b.time ){
+      return 1;
+    }
+    return 0;
+  }
+  temprow.sort( compareFirstNames );
+      console.log(temprow);
  this.rows = temprow;
  console.log( "ROWSSSS" );
  console.log( this.rows );

@@ -323,12 +323,12 @@
 -->
 
 <div class="section">
-  <div class="container">
+  <div class="container text-center">
     <div class="title"><h3>Classic Leaderboard !</h3><h4>Are you there yet?!</h4></div>
     
-    <div class="container">
-      <table class="table table-responsive table-striped" >
-        <tr>
+    <div class="container text-center">
+      <table class="table table-responsive table-striped scroll text-center tableformat" >
+        <tr >
           <th>Rank</th>
           <th>Team Name</th>
           <th>TIme</th>
@@ -360,7 +360,7 @@ tr td:first-child:before
 
 
      -->
-     <tr *ngFor="let row of rows ; let i = index " [ngClass] = "{'fa-sort-asc': column != time}">
+     <tr *ngFor="let row of rows ; let i = index " >
           
           <td>{{i+1}}</td>
           <td>{{row.teamname}}</td>
