@@ -21,3 +21,8 @@
     display: inline-block !important;
     width: 100% !important;
   }
+
+  .center {
+  margin-left: auto;
+  margin-right: auto;
+}

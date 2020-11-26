@@ -108,7 +108,7 @@ export class IndexComponent implements OnInit, OnDestroy {
 
           seconds = (d1 - d2) / 1000;
           time = seconds / 60;
-        //  console.log(time);
+         // console.log(time);
           rank = 1;
           // rows1: Array<{rank: number, teamname: string, time: number}> = [];
           var one = { rank: rank, teamname: teamname, time: time };
@@ -121,6 +121,9 @@ export class IndexComponent implements OnInit, OnDestroy {
 
       });
 
+      temprow.sort(function(a, b) {
+          return parseFloat(a.time) - parseFloat(b.time);
+    });
     });
  //   console.log(temprow);
     // temprow.sort((a, b) => a.time - b.time); 
@@ -132,16 +135,18 @@ export class IndexComponent implements OnInit, OnDestroy {
     //   console.log(sortedArray);
     //  temprow.sort((a,b) => a.time.rendered.localeCompare(b.time.rendered));
 
-    function compareFirstNames(a, b) {
-      if (a.time < b.time) {
-        return -1;
-      }
-      if (a.time > b.time) {
-        return 1;
-      }
-      return 0;
-    }
-    temprow.sort(compareFirstNames);
+    
+
+    // function compareFirstNames(a, b) {
+    //   if (a.time < b.time) {
+    //     return -1;
+    //   }
+    //   if (a.time > b.time) {
+    //     return 1;
+    //   }
+    //   return 0;
+    // }
+    // temprow.sort(compareFirstNames);
    // console.log(temprow);
     this.rows = temprow;
   //  console.log("ROWSSSS");

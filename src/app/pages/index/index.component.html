@@ -326,10 +326,81 @@
 </div>
 
 <!--
-  CLASSIC LEADERBOARD
+   LEADERBOARD SECTION
 -->
 
-<div class="section">
+      <div class="section section-tabs">
+        <div class="container">
+          <div class="title"><h3 class="mb-3">Classic Leaderboard !</h3> <h4>Are you there yet?!</h4> </div>
+          <div class="row">
+              <div class="card" >
+                <div class="card-header">
+                  <tabset class="nav-tabs-danger">
+                    <tab>
+                      <ng-template tabHeading>
+                         Box-1
+                      </ng-template>
+                        <div class="container text-center center">
+                        <table class="table table-responsive table-striped scroll text-center  tableformat" >
+                            <tr >
+                              <th>Rank</th>
+                              <th>Team Name</th>
+                              <th>TIme</th>
+                            </tr>
+                         <tr *ngFor="let row of rows ; let i = index " >
+                              
+                              <td>{{i+1}}</td>
+                              <td>{{row.teamname}}</td>
+                              <td>{{row.time}}</td>
+                            </tr>
+                          </table>
+                          </div>
+
+                     <!--  <p>
+                        Grey Matter Escape Rooms bring the excitement & mystery of an escape room straight to your living room. <br />
+                        Our escape boxes bring you an amazing Escape Room experience to play online! <br>
+                        Hop into a zoom call with your friends and get ready for an adrenaline filled ride!
+                        <br />
+                        <br>
+                        Let's get your brain cells tingling!
+                        <br><br>
+                      </p> -->
+                    </tab>
+                    <tab>
+                      <ng-template tabHeading>
+                       Box-2
+                      </ng-template>
+                      <p>
+                        The number of players for each box is mentioned. It is usually in teams of 2-4 players<br />
+                        The Escape box details and login code will be sent to your email id in 2-3 hours, after payment.
+                        <br />
+                        You dont have to download any software, this is a web-browser based game.
+                        <br><br>
+                        Play anytime, any where all across the world ! 
+                        <br><br>
+                      </p>
+                    </tab>
+                    <tab>
+                      <ng-template tabHeading>
+                     Box-3
+                      </ng-template>
+                      <p>
+                        You dont have to download any software, this is a web-browser based game. <br>
+                        It can be access via Computer, Tablet and Phone, but we recommend using a computer for best gaming experience. <br>
+                        24/7 Access to games & immediate delivery available<br />
+                        <br />
+                        Text us for queries!
+                        <br /><br />
+                      </p>
+                    </tab>
+                  </tabset>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+ <!-- <div class="section">
   <div class="container text-center">
     <div class="title"><h3>Classic Leaderboard !</h3><h4>Are you there yet?!</h4></div>
     
@@ -340,7 +411,7 @@
           <th>Team Name</th>
           <th>TIme</th>
         </tr>
-     <!--   <tr *ngFor="let row of rows ">
+       <tr *ngFor="let row of rows ">
        <i class="fa" 
     [ngClass]="{'fa-sort': column != 'CategoryID', 
                         'fa-sort-asc': (column == 'CategoryID' && !isDesc), 
@@ -366,7 +437,7 @@ tr td:first-child:before
 }
 
 
-     -->
+    
      <tr *ngFor="let row of rows ; let i = index " >
           
           <td>{{i+1}}</td>
@@ -379,9 +450,9 @@ tr td:first-child:before
   </div>
 </div>
 
-<!--   
+ --> --><!--   
 
--->
+
 
         <div class="row" >
           <div class="col-sm-3 col-6 spacing">
