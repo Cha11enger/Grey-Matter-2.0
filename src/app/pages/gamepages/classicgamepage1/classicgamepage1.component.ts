@@ -45,8 +45,8 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
     body.classList.remove("landing-page");
   }
 
-  yellow(){
-    alert('yellowbox');
+  theFunction(color){
+    console.log(color);
   }
 
   

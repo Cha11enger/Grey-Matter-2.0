@@ -35,20 +35,38 @@
    <!-- <section class="section section-lg section-coins">
     <img class="path" src="assets/img/path3.png" />  -->
     <section class="section ">
-      <div class="container">
+      <div class="stage" id="stage" >
 
-        <div id="img[usemap]">
+       
+      <div class="level1">
+
+        <div class="buttons">
+          <div class="bttn yellow" (click)="theFunction('yellow')"></div>
+          <div class="bttn red" (click)="theFunction('red')"></div>
+          <div class="bttn green" (click)="theFunction('green')" ></div>
+          <div class="bttn blue"  (click)="theFunction('blue')"></div>  
+       </div>  
+
+      </div>
+      <div class="level0" id="level0">
+
+        <div style="background-image:'assets/classic/classic1.jpg' " class='room' id='room'></div>
 
         </div>
+        
 
+
+
+
+<!--
 <img #playerbar src="assets/classic/classic1.jpg" alt="p1_bar" usemap="#p1_bar" class="imagebox" width="2000" height="1125"  >
 
 <map name="p1_bar">
-  <!--{{wid1/3.81,hei1/4.95,wid1/3.33,hei1/4.08}}-->
+  {{wid1/3.81,hei1/4.95,wid1/3.33,hei1/4.08}}
   <area shape="rect" coords="529,255,2000,1120" (click)="yellow()">
 </map>
 
-
+-->
       </div>
 
 <!-- 
@@ -66,7 +84,7 @@
   -->
 
   </section>
- 
+ <!--
   <script type="text/javascript" src="../../../../assets/resize/imageMapResizer.min.js"></script> 
    <script type="text/javascript">
      $(document).ready(function(e) {
@@ -74,5 +92,5 @@
        $('map').imageMapResize();
      });
  </script>
-
+-->
 </div>
