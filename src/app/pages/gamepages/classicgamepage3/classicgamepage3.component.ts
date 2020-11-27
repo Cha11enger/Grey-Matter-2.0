@@ -23,7 +23,10 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
     body.classList.remove("landing-page");
   }
 
- 
+  expandPiece(piece){
+console.log(piece);
+  }
+
 
   
 

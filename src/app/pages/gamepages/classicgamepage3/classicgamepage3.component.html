@@ -1,4 +1,4 @@
-
+<!--
   <nav
   class="navbar navbar-expand-lg fixed-top navbar-transparent"
   color-on-scroll="100"
@@ -20,13 +20,23 @@
     
    
   </div>
-</nav>
-<div class="wrapper">
+</nav>   -->
+<div class="wrapper" >
   
-  <section class="section section-lg section-coins">
-    <img class="path" src="assets/img/path3.png" />
+ 
 
-    <div class="container">
+    <div class="container" >
+      <img  src="assets/classic/classic3.jpg" class="imagebox" >
+      <div class="buttons">
+        <div class="piece1" (click)="expandPiece('y')"></div>
+        <div class="piece2" (click)="expandPiece('r')"></div>
+        <div class="piece3" (click)="expandPiece('g')" ></div>
+        <div class="piece4"  (click)="expandPiece('b')"></div>  
+     </div> 
+    </div>
+
+    <!--
+    <div>
       <div class="example-box" cdkDragBoundary=".section" cdkDrag>
         Drag me around
         
@@ -37,7 +47,8 @@
         test
       </div>
     </div>
-  </section>
+    -->
+
  
 </div>
 

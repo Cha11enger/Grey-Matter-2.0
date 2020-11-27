@@ -21,9 +21,56 @@
    
   </div>
 </nav>
+
+
 <div class="wrapper">
   
   <section class="section section-lg section-coins">
+
+<div class="scroll">
+
+    <div class="level2">
+
+
+    </div>
+       
+      <div class="level1">
+
+        <div class="cardsdisp">
+          <div class="card one" (click)="expandPiece('')"></div>
+          <div class="card two" (click)="expandPiece('r')"></div>
+          <div class="card three" (click)="expandPiece('g')" ></div>
+          <div class="card four"  (click)="expandPiece('b')"></div>  
+          <div class="card five" (click)="expandPiece('y')"></div>
+          <div class="card six" (click)="expandPiece('r')"></div>
+          <div class="card seven" (click)="expandPiece('g')" ></div>
+          <div class="card eight"  (click)="expandPiece('b')"></div> 
+       </div>  
+       
+       <div  *ngIf=showCard class="showingcard one"></div>
+
+      </div>
+      <div class="level0" id="level0">
+        <img  src="assets/classic/classic2.jpg" />
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
     <img class="path" src="assets/img/path3.png" />
 
     <div class="container">
@@ -37,6 +84,8 @@
         test
       </div>
     </div>
+
+  -->
   </section>
  
 </div>

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import Chart from "chart.js";
 import * as $ from "jquery";
 import * as jQuery from 'jquery';
+import { mixinColor } from '@angular/material/core';
 
 @Component({
   selector: "app-classicgamepage1",
@@ -14,7 +15,10 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
   wid1;
   hei1;
  
- 
+  showdoty = false;
+  showdotr = false;
+  showdotg = false;
+  showdotb = false;
 
   constructor(private http: HttpClient) {
   
@@ -45,11 +49,25 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
     body.classList.remove("landing-page");
   }
 
-  theFunction(color){
+  expandPiece(color){
+    if(color == 'y'){this.showdoty = true;}
+    if(color == 'r'){this.showdotr = true;}
+    if(color == 'b'){this.showdotb = true;}
+    if(color == 'g'){this.showdotg = true;}
+
+  
     console.log(color);
   }
 
+  contractPiece(color){
+    if(color == 'y'){this.showdoty = false;}
+    if(color == 'r'){this.showdotr = false;}
+    if(color == 'b'){this.showdotb = false;}
+    if(color == 'g'){this.showdotg = false;}
+
   
+    console.log(color);
+  }
 
 
 }

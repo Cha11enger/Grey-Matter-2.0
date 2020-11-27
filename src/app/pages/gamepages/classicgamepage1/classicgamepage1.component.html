@@ -34,27 +34,40 @@
   
    <!-- <section class="section section-lg section-coins">
     <img class="path" src="assets/img/path3.png" />  -->
-    <section class="section ">
-      <div class="stage" id="stage" >
+   <section class="section ">
+   <div  >   
+    <div class="level2">
 
+
+    </div>
        
       <div class="level1">
 
         <div class="buttons">
-          <div class="bttn yellow" (click)="theFunction('yellow')"></div>
-          <div class="bttn red" (click)="theFunction('red')"></div>
-          <div class="bttn green" (click)="theFunction('green')" ></div>
-          <div class="bttn blue"  (click)="theFunction('blue')"></div>  
+          <div class="bttn yellow" (click)="expandPiece('y')"></div>
+          <div class="bttn red" (click)="expandPiece('r')"></div>
+          <div class="bttn green" (click)="expandPiece('g')" ></div>
+          <div class="bttn blue"  (click)="expandPiece('b')"></div>  
        </div>  
+       <div   class="buttons">
+        <div class="bttn yellow1" *ngIf="showdoty" (click)="contractPiece('y')"></div>
+        <div class="bttn red1" *ngIf="showdotr" (click)="contractPiece('r')"></div>
+        <div class="bttn green1" *ngIf="showdotg" (click)="contractPiece('g')" ></div>
+        <div class="bttn blue1"  *ngIf="showdotb" (click)="contractPiece('b')"></div>  
+     </div>  
+
 
       </div>
       <div class="level0" id="level0">
 
-        <div style="background-image:'assets/classic/classic1.jpg' " class='room' id='room'></div>
+      <!--  <div style="background-image:'assets/classic/classic1.jpg' " class='room' id='room'></div>
+   src="assets/classic/classic1.jpg"
+      -->
 
+      <div class='room' id='room'></div>
         </div>
         
-
+       
 
 
 
@@ -66,8 +79,8 @@
   <area shape="rect" coords="529,255,2000,1120" (click)="yellow()">
 </map>
 
--->
-      </div>
+ -->
+      </div>  
 
 <!-- 
     <div class="container">
@@ -81,9 +94,9 @@
         test
       </div>
     </div>
-  -->
+ -->
 
-  </section>
+  </section>   
  <!--
   <script type="text/javascript" src="../../../../assets/resize/imageMapResizer.min.js"></script> 
    <script type="text/javascript">
