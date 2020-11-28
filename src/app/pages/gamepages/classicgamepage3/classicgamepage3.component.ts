@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input} from "@angular/core";
+import { Component, OnInit, OnDestroy, Input, HostListener} from "@angular/core";
 import { HttpClient, HttpDownloadProgressEvent } from '@angular/common/http';
 import Chart from "chart.js";
 import { Howler, Howl } from 'howler';
@@ -21,6 +21,15 @@ bluekey = false;
   
   }
 
+  @HostListener('document:click')
+  clickout() {
+    var sound = new Howl({
+      src: ['assets/audio/clicksound.mp3']
+    });
+    
+    sound.play();
+  }
+
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
@@ -40,11 +49,7 @@ bluekey = false;
     
 console.log(piece);
 
-var sound = new Howl({
-  src: ['sound.mp3']
-});
 
-sound.play();
 
 
 
