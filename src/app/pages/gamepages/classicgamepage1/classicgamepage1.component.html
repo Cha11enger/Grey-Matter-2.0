@@ -6,7 +6,7 @@
         $('img[usemap]').rwdImageMaps();
     });
 </script>
- -->
+
 
   <nav
   class="navbar navbar-expand-lg fixed-top navbar-transparent"
@@ -32,8 +32,8 @@
 </nav>
 <div class="wrapper">
   
-   <!-- <section class="section section-lg section-coins">
-    <img class="path" src="assets/img/path3.png" />  -->
+   <section class="section section-lg section-coins">
+    <img class="path" src="assets/img/path3.png" />  
    <section class="section ">
    <div  >   
     <div class="level2">
@@ -60,9 +60,9 @@
       </div>
       <div class="level0" id="level0">
 
-      <!--  <div style="background-image:'assets/classic/classic1.jpg' " class='room' id='room'></div>
+       <div style="background-image:'assets/classic/classic1.jpg' " class='room' id='room'></div>
    src="assets/classic/classic1.jpg"
-      -->
+     
 
       <div class='room' id='room'></div>
         </div>
@@ -71,7 +71,7 @@
 
 
 
-<!--
+
 <img #playerbar src="assets/classic/classic1.jpg" alt="p1_bar" usemap="#p1_bar" class="imagebox" width="2000" height="1125"  >
 
 <map name="p1_bar">
@@ -79,10 +79,10 @@
   <area shape="rect" coords="529,255,2000,1120" (click)="yellow()">
 </map>
 
- -->
+
       </div>  
 
-<!-- 
+
     <div class="container">
       <div class="example-box" cdkDragBoundary=".section" cdkDrag>
         Drag me around
@@ -94,10 +94,10 @@
         test
       </div>
     </div>
- -->
+ 
 
   </section>   
- <!--
+
   <script type="text/javascript" src="../../../../assets/resize/imageMapResizer.min.js"></script> 
    <script type="text/javascript">
      $(document).ready(function(e) {
@@ -105,5 +105,33 @@
        $('map').imageMapResize();
      });
  </script>
--->
+
 </div>
+-->
+
+
+<div class="wrapper" >
+  
+  <div class="area text-center" >
+    <div class="level0 " id="level0" >
+
+    <img  src="assets/classic/classic1.jpg" class="room " > 
+    
+    <div class="piece1" (click)="expandPiece('r')"></div>
+    <div class="piece2" (click)="expandPiece('y')"></div>
+      <div class="piece3" (click)="expandPiece('g')" ></div>
+      <div class="piece4"  (click)="expandPiece('b')"></div> 
+
+      <div *ngIf='redkey' class="piece11" (click)="hidePiece('r')"></div>
+      <div *ngIf='yellowkey' class="piece22" (click)="hidePiece('y')"></div>
+      <div *ngIf='greenkey' class="piece33" (click)="hidePiece('g')"></div>
+      <div *ngIf='bluekey' class="piece44" (click)="hidePiece('b')"></div>
+
+  </div>
+
+  </div>
+
+
+</div>
+
+

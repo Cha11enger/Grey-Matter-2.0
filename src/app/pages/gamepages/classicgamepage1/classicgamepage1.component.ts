@@ -1,9 +1,9 @@
-import { Component, OnInit, OnDestroy, Input} from "@angular/core";
+import { Component, OnInit, OnDestroy, Input, HostListener} from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import Chart from "chart.js";
 import * as $ from "jquery";
 import * as jQuery from 'jquery';
-import { mixinColor } from '@angular/material/core';
+import { Howler, Howl } from 'howler';
 
 @Component({
   selector: "app-classicgamepage1",
@@ -12,34 +12,27 @@ import { mixinColor } from '@angular/material/core';
 })
 export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
   isCollapsed = true;
-  wid1;
-  hei1;
+  redkey = false;
+  bluekey = false;
+  yellowkey = false;
+  greenkey = false;
  
-  showdoty = false;
-  showdotr = false;
-  showdotg = false;
-  showdotb = false;
 
   constructor(private http: HttpClient) {
   
   }
+  @HostListener('document:click')
+  clickout() {
+    var sound = new Howl({
+      src: ['assets/audio/clicksound.mp3']
+    });
 
+    sound.play();
+  }
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
 
-   // $(document).ready(function(e) {
-   //   $('img[usemap]').rwdImageMaps();
-  //});
-  
-    
-  //  jQuery.noConflict();
-  //  $(document).ready(function(e) {
-   //   $('img[usemap]').rwdImageMaps();
-
-//  });
- // this.wid1 = document.getElementById('playerbar').offsetWidth ;
- // this.hei1 = document.getElementById('playerbar').offsetHeight;
   
   }
   
@@ -49,24 +42,23 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
     body.classList.remove("landing-page");
   }
 
-  expandPiece(color){
-    if(color == 'y'){this.showdoty = true;}
-    if(color == 'r'){this.showdotr = true;}
-    if(color == 'b'){this.showdotb = true;}
-    if(color == 'g'){this.showdotg = true;}
+  expandPiece(piece) {
+    if (piece == 'r') { this.redkey = true; }
+    if (piece == 'y') { this.yellowkey = true; }
+    if (piece == 'b') { this.bluekey = true; }
+    if (piece == 'g') { this.greenkey = true; }
 
-  
-    console.log(color);
+    console.log(piece);
+
   }
 
-  contractPiece(color){
-    if(color == 'y'){this.showdoty = false;}
-    if(color == 'r'){this.showdotr = false;}
-    if(color == 'b'){this.showdotb = false;}
-    if(color == 'g'){this.showdotg = false;}
 
-  
-    console.log(color);
+  hidePiece(piece) {
+    if (piece == 'r') { this.redkey = false; }
+    if (piece == 'y') { this.yellowkey = false; }
+    if (piece == 'b') { this.bluekey = false; }
+    if (piece == 'g') { this.greenkey = false; }
+
   }
 
 
