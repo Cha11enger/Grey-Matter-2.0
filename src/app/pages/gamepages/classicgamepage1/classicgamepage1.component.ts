@@ -69,8 +69,24 @@ if(this.p1_clues == true){
     if (piece == 'bottle') { this.bottle = false; }
 
   }
+
+// Added for Delay
+
+  async delay_off(ms: number) {
+      await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>this.showBulb = false);
+  }
+
+   async delay_on(ms: number) {
+      await new Promise(resolve => setTimeout(()=>resolve(), ms)).then(()=>this.showBulb = true);
+  }
+
+  // Delay function ends here
+
   p1_sequence( seq ){ 
 
+    this.showBulb  = true;
+    this.delay_off(200);
+    // this.showBulb = false;
 
     if ( seq == "6"){  this.sequence = 1;  }
 
@@ -95,6 +111,7 @@ if(this.p1_clues == true){
     if( seq == "3" ){
       if ( this.sequence == 5){ 
         this.sequence = 6;
+        // this.showBulb  = true;
         this.p1_clues = true; 
 
         var success = new Howl({
@@ -108,16 +125,16 @@ if(this.p1_clues == true){
     }
 
     if(this.sequence == 6){
-
+      this.delay_on(200);
       this.showBulb  = true;
       
     }
-    else{
+    // else{
 
-      this.showBulb  = true;
-      delay(5000);
-      this.showBulb = false;
-    }
+    //   // this.showBulb  = true;
+    //   // delay(5000);
+    //   // this.showBulb = false;
+    // }
   
     
   }
