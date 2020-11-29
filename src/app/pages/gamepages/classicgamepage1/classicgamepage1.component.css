@@ -106,6 +106,30 @@
     z-index: 2;
     background-size: contain; 
   }
+
+  
+  .piece5{
+    left: 50.5%;
+    top: 63%;
+    position: absolute;
+    width: 17%;
+    height: 17%;
+    cursor: pointer;
+   
+  }
+  .piece55{
+    left: 47.5%;
+    top: 57%;
+    position: absolute;
+    width: 22%;
+    height: 39%;
+    cursor: pointer;
+    background: transparent url(/assets/classic/p1_bottleclick.png) no-repeat; 
+    z-index: 2;
+    background-size: contain; 
+  }
+
+
   #level0{
     position: absolute;
     z-index: 1;
@@ -116,7 +140,7 @@
 
   .room{
 
-    background: transparent url(/assets/classic/classic1.jpg) 50% 50% no-repeat; 
+    background: transparent url(/assets/classic/classic1new.png) 50% 50% no-repeat; 
     background-size: cover;
     z-index: 1;
 
@@ -125,4 +149,103 @@
   max-height:95%;
   max-width: 95%;
   
+}
+
+.hex1{
+  left: 20%;
+    top: 42%;
+    position: absolute;
+    width: 3%;
+    height: 6%;
+    cursor: pointer;
+    
+}
+.hex2{
+  left: 22.5%;
+    top: 35%;
+    position: absolute;
+    width: 3%;
+    height: 6%;
+    cursor: pointer;
+    
+}
+.hex3{
+  left: 25%;
+    top: 42%;
+    position: absolute;
+    width: 3%;
+    height: 6%;
+    cursor: pointer;
+    
+}
+.hex4{
+  left: 27.5%;
+    top: 35%;
+    position: absolute;
+    width: 3%;
+    height: 6%;
+    cursor: pointer;
+    
+}
+.hex5{
+  left: 30%;
+    top: 42%;
+    position: absolute;
+    width: 3%;
+    height: 6%;
+    cursor: pointer;
+    
+}
+.hex6{
+  left: 33%;
+    top: 35%;
+    position: absolute;
+    width: 3%;
+    height: 6%;
+    cursor: pointer;
+}
+.scroll{
+  left: 51.5%;
+  top: 12%;
+  position: absolute;
+  width: 37%;
+  height: 20%;
+  background: transparent url(/assets/classic/p1_followscript.png) no-repeat; 
+  z-index: 2;
+  background-size: contain;
+}
+/*
+.hex1:hover
+{
+    background-color:blue;
+    color:white;
+}
+*/
+.safecode{
+  left: 18%;
+    top: 67%;
+    position: absolute;
+    width: 10%;
+    height: 11%;
+    cursor: pointer;
+}
+.bulb{
+  left: 44.5%;
+    top: 13%;
+    position: absolute;
+    width: 8%;
+    height: 13%;
+  background: transparent url(/assets/classic/p1_bulboff.png) no-repeat; 
+  z-index: 2;
+  background-size: contain;
+}
+.bulbon{
+  left: 44.5%;
+    top: 13%;
+    position: absolute;
+    width: 8%;
+    height: 13%;
+  background: transparent url(/assets/classic/p1_bulbon.png) no-repeat; 
+  z-index: 3;
+  background-size: contain;
 }

@@ -4,6 +4,7 @@ import Chart from "chart.js";
 import * as $ from "jquery";
 import * as jQuery from 'jquery';
 import { Howler, Howl } from 'howler';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: "app-classicgamepage1",
@@ -16,7 +17,12 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
   bluekey = false;
   yellowkey = false;
   greenkey = false;
+  bottle = false;
+  showSafe = false;
+  showBulb = false;
  
+  sequence = 0;
+  p1_clues = false;
 
   constructor(private http: HttpClient) {
   
@@ -43,13 +49,15 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
   }
 
   expandPiece(piece) {
+    if (piece == 'b') { this.bluekey = true; }
+    if (piece == 'safe') { this.showSafe = true; }
+if(this.p1_clues == true){
     if (piece == 'r') { this.redkey = true; }
     if (piece == 'y') { this.yellowkey = true; }
-    if (piece == 'b') { this.bluekey = true; }
+    
     if (piece == 'g') { this.greenkey = true; }
-
-    console.log(piece);
-
+     }
+ if (piece == 'bottle') { this.bottle = true; }
   }
 
 
@@ -58,8 +66,68 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
     if (piece == 'y') { this.yellowkey = false; }
     if (piece == 'b') { this.bluekey = false; }
     if (piece == 'g') { this.greenkey = false; }
+    if (piece == 'bottle') { this.bottle = false; }
 
   }
+  p1_sequence( seq ){ 
 
+
+    if ( seq == "6"){  this.sequence = 1;  }
+
+    if( seq == "2"){
+      if (this.sequence == 1){ this.sequence = 2;}
+      else this.sequence=0;
+    }
+
+    if( seq == "5" ){
+      if ( this.sequence == 2){ this.sequence = 3;}
+      else this.sequence=0;
+    }
+
+    if( seq == "1" ){
+      if ( this.sequence == 3){ this.sequence = 4;}
+      else this.sequence=0;
+    }
+    if( seq == "4" ){
+      if ( this.sequence == 4){ this.sequence = 5;}
+      else this.sequence=0;
+    }
+    if( seq == "3" ){
+      if ( this.sequence == 5){ 
+        this.sequence = 6;
+        this.p1_clues = true; 
+
+        var success = new Howl({
+          src: ['assets/audio/success.mp3']
+        });
+    
+        success.play();
+
+      }
+      else this.sequence=0;
+    }
+
+    if(this.sequence == 6){
+
+      this.showBulb  = true;
+      
+    }
+    else{
+
+      this.showBulb  = true;
+      delay(5000);
+      this.showBulb = false;
+    }
+  
+    
+  }
+
+  checkCode(code){
+    if(code == "5713"){
+
+    }else{
+      console.log('nope');
+    }
+  }
 
 }
