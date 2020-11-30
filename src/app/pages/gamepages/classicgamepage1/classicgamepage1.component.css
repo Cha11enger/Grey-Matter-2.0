@@ -249,3 +249,29 @@
   z-index: 3;
   background-size: contain;
 }
+
+.bttnans{
+
+
+  width: inherit;
+    height: inherit;
+    background-color: rosybrown !important;
+    font-size: small;   
+    text-align: center;
+}
+.inputans{
+  border-radius: 5px;
+    max-width: 100%;
+}
+.safecode1{
+  left: 15%;
+  top: 65%;
+  position: absolute;
+  width: 18%;
+  height: 18%;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 7px;
+  background-color: antiquewhite;
+  border-width: medium;
+}

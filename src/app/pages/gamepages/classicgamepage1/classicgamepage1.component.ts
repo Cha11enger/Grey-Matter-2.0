@@ -23,6 +23,8 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
  
   sequence = 0;
   p1_clues = false;
+  correctCode = "Open!";
+  finalcode = "";
 
   constructor(private http: HttpClient) {
   
@@ -141,9 +143,11 @@ if(this.p1_clues == true){
 
   checkCode(code){
     if(code == "5713"){
+      this.correctCode = "Correct !!";
 
     }else{
-      console.log('nope');
+     
+     
     }
   }
 

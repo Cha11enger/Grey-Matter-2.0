@@ -142,11 +142,21 @@
       <div *ngIf='showBulb' class="bulbon" ></div>
 
       <div class="safecode"  (click)="expandPiece('safe')"></div> 
-
+<!--
       <div *ngIf='showSafe' class="safecode">
         <input #finalcode class="w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
         <button (click)="checkCode(finalcode.value)">Open</button>
       </div>
+    -->
+      
+<div *ngIf='showSafe' class=" safecode1">
+    
+      <input #finalcode  class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+      <button class="btn btn-default bttnans" (click)="checkCode(finalcode.value)" type="button">{{correctCode}}</button>
+  
+</div>
+
+
      
 
   </div>
