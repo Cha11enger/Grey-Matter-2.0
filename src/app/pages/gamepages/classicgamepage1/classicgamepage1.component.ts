@@ -146,7 +146,10 @@ if(this.p1_clues == true){
       this.correctCode = "Correct !!";
 
     }else{
-     
+    var inp =  document.getElementById('finalcode');
+    console.log();
+    console.log(inp.innerHTML);
+    inp.nodeValue = " Try Again " ;
      
     }
   }

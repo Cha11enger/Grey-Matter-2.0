@@ -212,3 +212,48 @@
   max-width: 95%;
   
 }
+
+.books{
+  left: 41.5%;
+    top: 85%;
+    position: absolute;
+    width: 13%;
+    height: 14%;
+  cursor: pointer;
+  
+ 
+}
+.books1{
+  left: 35.5%;
+    top: 73%;
+    position: absolute;
+    width: 24%;
+    height: 27%;
+  cursor: pointer;
+  background: transparent url(/assets/classic/p2_books.png) no-repeat; 
+  z-index: 2;
+  background-size: contain; 
+}
+
+
+.bottle{
+  left: 54.5%;
+    top: 14%;
+    position: absolute;
+    width: 3%;
+    height: 16%;
+  cursor: pointer;
+  background: transparent url(/assets/classic/p2_books.png) no-repeat; 
+ 
+}
+.bottle1{
+  left: 35.5%;
+    top: 73%;
+    position: absolute;
+    width: 24%;
+    height: 27%;
+  cursor: pointer;
+  background: transparent url(/assets/classic/p2_books.png) no-repeat; 
+  z-index: 2;
+  background-size: contain; 
+}

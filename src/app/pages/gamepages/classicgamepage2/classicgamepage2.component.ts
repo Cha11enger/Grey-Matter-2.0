@@ -19,6 +19,8 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   key6 = false;
   key7 = false;
   key8 = false;
+  books = false;
+  bottle = false;
 
   constructor(private http: HttpClient) {
   
@@ -53,7 +55,8 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
     if (piece == '6') { this.key6 = true; }
     if (piece == '7') { this.key7 = true; }
     if (piece == '8') { this.key8 = true; }
-
+    if (piece == 'books') { this.books = true; }
+    if (piece == 'bottle') { this.bottle = true; }
   }
 
 
@@ -66,6 +69,8 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
     if (piece == '6') { this.key6 = false; }
     if (piece == '7') { this.key7 = false; }
     if (piece == '8') { this.key8 = false; }
+    if (piece == 'books') { this.books = false; }
+    if (piece == 'bottle') { this.bottle = false; }
 
   }
 

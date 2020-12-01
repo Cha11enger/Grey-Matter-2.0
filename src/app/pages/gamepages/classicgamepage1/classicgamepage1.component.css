@@ -252,26 +252,25 @@
 
 .bttnans{
 
-
-  width: inherit;
-    height: inherit;
-    background-color: rosybrown !important;
-    font-size: small;   
-    text-align: center;
+  background-color: rosybrown !important;
+  font-size: small;
+  text-align: center;
+  background: transparent url(/assets/classic/lock.png) no-repeat;
+  border-radius: 10px;
 }
 .inputans{
   border-radius: 5px;
-    max-width: 100%;
+    max-width: 82%;
 }
 .safecode1{
   left: 15%;
-  top: 65%;
-  position: absolute;
-  width: 18%;
-  height: 18%;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 7px;
-  background-color: antiquewhite;
-  border-width: medium;
+    top: 65%;
+    position: absolute;
+    width: 18%;
+   
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 7px;
+    background-color: antiquewhite;
+    border-width: medium;
 }
