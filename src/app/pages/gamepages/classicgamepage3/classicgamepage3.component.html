@@ -36,6 +36,25 @@
         <div *ngIf='yellowkey' class="piece22" (click)="hidePiece('y')"></div>
         <div *ngIf='greenkey' class="piece33" (click)="hidePiece('g')"></div>
         <div *ngIf='bluekey' class="piece44" (click)="hidePiece('b')"></div>
+
+        <div class="safecode"  (click)="expandPiece('safe')"></div>            
+      <div *ngIf='showSafe' class=" safecode1">
+           <input #finalcode id="finalcode" class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+           <div class="bttnans"  (click)="checkCode(finalcode.value)"></div> 
+      </div>
+
+      <div class="book" (click)="expandPiece('book')"></div>
+
+      <div *ngIf='bookClue' class="book2" ></div>
+      <div *ngIf='showBook' class="book1" >
+    
+           <input #bookcode id="bookcode" class="inputbtl w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+           <div class="bttnbtl"  (click)="checkBookCode(bookcode.value)"></div>
+                                                                        
+    </div>
+
+
+      
     </div>
     <!--  <div class="level1">
         <div class="piece1" (click)="expandPiece('y')"></div>

@@ -37,6 +37,12 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
 
     sound.play();
   }
+  success = new Howl({
+    src: ['assets/audio/success.mp3']
+  });
+  error = new Howl({
+    src: ['assets/audio/error.mp3']
+  });
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
@@ -116,11 +122,8 @@ if(this.p1_clues == true){
         // this.showBulb  = true;
         this.p1_clues = true; 
 
-        var success = new Howl({
-          src: ['assets/audio/success.mp3']
-        });
-    
-        success.play();
+      
+        this.success.play();
 
       }
       else this.sequence=0;
@@ -143,14 +146,12 @@ if(this.p1_clues == true){
 
   checkCode(code){
     if(code == "5713"){
-      this.correctCode = "Correct !!";
-
+     console.log('correct');
+   this.success.play();
     }else{
-    var inp =  document.getElementById('finalcode');
-    console.log();
-    console.log(inp.innerHTML);
-    inp.nodeValue = " Try Again " ;
-     
+      this.showSafe = false;
+   
+      this.error.play();
     }
   }
 

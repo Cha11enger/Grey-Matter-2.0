@@ -30,7 +30,20 @@
       <div *ngIf='books' class="books1" (click)="hidePiece('books')"></div>
 
       <div class="bottle" (click)="expandPiece('bottle')"></div>
-      <div *ngIf='bottle' class="bottle1" (click)="hidePiece('bottle')"></div>
+      <div *ngIf='cardClue' class="bottle2" ></div>
+      <div *ngIf='bottle' class="bottle1" >
+    
+           <input #bottlecode id="bottlecode" class="inputbtl w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+           <div class="bttnbtl"  (click)="checkBottleCode(bottlecode.value)"></div>
+                                                                        
+    </div>
+    
+          <div class="safecode"  (click)="expandPiece('safe')"></div>            
+      <div *ngIf='showSafe' class=" safecode1">
+           <input #finalcode id="finalcode" class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+           <div class="bttnans"  (click)="checkCode(finalcode.value)"></div> 
+      </div>
+
 
     </div>
 

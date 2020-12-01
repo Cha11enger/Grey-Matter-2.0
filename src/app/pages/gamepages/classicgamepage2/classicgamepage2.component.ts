@@ -21,7 +21,8 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   key8 = false;
   books = false;
   bottle = false;
-
+  showSafe = false;
+  cardClue = false;
   constructor(private http: HttpClient) {
   
   }
@@ -34,6 +35,13 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
 
     sound.play();
   }
+
+  success = new Howl({
+    src: ['assets/audio/success.mp3']
+  });
+  error = new Howl({
+    src: ['assets/audio/error.mp3']
+  });
   
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
@@ -47,6 +55,7 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
 
  
   expandPiece(piece) {
+    if (piece == 'safe') { this.showSafe = true; }
     if (piece == '1') { this.key1 = true; }
     if (piece == '2') { this.key2 = true; }
     if (piece == '3') { this.key3 = true; }
@@ -73,8 +82,31 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
     if (piece == 'bottle') { this.bottle = false; }
 
   }
-
+  checkCode(code){
+    if(code == "5713"){
+     console.log('correct');
+   
+    this.success.play();
+    }else{
+      this.showSafe = false;
+    
   
+      this.error.play();
+    }
+  }
+  
+  checkBottleCode(code){
+    if(code == "3013"){
+      console.log('correct');
+      
+     this.success.play();
+     this.bottle = false;
+     this.cardClue = true;
 
+     }else{
+       this.bottle = false;   
+       this.error.play();
+     }
+  }
 
 }

@@ -251,17 +251,26 @@
 }
 
 .bttnans{
-
-  background-color: rosybrown !important;
-  font-size: small;
-  text-align: center;
-  background: transparent url(/assets/classic/lock.png) no-repeat;
-  border-radius: 10px;
+  left: 34%;
+    top: 58%;
+    position: absolute;
+    width: 30%;
+    height: 30%;
+  cursor: pointer;
+  z-index: 3;
 }
 .inputans{
+ 
   border-radius: 5px;
-    max-width: 82%;
+  left: 11.5%;
+  top: 14%;
+  position: absolute;
+  width: 77%;
+  height: 33%;
+  z-index: 3;
+  
 }
+/* 
 .safecode1{
   left: 15%;
     top: 65%;
@@ -269,8 +278,26 @@
     width: 18%;
    
     cursor: pointer;
-    padding: 4px;
+   padding: 4px;
     border-radius: 7px;
     background-color: antiquewhite;
-    border-width: medium;
+    border-width: medium;  
+    background: transparent url(/assets/classic/lock.png) no-repeat; 
+  z-index: 2;
+  background-size: contain;
+
+}*/
+
+.safecode1{
+  padding: 5px;
+    left: 14%;
+    top: 62%;
+    position: absolute;
+    width: 17%;
+    height: 21%;
+    
+    background: transparent url(/assets/classic/lock.png) no-repeat;
+    z-index: 2;
+    background-size: contain;
+    border-radius: 9px;
 }

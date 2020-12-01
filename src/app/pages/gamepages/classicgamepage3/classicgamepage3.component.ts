@@ -14,9 +14,11 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
   bluekey = false;
   yellowkey = false;
   greenkey = false;
+  showBook = false;
+  bookClue = false;
  
 
-
+  showSafe = false;
   constructor(private http: HttpClient) {
 
   }
@@ -29,7 +31,12 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
 
     sound.play();
   }
-
+  success = new Howl({
+    src: ['assets/audio/success.mp3']
+  });
+  error = new Howl({
+    src: ['assets/audio/error.mp3']
+  });
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
@@ -44,7 +51,8 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
     if (piece == 'y') { this.yellowkey = true; }
     if (piece == 'b') { this.bluekey = true; }
     if (piece == 'g') { this.greenkey = true; }
-
+    if (piece == 'safe') { this.showSafe = true; }
+    if (piece == 'book') { this.showBook = true; }
     console.log(piece);
 
   }
@@ -58,8 +66,32 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
 
   }
 
+  checkCode(code){
+    if(code == "5713"){
+     console.log('correct');
+    
+    this.success.play();
+    }else{
+      this.showSafe = false;
+     
+  
+      this.error.play();
+    }
+  }
 
+  checkBookCode(code){
+    if(code == "pizza" ||code == "PIZZA"|| code == "Pizza" ){
+      console.log('correct');
+      
+     this.success.play();
+     this.showBook = false;
+     this.bookClue = true;
 
+     }else{
+       this.showBook = false;   
+       this.error.play();
+     }
+  }
 
 
 }
