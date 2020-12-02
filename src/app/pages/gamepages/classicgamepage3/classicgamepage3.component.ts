@@ -16,7 +16,9 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
   greenkey = false;
   showBook = false;
   bookClue = false;
- 
+  lockclue = false;
+  arrow = false;
+  scrollclue = false;
 
   showSafe = false;
   constructor(private http: HttpClient) {
@@ -47,51 +49,69 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
     body.classList.remove("landing-page");
   }
   expandPiece(piece) {
-    if (piece == 'r') { this.redkey = true; }
-    if (piece == 'y') { this.yellowkey = true; }
-    if (piece == 'b') { this.bluekey = true; }
+    if(  this.bookClue == true){   
+    if (piece == 'y') { this.yellowkey = true; }  
     if (piece == 'g') { this.greenkey = true; }
+    }
+    if (piece == 'b') { this.bluekey = true; }
+    if (piece == 'r') { this.redkey = true; }
     if (piece == 'safe') { this.showSafe = true; }
-    if (piece == 'book') { this.showBook = true; }
-    console.log(piece);
+    if (piece == 'book'  && this.arrow == true) { this.showBook = true; }
+    if (piece == 'scrollclue') { this.scrollclue = true; }
+ if (piece == 'lockclue') { this.lockclue = true; }
+  
 
   }
 
 
   hidePiece(piece) {
-    if (piece == 'r') { this.redkey = false; }
+  
     if (piece == 'y') { this.yellowkey = false; }
-    if (piece == 'b') { this.bluekey = false; }
-    if (piece == 'g') { this.greenkey = false; }
+    if (piece == 'g') { this.greenkey = false; }   
+   
+      if (piece == 'r') { this.redkey = false; }
+      if (piece == 'b') { this.bluekey = false; }
 
   }
 
-  checkCode(code){
-    if(code == "5713"){
-     console.log('correct');
-    
-    this.success.play();
-    }else{
-      this.showSafe = false;
-     
+  checkCode(code, item){
+    if(item == 'safe'){
+      if(code == "5713"){
+       
+      this.success.play();
+       }else{
+         this.showSafe = false;
+      
+         this.error.play();
+       }
+    }
+    if(item == 'lock'){
   
-      this.error.play();
+      if(code == "ITY" || code == "ity" ){
+      this.arrow = true;
+
+      this.success.play();
+       }else{
+         this.lockclue = false;
+      
+         this.error.play();
+       }
+    }
+    if ( item == 'book'){
+      if(code == "pizza" ||code == "PIZZA"|| code == "Pizza" ){
+       
+        
+       this.success.play();
+       this.showBook = false;
+       this.bookClue = true;
+  
+       }else{
+         this.showBook = false;   
+         this.error.play();
+       }
     }
   }
 
-  checkBookCode(code){
-    if(code == "pizza" ||code == "PIZZA"|| code == "Pizza" ){
-      console.log('correct');
-      
-     this.success.play();
-     this.showBook = false;
-     this.bookClue = true;
-
-     }else{
-       this.showBook = false;   
-       this.error.play();
-     }
-  }
-
+ 
 
 }

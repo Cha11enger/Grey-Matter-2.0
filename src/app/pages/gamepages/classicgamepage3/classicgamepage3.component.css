@@ -256,3 +256,86 @@
   z-index: 3;
   
 }
+
+.scrollclue{ 
+  left: 5%;
+  top: 41%;
+  position: absolute;
+  width: 6%;
+  height: 18%; 
+    cursor: pointer; 
+    background: transparent url(/assets/classic/scroll.png) no-repeat;
+    z-index: 2;
+    background-size: contain;
+}
+
+.scrollclue1{
+  left: 2%;
+    top: 10%;
+    position: absolute;
+    width: 15%;
+    height: 32%;  
+    background: transparent url(/assets/classic/p3_scroll.png) no-repeat;
+    z-index: 3;
+    background-size: contain;
+}
+
+
+.lockclue{ 
+  left: 81%;
+    top: 47%;
+  position: absolute;
+  width: 10%;
+  height: 12%; 
+    cursor: pointer; 
+    background: transparent url(/assets/classic/lockclue.png) no-repeat;
+    z-index: 2;
+    background-size: contain;
+}
+
+.lockclue1{
+  left: 78%;
+  top: 60%;
+  position: absolute;
+  width: 14%;
+  height: 32%; 
+    background: transparent url(/assets/classic/p3_scrollclue.png) no-repeat;
+    z-index: 3;
+    background-size: contain;
+}
+
+.bttnlock{
+  left: 56%;
+  top: 20%;
+  position: absolute;
+  width: 21%;
+  height: 19%;
+  cursor: pointer;
+  z-index: 3;
+  background: transparent url(/assets/classic/red_button.png) no-repeat;
+  background-size: contain;
+
+}
+.inputlock{
+ 
+  border-radius: 4px;
+  left: 23%;
+  top: 59%;
+  position: absolute;
+  width: 53%;
+  height: 16%;
+  z-index: 3;
+}
+
+
+.arrow{
+  left: 26%;
+    top: 74%;
+    position: absolute;
+    width: 16%;
+    height: 26%;
+  
+  z-index: 3;
+  background: transparent url(/assets/classic/p1_arrow.png) no-repeat;
+  background-size: contain;
+}

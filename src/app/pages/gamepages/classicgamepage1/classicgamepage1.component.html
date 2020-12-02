@@ -155,12 +155,19 @@
       <button class="btn btn-default bttnans" (click)="checkCode(finalcode.value)" type="button">O</button>
      -->
      <input #finalcode id="finalcode" class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-     <div class="bttnans"  (click)="checkCode(finalcode.value)"></div> 
+     <div class="bttnans"  (click)="checkCode(finalcode.value, 'safe')"></div> 
 </div>
 
 
-     
+<div class="scrollclue" (click)="expandPiece('scrollclue')"></div>
+<div *ngIf='scrollclue' class="scrollclue1"></div>    
 
+<div class="lockclue" (click)="expandPiece('lockclue')"></div>
+<div *ngIf='lockclue' class="lockclue1">
+  <input #lockcode id="lockcode" class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+     <div class="bttnlock"  (click)="checkCode(lockcode.value, 'lock')"></div> 
+</div>  
+<div *ngIf='arrow'class="arrow" ></div>
   </div>
 
   </div>

@@ -20,12 +20,13 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
   bottle = false;
   showSafe = false;
   showBulb = false;
- 
+  scrollclue = false;
   sequence = 0;
   p1_clues = false;
   correctCode = "Open!";
   finalcode = "";
-
+  lockclue = false;
+arrow = false;
   constructor(private http: HttpClient) {
   
   }
@@ -66,6 +67,8 @@ if(this.p1_clues == true){
     if (piece == 'g') { this.greenkey = true; }
      }
  if (piece == 'bottle') { this.bottle = true; }
+ if (piece == 'scrollclue') { this.scrollclue = true; }
+ if (piece == 'lockclue') { this.lockclue = true; }
   }
 
 
@@ -92,9 +95,15 @@ if(this.p1_clues == true){
 
   p1_sequence( seq ){ 
 
+   
+
     this.showBulb  = true;
     this.delay_off(200);
     // this.showBulb = false;
+
+    if(this.arrow == true){
+      
+
 
     if ( seq == "6"){  this.sequence = 1;  }
 
@@ -128,7 +137,7 @@ if(this.p1_clues == true){
       }
       else this.sequence=0;
     }
-
+  }
     if(this.sequence == 6){
       this.delay_on(200);
       this.showBulb  = true;
@@ -144,15 +153,29 @@ if(this.p1_clues == true){
     
   }
 
-  checkCode(code){
-    if(code == "5713"){
-     console.log('correct');
-   this.success.play();
-    }else{
-      this.showSafe = false;
-   
-      this.error.play();
+  checkCode(code, item){
+    if(item == 'safe'){
+      if(code == "5713"){
+       
+      this.success.play();
+       }else{
+         this.showSafe = false;
+      
+         this.error.play();
+       }
     }
+    if(item == 'lock'){
+  
+      if(code == "IUT" || code == "iut" ){
+      this.arrow = true;
+      this.success.play();
+       }else{
+         this.lockclue = false;
+      
+         this.error.play();
+       }
+    }
+   
   }
 
 }

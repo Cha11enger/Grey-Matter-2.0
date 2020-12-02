@@ -23,6 +23,9 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   bottle = false;
   showSafe = false;
   cardClue = false;
+  lockclue = false;
+  arrow = false;
+  scrollclue = false;
   constructor(private http: HttpClient) {
   
   }
@@ -57,15 +60,22 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   expandPiece(piece) {
     if (piece == 'safe') { this.showSafe = true; }
     if (piece == '1') { this.key1 = true; }
-    if (piece == '2') { this.key2 = true; }
     if (piece == '3') { this.key3 = true; }
+   
+  if(  this.cardClue == true){
+    if (piece == '2') { this.key2 = true; }
     if (piece == '4') { this.key4 = true; }
     if (piece == '5') { this.key5 = true; }
     if (piece == '6') { this.key6 = true; }
     if (piece == '7') { this.key7 = true; }
     if (piece == '8') { this.key8 = true; }
+  }
+
+   
     if (piece == 'books') { this.books = true; }
-    if (piece == 'bottle') { this.bottle = true; }
+    if (piece == 'bottle' && this.arrow == true) { this.bottle = true; }
+    if (piece == 'scrollclue') { this.scrollclue = true; }
+ if (piece == 'lockclue') { this.lockclue = true; }
   }
 
 
@@ -82,31 +92,42 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
     if (piece == 'bottle') { this.bottle = false; }
 
   }
-  checkCode(code){
-    if(code == "5713"){
-     console.log('correct');
-   
-    this.success.play();
-    }else{
-      this.showSafe = false;
-    
+  checkCode(code, item){
+    if(item == 'safe'){
+      if(code == "5713"){
+       
+      this.success.play();
+       }else{
+         this.showSafe = false;
+      
+         this.error.play();
+       }
+    }
+    if(item == 'lock'){
   
-      this.error.play();
+      if(code == "VLI" || code == "vli" ){
+      this.arrow = true;
+
+      this.success.play();
+       }else{
+         this.lockclue = false;
+      
+         this.error.play();
+       }
+    }
+    if ( item == 'bottle'){
+      if(code == "3013"){
+     
+       this.success.play();
+       this.bottle = false;
+       this.cardClue = true;
+  
+       }else{
+         this.bottle = false;   
+         this.error.play();
+       }
     }
   }
   
-  checkBottleCode(code){
-    if(code == "3013"){
-      console.log('correct');
-      
-     this.success.play();
-     this.bottle = false;
-     this.cardClue = true;
-
-     }else{
-       this.bottle = false;   
-       this.error.play();
-     }
-  }
-
+  
 }
