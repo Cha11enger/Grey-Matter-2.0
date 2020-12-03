@@ -259,10 +259,10 @@
 
 .scrollclue{ 
   left: 5%;
-  top: 41%;
-  position: absolute;
-  width: 6%;
-  height: 18%; 
+    top: 41%;
+    position: absolute;
+    width: 6%;
+    height: 9%; 
     cursor: pointer; 
     background: transparent url(/assets/classic/scroll.png) no-repeat;
     z-index: 2;
@@ -329,12 +329,11 @@
 
 
 .arrow{
-  left: 26%;
-    top: 74%;
-    position: absolute;
-    width: 16%;
-    height: 26%;
-  
+  left: 23%;
+  top: 83%;
+  position: absolute;
+  width: 16%;
+  height: 18%;  
   z-index: 3;
   background: transparent url(/assets/classic/p1_arrow.png) no-repeat;
   background-size: contain;

@@ -23,6 +23,10 @@
                 0 8px 10px 1px rgba(0, 0, 0, 0.14),
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
+
+  .topbar{
+    margin: 0px 150px 0px 150px;
+  }
   .piece4{
     left: 3%;
     top: 87%;
@@ -40,7 +44,7 @@
     width: 8%;
     height: 9%;
     cursor: pointer;
-    background: transparent url(/assets/classic/p1_bluedot.jpg) no-repeat; 
+    background: transparent url(/assets/classic/p1_bluedot.png) no-repeat; 
     z-index: 2;
     background-size: contain;
   }
@@ -60,7 +64,7 @@
     width: 8%;
     height: 9%;
     cursor: pointer;
-    background: transparent url(/assets/classic/p1_yellowdot.jpg) no-repeat; 
+    background: transparent url(/assets/classic/p1_yellowdot.png) no-repeat; 
     z-index: 2;
     background-size: contain;
   }
@@ -81,7 +85,7 @@
     width: 8%;
     height: 9%;
     cursor: pointer;
-    background: transparent url(/assets/classic/p1_greendot.jpg) no-repeat; 
+    background: transparent url(/assets/classic/p1_greendot.png) no-repeat; 
     z-index: 2;
     background-size: contain; 
   }
@@ -102,7 +106,7 @@
     width: 8%;
     height: 9%;
     cursor: pointer;
-    background: transparent url(/assets/classic/p1_reddot.jpg) no-repeat; 
+    background: transparent url(/assets/classic/p1_reddot.png) no-repeat; 
     z-index: 2;
     background-size: contain; 
   }

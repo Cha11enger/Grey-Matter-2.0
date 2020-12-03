@@ -30,6 +30,8 @@ arrow = false;
   constructor(private http: HttpClient) {
   
   }
+
+/*
   @HostListener('document:click')
   clickout() {
     var sound = new Howl({
@@ -38,6 +40,14 @@ arrow = false;
 
     sound.play();
   }
+*/
+sound = new Howl({
+  src: ['assets/audio/clicksound.mp3']
+});
+
+
+
+
   success = new Howl({
     src: ['assets/audio/success.mp3']
   });
@@ -58,17 +68,18 @@ arrow = false;
   }
 
   expandPiece(piece) {
-    if (piece == 'b') { this.bluekey = true; }
+   
     if (piece == 'safe') { this.showSafe = true; }
 if(this.p1_clues == true){
     if (piece == 'r') { this.redkey = true; }
     if (piece == 'y') { this.yellowkey = true; }
-    
+    if (piece == 'b') { this.bluekey = true; }
     if (piece == 'g') { this.greenkey = true; }
      }
  if (piece == 'bottle') { this.bottle = true; }
  if (piece == 'scrollclue') { this.scrollclue = true; }
  if (piece == 'lockclue') { this.lockclue = true; }
+ this.sound.play();
   }
 
 
@@ -78,7 +89,7 @@ if(this.p1_clues == true){
     if (piece == 'b') { this.bluekey = false; }
     if (piece == 'g') { this.greenkey = false; }
     if (piece == 'bottle') { this.bottle = false; }
-
+    this.sound.play();
   }
 
 // Added for Delay
@@ -94,7 +105,7 @@ if(this.p1_clues == true){
   // Delay function ends here
 
   p1_sequence( seq ){ 
-
+    this.sound.play();
    
 
     this.showBulb  = true;
