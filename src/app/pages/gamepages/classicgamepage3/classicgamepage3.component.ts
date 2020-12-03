@@ -24,7 +24,7 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
   constructor(private http: HttpClient) {
 
   }
-
+/*
   @HostListener('document:click')
   clickout() {
     var sound = new Howl({
@@ -32,7 +32,10 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
     });
 
     sound.play();
-  }
+  } */
+  sound = new Howl({
+    src: ['assets/audio/clicksound.mp3']
+  });
   success = new Howl({
     src: ['assets/audio/success.mp3']
   });
@@ -52,14 +55,15 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
     if(  this.bookClue == true){   
     if (piece == 'y') { this.yellowkey = true; }  
     if (piece == 'g') { this.greenkey = true; }
-    }
     if (piece == 'b') { this.bluekey = true; }
     if (piece == 'r') { this.redkey = true; }
     if (piece == 'safe') { this.showSafe = true; }
+    }
+       
     if (piece == 'book'  && this.arrow == true) { this.showBook = true; }
     if (piece == 'scrollclue') { this.scrollclue = true; }
  if (piece == 'lockclue') { this.lockclue = true; }
-  
+  this.sound.play();
 
   }
 
@@ -71,7 +75,7 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
    
       if (piece == 'r') { this.redkey = false; }
       if (piece == 'b') { this.bluekey = false; }
-
+      this.sound.play();
   }
 
   checkCode(code, item){

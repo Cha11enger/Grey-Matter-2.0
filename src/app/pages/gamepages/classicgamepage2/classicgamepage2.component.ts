@@ -29,7 +29,7 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   constructor(private http: HttpClient) {
   
   }
-
+/*
   @HostListener('document:click')
   clickout() {
     var sound = new Howl({
@@ -38,6 +38,10 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
 
     sound.play();
   }
+*/
+sound = new Howl({
+  src: ['assets/audio/clicksound.mp3']
+});
 
   success = new Howl({
     src: ['assets/audio/success.mp3']
@@ -58,17 +62,18 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
 
  
   expandPiece(piece) {
-    if (piece == 'safe') { this.showSafe = true; }
+   
+      
+  if(  this.cardClue == true){
     if (piece == '1') { this.key1 = true; }
     if (piece == '3') { this.key3 = true; }
-   
-  if(  this.cardClue == true){
     if (piece == '2') { this.key2 = true; }
     if (piece == '4') { this.key4 = true; }
     if (piece == '5') { this.key5 = true; }
     if (piece == '6') { this.key6 = true; }
     if (piece == '7') { this.key7 = true; }
     if (piece == '8') { this.key8 = true; }
+    if (piece == 'safe') { this.showSafe = true; }
   }
 
    
@@ -76,6 +81,7 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
     if (piece == 'bottle' && this.arrow == true) { this.bottle = true; }
     if (piece == 'scrollclue') { this.scrollclue = true; }
  if (piece == 'lockclue') { this.lockclue = true; }
+ this.sound.play();
   }
 
 
@@ -90,7 +96,7 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
     if (piece == '8') { this.key8 = false; }
     if (piece == 'books') { this.books = false; }
     if (piece == 'bottle') { this.bottle = false; }
-
+this.sound.play();
   }
   checkCode(code, item){
     if(item == 'safe'){

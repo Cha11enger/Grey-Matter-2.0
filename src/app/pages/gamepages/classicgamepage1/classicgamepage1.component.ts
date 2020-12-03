@@ -69,8 +69,9 @@ sound = new Howl({
 
   expandPiece(piece) {
    
-    if (piece == 'safe') { this.showSafe = true; }
+   
 if(this.p1_clues == true){
+  if (piece == 'safe') { this.showSafe = true; }
     if (piece == 'r') { this.redkey = true; }
     if (piece == 'y') { this.yellowkey = true; }
     if (piece == 'b') { this.bluekey = true; }
