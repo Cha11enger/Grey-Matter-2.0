@@ -28,24 +28,32 @@
 }
 
 .titlebox{
-  background-color: #171941;
-  -webkit-animation: move-left-right 11s infinite;
-  animation: move-left-right 11s infinite;
-  /* height: 419px; */
-  /* width: 100% !important; */
-  opacity: 0.9;
-  /* left: 22%; */
-  border-radius: 43px;
-  left: 20%;
-    top: 30%;
-    padding: 14px;
-  /* top: 38%;*/
+  
+
+/*  background-color: #171935; */
+    -webkit-animation: move-left-right 11s infinite;
+    animation: move-left-right 11s infinite;
+    opacity: 0.9;
+    border-radius: 45px;
+    left: 20%;
+    top: 27%;
+    
+
 }
+/*
 .titlemain{
-  text-align: left;
+    text-align: left;
     padding-top: 32px;
-    font-weight: 500;
-    font-size: xx-large;
+    padding-left: 0px;
+    margin-left: -12px;
+    font-weight: 550;
+    font-size: 73px;
     font-family: revert;
+    vertical-align: middle !important;
     color: ivory;
+    display: flex;
+    align-items: center;
+
 }
+
+*/
