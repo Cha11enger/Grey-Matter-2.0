@@ -196,19 +196,16 @@
               <hr class="line-primary" />
     
               <button type="button" (click)="hint1=!hint1" class="btn btn-primary btn-sm mr-1">Hint 1</button>
-              <p *ngIf='hint1' class="text-primary">
-                I will be the leader of a company that ends up being worth
-                billions of dollars, because I got the answers...
+              <p *ngIf='hint1'>  <!-- class="text-primary" -->
+                The Symbols are shaped as letters!
               </p>
               <button type="button" (click)="hint2=!hint2;" class="btn btn-primary btn-sm mr-1">Hint 2</button>
-              <p *ngIf='hint2' class="text-primary">
-                I will be the leader of a company that ends up being worth
-                billions of dollars, because I got the answers...
+              <p *ngIf='hint2' >
+                Enter the correct colour sequence from another room!
               </p>
               <button type="button" (click)="hint3=!hint3;" class="btn btn-primary btn-sm mr-1">Hint 3</button>
-              <p *ngIf='hint3' class="text-primary">
-                I will be the leader of a company that ends up being worth
-                billions of dollars, because I got the answers...
+              <p *ngIf='hint3' >
+                Tiles give the order and colour code of Final Answer
               </p>
             </div>
           </div>

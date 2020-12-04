@@ -27,3 +27,25 @@
   margin-right: auto;
 }
 
+.titlebox{
+  background-color: #171941;
+  -webkit-animation: move-left-right 11s infinite;
+  animation: move-left-right 11s infinite;
+  /* height: 419px; */
+  /* width: 100% !important; */
+  opacity: 0.9;
+  /* left: 22%; */
+  border-radius: 43px;
+  left: 20%;
+    top: 30%;
+    padding: 14px;
+  /* top: 38%;*/
+}
+.titlemain{
+  text-align: left;
+    padding-top: 32px;
+    font-weight: 500;
+    font-size: xx-large;
+    font-family: revert;
+    color: ivory;
+}
