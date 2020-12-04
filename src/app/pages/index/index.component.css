@@ -56,4 +56,17 @@
 
 }
 
+
+
+.titlebox1 {
+  padding: 5px 30px;
+  border: 1px solid #171935;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 1px 6px 12px rgb(81, 64, 231), inset -1px -10px 5px #171935, 1px 2px 1px black;
+  -moz-box-shadow: inset 1px 6px 12px rgb(81, 64, 231), inset -1px -10px 5px #171935, 1px 2px 1px black;
+  box-shadow: inset 1px 6px 12px rgb(81, 64, 231), inset -1px -10px 5px #171935, 1px 2px 1px black;
+  background-color: rgb(2, 0, 128);
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
 */
