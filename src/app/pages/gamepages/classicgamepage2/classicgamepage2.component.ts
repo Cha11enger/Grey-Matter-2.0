@@ -26,6 +26,10 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   lockclue = false;
   arrow = false;
   scrollclue = false;
+  hint1 = false;
+  hint2 = false;
+  hint3 = false;
+  hintsection = false;
   constructor(private http: HttpClient) {
   
   }

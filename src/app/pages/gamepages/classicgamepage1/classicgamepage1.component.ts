@@ -26,6 +26,10 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
   correctCode = "Open!";
   finalcode = "";
   lockclue = false;
+  hint1 = false;
+  hint2 = false;
+  hint3 = false;
+  hintsection = false;
 arrow = false;
   constructor(private http: HttpClient) {
   
@@ -189,5 +193,5 @@ if(this.p1_clues == true){
     }
    
   }
-
+ 
 }

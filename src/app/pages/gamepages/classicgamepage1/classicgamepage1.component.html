@@ -1,4 +1,4 @@
- <!--
+<!--
 <script type="text/javascript" src="../../../../assets/resize/jquery.rwdImageMaps.js"></script>
  <script type="text/javascript" src="../../../../assets/resize/jquery.rwdImageMaps.min.js"></script> 
   <script>
@@ -110,8 +110,8 @@
 -->
 
 
-<div class="wrapper" >
-<!--
+<div class="wrapper">
+  <!--
   <div>
     <div class="topbar progress-container progress-danger">
       <span class="progress-badge"> Grey Matter • Classic Box • Player 1 </span>
@@ -123,20 +123,20 @@
 -->
 
 
-  <div class="area text-center" >
-    <div class="level0 " id="level0" >
+  <div class="area text-center">
+    <div class="level0 " id="level0">
 
-    <img  src="assets/classic/classic1new.png" class="room " > 
+      <img src="assets/classic/classic1new.png" class="room ">
 
-    <div class="topbar progress-container progress-danger">
-      <span class="toptext"> GREY MATTER ESCAPE ROOMS • Classic Box • Player 1 • Team name </span>        
-    </div>  
-    
-    <div class="piece1" (click)="expandPiece('r')"></div>
-    <div class="piece2" (click)="expandPiece('y')"></div>
-      <div class="piece3" (click)="expandPiece('g')" ></div>
-      <div class="piece4"  (click)="expandPiece('b')"></div> 
-      <div class="piece5"  (click)="expandPiece('bottle')"></div> 
+      <div class="topbar progress-container progress-danger">
+        <span class="toptext"> GREY MATTER ESCAPE ROOMS • Classic Box • Player 1 • Team name </span>
+      </div>
+
+      <div class="piece1" (click)="expandPiece('r')"></div>
+      <div class="piece2" (click)="expandPiece('y')"></div>
+      <div class="piece3" (click)="expandPiece('g')"></div>
+      <div class="piece4" (click)="expandPiece('b')"></div>
+      <div class="piece5" (click)="expandPiece('bottle')"></div>
 
       <div *ngIf='redkey' class="piece11" (click)="hidePiece('r')"></div>
       <div *ngIf='yellowkey' class="piece22" (click)="hidePiece('y')"></div>
@@ -146,48 +146,84 @@
 
       <div *ngIf='p1_clues' class="scroll"></div>
 
-      <div class="hex1"  (click)="p1_sequence('1')"></div> 
-      <div class="hex2"  (click)="p1_sequence('2')"></div> 
-      <div class="hex3"  (click)="p1_sequence('3')"></div> 
-      <div class="hex4"  (click)="p1_sequence('4')"></div> 
-      <div class="hex5"  (click)="p1_sequence('5')"></div> 
-      <div class="hex6"  (click)="p1_sequence('6')"></div> 
+      <div class="hex1" (click)="p1_sequence('1')"></div>
+      <div class="hex2" (click)="p1_sequence('2')"></div>
+      <div class="hex3" (click)="p1_sequence('3')"></div>
+      <div class="hex4" (click)="p1_sequence('4')"></div>
+      <div class="hex5" (click)="p1_sequence('5')"></div>
+      <div class="hex6" (click)="p1_sequence('6')"></div>
 
-      <div class="bulb"  ></div>
-      <div *ngIf='showBulb' class="bulbon" ></div>
+      <div class="bulb"></div>
+      <div *ngIf='showBulb' class="bulbon"></div>
 
-      <div class="safecode"  (click)="expandPiece('safe')"></div> 
-<!--
+      <div class="safecode" (click)="expandPiece('safe')"></div>
+      <!--
       <div *ngIf='showSafe' class="safecode">
         <input #finalcode class="w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
         <button (click)="checkCode(finalcode.value)">Open</button>
       </div>
     -->
-      
-<div *ngIf='showSafe' class=" safecode1">
-    <!--
+
+      <div *ngIf='showSafe' class=" safecode1">
+        <!--
       <input #finalcode id="finalcode" class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
       <button class="btn btn-default bttnans" (click)="checkCode(finalcode.value)" type="button">O</button>
      -->
-     <input #finalcode id="finalcode" class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-     <div class="bttnans"  (click)="checkCode(finalcode.value, 'safe')"></div> 
-</div>
+        <input #finalcode id="finalcode"
+          class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+        <div class="bttnans" (click)="checkCode(finalcode.value, 'safe')"></div>
+      </div>
 
 
-<div class="scrollclue" (click)="expandPiece('scrollclue')"></div>
-<div *ngIf='scrollclue' class="scrollclue1"></div>    
+      <div class="scrollclue" (click)="expandPiece('scrollclue')"></div>
+      <div *ngIf='scrollclue' class="scrollclue1"></div>
 
-<div class="lockclue" (click)="expandPiece('lockclue')"></div>
-<div *ngIf='lockclue' class="lockclue1">
-  <input #lockcode id="lockcode" class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-     <div class="bttnlock"  (click)="checkCode(lockcode.value, 'lock')"></div> 
-</div>  
-<div *ngIf='arrow'class="arrow" ></div>
+      <div class="lockclue" (click)="expandPiece('lockclue')"></div>
+      <div *ngIf='lockclue' class="lockclue1">
+        <input #lockcode id="lockcode"
+          class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+        <div class="bttnlock" (click)="checkCode(lockcode.value, 'lock')"></div>
+      </div>
+      <div *ngIf='arrow' class="arrow"></div>
+      <div class="hints" (click)="hintsection=!hintsection"></div>
+
+
+      <div *ngIf='hintsection' class="hintsection card card-coin card-plain">
+        <div class="">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <button class="btn btn-danger mr-1">Spoiler Alert !</button>          
+              <hr class="line-primary" />
+    
+              <button type="button" (click)="hint1=!hint1" class="btn btn-primary btn-sm mr-1">Hint 1</button>
+              <p *ngIf='hint1' class="text-primary">
+                I will be the leader of a company that ends up being worth
+                billions of dollars, because I got the answers...
+              </p>
+              <button type="button" (click)="hint2=!hint2;" class="btn btn-primary btn-sm mr-1">Hint 2</button>
+              <p *ngIf='hint2' class="text-primary">
+                I will be the leader of a company that ends up being worth
+                billions of dollars, because I got the answers...
+              </p>
+              <button type="button" (click)="hint3=!hint3;" class="btn btn-primary btn-sm mr-1">Hint 3</button>
+              <p *ngIf='hint3' class="text-primary">
+                I will be the leader of a company that ends up being worth
+                billions of dollars, because I got the answers...
+              </p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+
+    </div>
+
+   
+
+
   </div>
 
-  </div>
+  
 
 
 </div>
-
-
