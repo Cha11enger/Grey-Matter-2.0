@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 //import { AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore'; 
-//import { Observable } from 'rxjs/Observable';
+//import { observable } from 'rxjs/Observable';
 //import 'rxjs/add/operator/map';
-
+import { DatePipe } from '@angular/common';
+//import { Observable } from 'rxjs';
 @Injectable(
   // {  providedIn: 'root' }
 )
@@ -19,6 +20,7 @@ export class IndexService {
   //posts: Observable<Post[]>;
 
   constructor(public fireservice: AngularFirestore) { }
+  
 /*
   add_value_db(record) {
     var kkk4;

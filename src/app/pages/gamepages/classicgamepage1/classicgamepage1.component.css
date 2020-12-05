@@ -158,7 +158,7 @@
 
   .room{
 
-    background: transparent url(/assets/classic/classic1new.png) 50% 50% no-repeat; 
+  /*  background: transparent url(/assets/classic/classic1new.png) 50% 50% no-repeat;  */
     background-size: cover;
     z-index: 1;
 
@@ -423,4 +423,16 @@
   padding-bottom: 2px;
   text-align: left;
   padding: 2px;
+}
+.startPage{
+ 
+  background-color: black;
+  width: 100%;
+  
+}
+.endpage{
+  left: 30%;
+    top: 5%;
+    position: absolute;
+    width: 40%;
 }

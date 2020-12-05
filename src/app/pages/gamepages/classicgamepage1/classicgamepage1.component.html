@@ -1,137 +1,47 @@
-<!--
-<script type="text/javascript" src="../../../../assets/resize/jquery.rwdImageMaps.js"></script>
- <script type="text/javascript" src="../../../../assets/resize/jquery.rwdImageMaps.min.js"></script> 
-  <script>
-    $(document).ready(function(e) {
-        $('img[usemap]').rwdImageMaps();
-    });
-</script>
+<div class="wrapper">
+ 
+  <div *ngIf='startPage'>
+    <img src="assets/classic/startpagetop.png" class="room ">
 
-
-  <nav
-  class="navbar navbar-expand-lg fixed-top navbar-transparent"
-  color-on-scroll="100"
-  id="navbar-top"
->
-  <div class="container">
-    <div class="navbar-translate">
-      <a
-        class="navbar-brand"
-        [routerLink]="['/home']"
-        placement="bottom"
-        tooltip="Designed and Coded by Creative Tim"
-      >
-        <span> Classic Box • </span> Think inside the Box !<span> • Player 1  </span>
-      </a>
-   
-       
+    <div class="startPage"> 
+      instrections all
+      <br>
+      add storyline here 
+      <br><br>
+      its editable yo!
     </div>
     
    
+
+<div style="position: relative;">
+    <img src="assets/classic/startpagebottom.png" class="room ">
+    <div class="container endpage">
+      <div style="padding:10px 45px 10px 45px;" class="card card-coin card-plain">
+     <div class="text-center">                
+         <p> Enter Team Name and Player 1 Code recieved    </p>            
+        <hr class="line-primary" />
+        <input class="form-control" placeholder="Team Name" type="text" (focus)="focus = true"
+          (blur)="focus = false" #teamname />
+          <input class="form-control" placeholder="Player 1 code" type="text" (focus)="focus = true"
+          (blur)="focus = false" #playerOne />  
+          <div class="btn btn-primary btn-simple" (click)="checkTeamCode(teamname.value, playerOne.value, 'one' ,'classic');">
+                    <strong>Start Game</strong>
   </div>
-</nav>
-<div class="wrapper">
-  
-   <section class="section section-lg section-coins">
-    <img class="path" src="assets/img/path3.png" />  
-   <section class="section ">
-   <div  >   
-    <div class="level2">
-
-
-    </div>
-       
-      <div class="level1">
-
-        <div class="buttons">
-          <div class="bttn yellow" (click)="expandPiece('y')"></div>
-          <div class="bttn red" (click)="expandPiece('r')"></div>
-          <div class="bttn green" (click)="expandPiece('g')" ></div>
-          <div class="bttn blue"  (click)="expandPiece('b')"></div>  
-       </div>  
-       <div   class="buttons">
-        <div class="bttn yellow1" *ngIf="showdoty" (click)="contractPiece('y')"></div>
-        <div class="bttn red1" *ngIf="showdotr" (click)="contractPiece('r')"></div>
-        <div class="bttn green1" *ngIf="showdotg" (click)="contractPiece('g')" ></div>
-        <div class="bttn blue1"  *ngIf="showdotb" (click)="contractPiece('b')"></div>  
-     </div>  
-
-
-      </div>
-      <div class="level0" id="level0">
-
-       <div style="background-image:'assets/classic/classic1.jpg' " class='room' id='room'></div>
-   src="assets/classic/classic1.jpg"
-     
-
-      <div class='room' id='room'></div>
-        </div>
-        
-       
-
-
-
-
-<img #playerbar src="assets/classic/classic1.jpg" alt="p1_bar" usemap="#p1_bar" class="imagebox" width="2000" height="1125"  >
-
-<map name="p1_bar">
-  {{wid1/3.81,hei1/4.95,wid1/3.33,hei1/4.08}}
-  <area shape="rect" coords="529,255,2000,1120" (click)="yellow()">
-</map>
-
-
-      </div>  
-
-
-    <div class="container">
-      <div class="example-box" cdkDragBoundary=".section" cdkDrag>
-        Drag me around
-        
-      </div>
-    </div>
-    <div class="example-boundary">
-      <div class="example-box" cdkDragBoundary=".section" cdkDrag>
-        test
-      </div>
-    </div>
- 
-
-  </section>   
-
-  <script type="text/javascript" src="../../../../assets/resize/imageMapResizer.min.js"></script> 
-   <script type="text/javascript">
-     $(document).ready(function(e) {
-       //  $('img[usemap]').rwdImageMaps();
-       $('map').imageMapResize();
-     });
- </script>
-
 </div>
--->
-
-
-<div class="wrapper">
-  <!--
-  <div>
-    <div class="topbar progress-container progress-danger">
-      <span class="progress-badge"> Grey Matter • Classic Box • Player 1 </span>
-      <progressbar #p1progress class="progress-bar-danger" [value]="2">
-        <span class="progress-value"> 0/3 </span>
-      </progressbar>
-    </div>
+</div>
+<div class="row" *ngIf="isError">
+  <h3>Please enter correct {{err}} code </h3>
+</div>
+</div>
+</div>
   </div>
--->
 
-
-  <div class="area text-center">
+  <div *ngIf='gamePage' class="area text-center">
     <div class="level0 " id="level0">
-
       <img src="assets/classic/classic1new.png" class="room ">
-
       <div class="topbar progress-container progress-danger">
         <span class="toptext"> GREY MATTER ESCAPE ROOMS • Classic Box • Player 1 • Team name </span>
       </div>
-
       <div class="piece1" (click)="expandPiece('r')"></div>
       <div class="piece2" (click)="expandPiece('y')"></div>
       <div class="piece3" (click)="expandPiece('g')"></div>
@@ -192,35 +102,36 @@
         <div class="">
           <div class="row">
             <div class="col-md-12 text-center">
-              <button class="btn btn-danger mr-1">Spoiler Alert !</button>          
+              <button class="btn btn-danger mr-1">Spoiler Alert !</button>
               <hr class="line-primary" />
-    
+
               <button type="button" (click)="hint1=!hint1" class="btn btn-primary btn-sm mr-1">Hint 1</button>
-              <p *ngIf='hint1'>  <!-- class="text-primary" -->
+              <p *ngIf='hint1'>
+                <!-- class="text-primary" -->
                 The Symbols are shaped as letters!
               </p>
               <button type="button" (click)="hint2=!hint2;" class="btn btn-primary btn-sm mr-1">Hint 2</button>
-              <p *ngIf='hint2' >
+              <p *ngIf='hint2'>
                 Enter the correct colour sequence from another room!
               </p>
               <button type="button" (click)="hint3=!hint3;" class="btn btn-primary btn-sm mr-1">Hint 3</button>
-              <p *ngIf='hint3' >
+              <p *ngIf='hint3'>
                 Tiles give the order and colour code of Final Answer
               </p>
             </div>
           </div>
-    
+
         </div>
       </div>
 
     </div>
 
-   
+
 
 
   </div>
 
-  
 
+  <div *ngIf='endPage'></div>
 
 </div>
