@@ -6,6 +6,7 @@ import * as jQuery from 'jquery';
 import { Howler, Howl } from 'howler';
 import { delay } from 'rxjs/operators';
 import { IndexService } from '../../index/index.service'
+import { snapshotChanges } from '@angular/fire/database';
 
 @Component({
   selector: "app-classicgamepage1",
@@ -176,6 +177,57 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
 
   }
   checkTeamCode(code, game, c, d,) {
+    var now;
+    var isTeam = false;
+    var isPlayer = false;
+    this.indexService.fireservice.collection('player keys').doc(code).get()
+    .toPromise().then(doc => {
+      if (doc.exists) {
+        console.log("Document data:", doc.data());
+          isTeam = true;
+          console.log(doc.data['pone']);
+          console.log(doc.data()['pone']);
+      var result = doc.data();
+          if (result['pone'] == game) {
+            console.log('play  true');
+            isPlayer = true;
+            this.isError = false;
+            this.startPage = false;
+            this.gamePage = true;
+            var record = {}
+            if (result['timeset'] == undefined) {
+              console.log('time  true');
+              now = Date.now();
+              //  record['starttime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
+              record['starttime'] = now;
+              record['timeset'] = 'true';
+              record['gamebox'] = 'classic';
+              record['teamname'] = code;
+              this.indexService.fireservice.collection('player keys').doc(code).update(record);
+            }
+          } else {
+            isPlayer = false;
+            this.isError = true;
+            this.err = 'Player 1 ';
+            console.log('player not available ');
+          }
+             
+      } else {
+        isTeam = false;
+        this.isError = true;
+        this.err = 'Team';
+      }
+    }).catch(function(error) {
+     
+        isTeam = false;
+       this.Error = true;
+        this.err = 'Team';    
+    });
+    
+   }
+
+   /*
+ checkTeamCode(code, game, c, d,) {
     var CurrentTime;
     var now;
     var isTeam = false;
@@ -192,7 +244,7 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
         else if (result['exists'] == 'true') {
           isTeam = true;
           console.log('team  true');
-          if (result['pone'] == game) {
+          if (result['ptwo'] == game) {
             isPlayer = true;
             this.isError = false;
             this.startPage = false;
@@ -204,12 +256,13 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
               record['starttime'] = now;
               record['timeset'] = 'true';
               record['gamebox'] = 'classic';
+              record['teamname'] = code;
               this.indexService.fireservice.collection('player keys').doc(code).update(record);
             }
           } else {
             isPlayer = false;
             this.isError = true;
-            this.err = 'Player 1 ';
+            this.err = 'Player 2 ';
             console.log('player not available ');
           }
         } else {
@@ -226,7 +279,12 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
       })
   }
 
+
+   */
+
+  /*
   teamEndTime(teamCode, review, leaderboard, gamebox) {
+   
     var now;
     this.indexService.fireservice.collection('player keys').doc(teamCode).valueChanges()
       .subscribe(result => {
@@ -239,10 +297,11 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
             now = Date.now();
             //  record['endtime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
             record['endtime'] = now;
-            record['review1'] = review;
+            record['review'] = review;
             record['enterlb'] = leaderboard;
             record['timeset'] = 'done';
             this.indexService.fireservice.collection('player keys').doc(teamCode).update(record);
+           
             }
           this.errend = 'Thankyou ! Do try our other Boxes';
           this.isEndError = true;
@@ -252,5 +311,37 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
         this.isEndError = true;
       }
       )
-  }
+  }   */
+
+  
+  teamEndTime(teamCode, review, leaderboard, gamebox) {
+   
+    var now;
+    this.indexService.fireservice.collection('player keys').doc(teamCode).get()
+    .toPromise().then(doc => {
+      if (doc.exists) {
+        var result = doc.data();
+        var record = {};
+        record['review1'] = review;
+        record['enterlb'] = leaderboard;
+        if (result['timeset'] != 'done') {
+          now = Date.now();
+          //  record['endtime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
+          record['endtime'] = now; 
+          record['timeset'] = 'done';          
+          }
+        this.indexService.fireservice.collection('player keys').doc(teamCode).update(record);
+        this.errend = 'Thankyou ! Do try our other Boxes';
+        this.isEndError = true;
+      }
+      else {
+        this.errend = 'Team doesnt exist';
+          this.isEndError = true;        
+      }
+    }).catch(function(error) {
+      this.errend = 'Team doesnt exist';
+      this.isEndError = true;           
+    });
+
+}
 }

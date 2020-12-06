@@ -18,8 +18,9 @@
     
   }
   .tableformat{
-    display: inline-block !important;
+    display: table;
     width: 100% !important;
+    color: white;
   }
 
   .center {

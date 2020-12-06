@@ -62,27 +62,27 @@ export class IndexComponent implements OnInit, OnDestroy {
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("index-page");
   }
-/*
-  dbWriteFunction() {
-    let record = {};
-    this.playerNumber = '3';
-    this.playerCode = 'yoyoyoyoyooy';
-    record['playerNumber'] = this.playerNumber;
-    record['code'] = this.playerCode;
-
-    this.indexservice.add_value_db(record)
-
-    /*.then( res -> {
-
-      this.playerNumber = '';
-      this.code = '';
-      console.log(res);
-
-    }).catch( error->{
-      console.log(error);
-    })
-    ) */ /*
-  }   */
+  /*
+    dbWriteFunction() {
+      let record = {};
+      this.playerNumber = '3';
+      this.playerCode = 'yoyoyoyoyooy';
+      record['playerNumber'] = this.playerNumber;
+      record['code'] = this.playerCode;
+  
+      this.indexservice.add_value_db(record)
+  
+      /*.then( res -> {
+  
+        this.playerNumber = '';
+        this.code = '';
+        console.log(res);
+  
+      }).catch( error->{
+        console.log(error);
+      })
+      ) */ /*
+}   */
 
   displayLeaderBoard() {
     var temprow = [];
@@ -91,68 +91,74 @@ export class IndexComponent implements OnInit, OnDestroy {
     var time;
     var seconds;
     var d1, d2;
-    this.indexservice.fireservice.collection('player keys').valueChanges().subscribe(result => {
+    this.indexservice.fireservice.collection('player keys').get()
+      .toPromise().then(col => {
+        col.forEach(function (val) {
+          if (val.exists) {
+            console.log(val.data());
+            var value = val.data();
+            if (value['timeset'] != undefined && value['timeset'] != null && value['timeset'] != "" && value['timeset'] == 'done') {
 
-
-      result.forEach(function (value) {
-        if (value['timeset'] != undefined && value['timeset'] != null && value['timeset'] != "" && value['timeset'] == 'done') {
-        //  console.log(value);
-
-          teamname = value['teamname'];
-
-          d1 = new Date(value['endtime']);
-
-         // console.log(d1);
-          d2 = new Date(value['starttime']);
-        //  console.log(d2);
-
-          seconds = (d1 - d2) / 1000;
-          time = seconds / 60;
-         // console.log(time);
-          rank = 1;
-          // rows1: Array<{rank: number, teamname: string, time: number}> = [];
-          var one = { rank: rank, teamname: teamname, time: time };
-
-          temprow.push(one);
-
-
-
-        }
-
+              if (value['enterlb'] == true) {
+                teamname = value['teamname'];
+                d1 = new Date(value['endtime']);
+                d2 = new Date(value['starttime']);
+                seconds = (d1 - d2) / 1000;
+                time = seconds / 60;
+                rank = 1;
+                var one = { rank: rank, teamname: teamname, time: time };
+                temprow.push(one);
+              }
+            }
+          }
+        });
+        temprow.sort(function (a, b) {
+          return parseFloat(a.time) - parseFloat(b.time);
+        });
+      }).catch(function (error) {
       });
 
+    this.rows = temprow;
+  }
+
+
+  /*
+display leader board old
+{
+  
+var temprow = [];
+    var rank;
+    var teamname;
+    var time;
+    var seconds;
+    var d1, d2;
+    
+    this.indexservice.fireservice.collection('player keys').valueChanges().subscribe(result => {
+      result.forEach(function (value) {
+       // console.log(value);
+        if (value['timeset'] != undefined && value['timeset'] != null && value['timeset'] != "" && value['timeset'] == 'done') {
+
+          if( value['enterlb'] == true ){
+          teamname = value['teamname'];
+          d1 = new Date(value['endtime']);
+          d2 = new Date(value['starttime']);
+          seconds = (d1 - d2) / 1000;
+          time = seconds / 60;
+          rank = 1;        
+          var one = { rank: rank, teamname: teamname, time: time };
+          temprow.push(one);
+          }     
+        }
+      });
       temprow.sort(function(a, b) {
           return parseFloat(a.time) - parseFloat(b.time);
     });
     });
- //   console.log(temprow);
-    // temprow.sort((a, b) => a.time - b.time); 
 
-    // var sortedArray = temprow.sort(function(a,b){
-    //   console.log(a,b);
-    //   return a.time >b.time?1:a.time <b.time?-1:0
-    //   })
-    //   console.log(sortedArray);
-    //  temprow.sort((a,b) => a.time.rendered.localeCompare(b.time.rendered));
-
-    
-
-    // function compareFirstNames(a, b) {
-    //   if (a.time < b.time) {
-    //     return -1;
-    //   }
-    //   if (a.time > b.time) {
-    //     return 1;
-    //   }
-    //   return 0;
-    // }
-    // temprow.sort(compareFirstNames);
-   // console.log(temprow);
     this.rows = temprow;
-  //  console.log("ROWSSSS");
-  //  console.log(this.rows);
-  }
+}
 
+  */
 
 
 

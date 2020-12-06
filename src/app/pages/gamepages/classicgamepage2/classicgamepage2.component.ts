@@ -142,22 +142,14 @@ this.sound.play();
   } 
 
   checkTeamCode(code, game, c, d,) {
-    var CurrentTime;
     var now;
     var isTeam = false;
     var isPlayer = false;
-    this.indexService.fireservice.collection('player keys').doc(code).valueChanges()
-      .subscribe(result => {
-        console.log(result);
-        if (result == undefined || result == null || result == "") {
-          isTeam = false;
-          this.isError = true;
-          this.err = 'team';
-          console.log('failed auth');
-        }
-        else if (result['exists'] == 'true') {
-          isTeam = true;
-          console.log('team  true');
+    this.indexService.fireservice.collection('player keys').doc(code).get()
+    .toPromise().then(doc => {
+      if (doc.exists) {
+            isTeam = true;
+      var result = doc.data();
           if (result['ptwo'] == game) {
             isPlayer = true;
             this.isError = false;
@@ -170,54 +162,54 @@ this.sound.play();
               record['starttime'] = now;
               record['timeset'] = 'true';
               record['gamebox'] = 'classic';
+              record['teamname'] = code;
               this.indexService.fireservice.collection('player keys').doc(code).update(record);
             }
           } else {
             isPlayer = false;
             this.isError = true;
             this.err = 'Player 2 ';
-            console.log('player not available ');
           }
-        } else {
-          isTeam = false;
-          this.isError = true;
-          this.err = 'team';
-          console.log('failed auth');
-        }
-      }, error => {
+             
+      } else {
         isTeam = false;
         this.isError = true;
-        this.err = 'team';
-        console.log('failed auth');
-      })
+        this.err = 'Team';
+      }
+    }).catch(function(error) {
+     
+        isTeam = false;
+       this.Error = true;
+        this.err = 'Team';    
+    });
   }
 
   teamEndTime(teamCode, review, leaderboard, gamebox) {
     var now;
-    this.indexService.fireservice.collection('player keys').doc(teamCode).valueChanges()
-      .subscribe(result => {
-        if (result == undefined || result == null || result == "") {
-          this.errend = 'Team doesnt exist';
-          this.isEndError = true;
-        } else {
-          if (result['timeset'] != 'done') {
-            var record = {};
-            now = Date.now();
-            //  record['endtime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
-            record['endtime'] = now;
-            record['review1'] = review;
-            record['enterlb'] = leaderboard;
-            record['timeset'] = 'done';
-            this.indexService.fireservice.collection('player keys').doc(teamCode).update(record);
-            }
-          this.errend = 'Thankyou ! Do try our other Boxes';
-          this.isEndError = true;
-         }
-      }, error => {
-        this.errend = 'Team doesnt exist';
+    this.indexService.fireservice.collection('player keys').doc(teamCode).get()
+    .toPromise().then(doc => {
+      if (doc.exists) {
+        var result = doc.data();
+        var record = {};
+        record['review2'] = review;
+        record['enterlb'] = leaderboard;
+        if (result['timeset'] != 'done') {
+          now = Date.now();
+          //  record['endtime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
+          record['endtime'] = now; 
+          record['timeset'] = 'done';          
+          }
+        this.indexService.fireservice.collection('player keys').doc(teamCode).update(record);
+        this.errend = 'Thankyou ! Do try our other Boxes';
         this.isEndError = true;
       }
-      )
+      else {
+        this.errend = 'Team doesnt exist';
+          this.isEndError = true;        
+      }
+    }).catch(function(error) {
+      this.errend = 'Team doesnt exist';
+      this.isEndError = true;           
+    });
   }
-  
 }
