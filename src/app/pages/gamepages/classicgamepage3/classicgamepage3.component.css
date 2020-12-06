@@ -379,3 +379,15 @@
   text-align: left;
   padding: 2px;
 }
+
+.startPage{ 
+  background-color: black;
+  width: 100%;
+  padding: 32px;  
+}
+.endpage{
+  left: 30%;
+    top: 5%;
+    position: absolute;
+    width: 40%;
+}

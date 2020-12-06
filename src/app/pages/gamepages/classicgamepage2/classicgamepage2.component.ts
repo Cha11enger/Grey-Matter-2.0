@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, Input, HostListener} from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Howler, Howl } from 'howler';
+import { IndexService } from '../../index/index.service'
 
 
 @Component({
@@ -11,6 +12,14 @@ import { Howler, Howl } from 'howler';
 export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   isCollapsed = true;
   
+  startPage = true;
+  gamePage = false;
+  endPage = false;
+  isError = false;
+  err = "";
+  errend = "";
+  isEndError = false;
+
   key1 = false;
   key2 = false;
   key3 = false;
@@ -30,7 +39,7 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   hint2 = false;
   hint3 = false;
   hintsection = false;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public indexService:IndexService) {
   
   }
 /*
@@ -65,9 +74,9 @@ sound = new Howl({
   }
 
  
-  expandPiece(piece) {
-   
-      
+  expandPiece(piece) {   
+    if (piece == 'safe') { this.showSafe = true; }
+    //// delete above line later
   if(  this.cardClue == true){
     if (piece == '1') { this.key1 = true; }
     if (piece == '3') { this.key3 = true; }
@@ -78,16 +87,13 @@ sound = new Howl({
     if (piece == '7') { this.key7 = true; }
     if (piece == '8') { this.key8 = true; }
     if (piece == 'safe') { this.showSafe = true; }
-  }
-
-   
+  }   
     if (piece == 'books') { this.books = true; }
     if (piece == 'bottle' && this.arrow == true) { this.bottle = true; }
     if (piece == 'scrollclue') { this.scrollclue = true; }
  if (piece == 'lockclue') { this.lockclue = true; }
  this.sound.play();
   }
-
 
   hidePiece(piece) {
     if (piece == '1') { this.key1 = false; }
@@ -102,42 +108,116 @@ sound = new Howl({
     if (piece == 'bottle') { this.bottle = false; }
 this.sound.play();
   }
+
   checkCode(code, item){
     if(item == 'safe'){
-      if(code == "5713"){
-       
+      if(code == "5713"){       
       this.success.play();
+      this.gamePage = false;
+        this.endPage = true;
        }else{
-         this.showSafe = false;
-      
+         this.showSafe = false;      
          this.error.play();
        }
     }
-    if(item == 'lock'){
-  
+    if(item == 'lock'){  
       if(code == "VLI" || code == "vli" ){
       this.arrow = true;
-
       this.success.play();
        }else{
-         this.lockclue = false;
-      
+         this.lockclue = false;      
          this.error.play();
        }
     }
     if ( item == 'bottle'){
-      if(code == "3013"){
-     
+      if(code == "3013"){     
        this.success.play();
        this.bottle = false;
-       this.cardClue = true;
-  
+       this.cardClue = true;  
        }else{
          this.bottle = false;   
          this.error.play();
        }
     }
+  } 
+
+  checkTeamCode(code, game, c, d,) {
+    var CurrentTime;
+    var now;
+    var isTeam = false;
+    var isPlayer = false;
+    this.indexService.fireservice.collection('player keys').doc(code).valueChanges()
+      .subscribe(result => {
+        console.log(result);
+        if (result == undefined || result == null || result == "") {
+          isTeam = false;
+          this.isError = true;
+          this.err = 'team';
+          console.log('failed auth');
+        }
+        else if (result['exists'] == 'true') {
+          isTeam = true;
+          console.log('team  true');
+          if (result['ptwo'] == game) {
+            isPlayer = true;
+            this.isError = false;
+            this.startPage = false;
+            this.gamePage = true;
+            var record = {}
+            if (result['timeset'] == undefined) {
+              now = Date.now();
+              //  record['starttime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
+              record['starttime'] = now;
+              record['timeset'] = 'true';
+              record['gamebox'] = 'classic';
+              this.indexService.fireservice.collection('player keys').doc(code).update(record);
+            }
+          } else {
+            isPlayer = false;
+            this.isError = true;
+            this.err = 'Player 2 ';
+            console.log('player not available ');
+          }
+        } else {
+          isTeam = false;
+          this.isError = true;
+          this.err = 'team';
+          console.log('failed auth');
+        }
+      }, error => {
+        isTeam = false;
+        this.isError = true;
+        this.err = 'team';
+        console.log('failed auth');
+      })
   }
-  
+
+  teamEndTime(teamCode, review, leaderboard, gamebox) {
+    var now;
+    this.indexService.fireservice.collection('player keys').doc(teamCode).valueChanges()
+      .subscribe(result => {
+        if (result == undefined || result == null || result == "") {
+          this.errend = 'Team doesnt exist';
+          this.isEndError = true;
+        } else {
+          if (result['timeset'] != 'done') {
+            var record = {};
+            now = Date.now();
+            //  record['endtime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
+            record['endtime'] = now;
+            record['review1'] = review;
+            record['enterlb'] = leaderboard;
+            record['timeset'] = 'done';
+            this.indexService.fireservice.collection('player keys').doc(teamCode).update(record);
+            }
+          this.errend = 'Thankyou ! Do try our other Boxes';
+          this.isEndError = true;
+         }
+      }, error => {
+        this.errend = 'Team doesnt exist';
+        this.isEndError = true;
+      }
+      )
+  }
   
 }

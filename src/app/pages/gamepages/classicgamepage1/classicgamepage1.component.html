@@ -1,39 +1,43 @@
 <div class="wrapper">
- 
   <div *ngIf='startPage'>
-    <img src="assets/classic/startpagetop.png" class="room ">
-
-    <div class="startPage"> 
-      instrections all
-      <br>
-      add storyline here 
-      <br><br>
-      its editable yo!
+    <!-- <img src="assets/classic/startpagetop.png" class="room ">
+   -->
+    <div class="startPage text-center">
+      <h3 style="margin-bottom: 2px;">CLASSIC BOX</h3>
+      <i class="text-primary">“If you see the world in black and white, you're missing important Grey Matter”
+      </i>  <br><br>
+      <h4 style="margin-bottom: 2px;">Player 1</h4>
+      <p>
+        <br><br>
+        instrections all
+        <br>
+        add storyline here
+        <br><br>
+        its editable yo!
+      </p>
     </div>
-    
-   
-
-<div style="position: relative;">
-    <img src="assets/classic/startpagebottom.png" class="room ">
-    <div class="container endpage">
-      <div style="padding:10px 45px 10px 45px;" class="card card-coin card-plain">
-     <div class="text-center">                
-         <p> Enter Team Name and Player 1 Code recieved    </p>            
-        <hr class="line-primary" />
-        <input class="form-control" placeholder="Team Name" type="text" (focus)="focus = true"
-          (blur)="focus = false" #teamname />
-          <input class="form-control" placeholder="Player 1 code" type="text" (focus)="focus = true"
-          (blur)="focus = false" #playerOne />  
-          <div class="btn btn-primary btn-simple" (click)="checkTeamCode(teamname.value, playerOne.value, 'one' ,'classic');">
-                    <strong>Start Game</strong>
-  </div>
-</div>
-</div>
-<div class="row" *ngIf="isError">
-  <h3>Please enter correct {{err}} code </h3>
-</div>
-</div>
-</div>
+    <div style="position: relative;">
+      <img src="assets/classic/startpagebottom.png" class="room ">
+      <div class="container endpage">
+        <div style="padding:10px 45px 10px 45px;" class="card card-coin card-plain">
+          <div class="text-center">
+            <p> Enter Team Name and Player 1 Code recieved </p>
+            <hr class="line-primary" />
+            <input class="form-control" placeholder="Team Name" type="text" (focus)="focus = true"
+              (blur)="focus = false" #teamname />
+            <input class="form-control" placeholder="Player 1 code" type="text" (focus)="focus = true"
+              (blur)="focus = false" #playerOne />
+            <div class="btn btn-primary btn-simple"
+              (click)="checkTeamCode(teamname.value, playerOne.value, 'one' ,'classic');">
+              <strong>Start Game</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="isError">
+          <h3>Please enter correct {{err}} code </h3>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div *ngIf='gamePage' class="area text-center">
@@ -83,8 +87,6 @@
           class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
         <div class="bttnans" (click)="checkCode(finalcode.value, 'safe')"></div>
       </div>
-
-
       <div class="scrollclue" (click)="expandPiece('scrollclue')"></div>
       <div *ngIf='scrollclue' class="scrollclue1"></div>
 
@@ -120,18 +122,43 @@
               </p>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
-
-
-
-
   </div>
-
-
-  <div *ngIf='endPage'></div>
-
+  <div *ngIf='endPage'>
+    <div class="startPage text-center">
+      <h3 style="margin-bottom: 2px;">YOU ESCAPED THE BOX !</h3>
+      <i class="text-primary">WE MUST ADMIT ! YOU ARE AMAZING !!</i> 
+    </div>
+    <div style="position: relative;">
+      <img src="assets/classic/startpagebottom.png" class="room ">
+      <div class="container endpage">
+        <div style="padding:10px 45px 10px 45px;" class="card card-coin card-plain">
+          <div class="text-center">
+            <p> Grey Matter, matters ! </p>
+            <hr class="line-primary" />
+            Enter Team Name:
+            <input class="form-control" placeholder="Team Name" type="text" (focus)="focus = true"
+              (blur)="focus = false" #teamname1 />
+            Submit Review:
+            <input class="form-control" placeholder="Classic Box Review" type="text" (focus)="focus = true"
+              (blur)="focus = false" #review />
+              <label class="form-check-label">
+                <input #leaderboard class="form-check-input" type="checkbox" />
+                <span class="form-check-sign"> </span> Publish in Leaderboard
+              </label>
+              <br>
+            <div class="btn btn-primary btn-simple"
+              (click)="teamEndTime(teamname1.value, review.value,  leaderboard.checked , 'classic');">
+              <strong>End Game !</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="isEndError">
+          <h3>{{errend}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

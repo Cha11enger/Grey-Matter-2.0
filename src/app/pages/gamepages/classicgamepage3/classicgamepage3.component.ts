@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, Input, HostListener } from "@angular/core
 import { HttpClient, HttpDownloadProgressEvent } from '@angular/common/http';
 import Chart from "chart.js";
 import { Howler, Howl } from 'howler';
+import { IndexService } from '../../index/index.service'
 
 @Component({
   selector: "app-classicgamepage3",
@@ -10,6 +11,15 @@ import { Howler, Howl } from 'howler';
 })
 export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
   isCollapsed = true;
+
+  startPage = true;
+  gamePage = false;
+  endPage = false;
+  isError = false;
+  err = "";
+  errend = "";
+  isEndError = false;
+
   redkey = false;
   bluekey = false;
   yellowkey = false;
@@ -25,7 +35,7 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
   hintsection = false;
 
   showSafe = false;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public indexService:IndexService) {
 
   }
 /*
@@ -56,27 +66,26 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
     body.classList.remove("landing-page");
   }
   expandPiece(piece) {
+    if (piece == 'safe') { this.showSafe = true; }
+    //// delete above line later
     if(  this.bookClue == true){   
     if (piece == 'y') { this.yellowkey = true; }  
     if (piece == 'g') { this.greenkey = true; }
     if (piece == 'b') { this.bluekey = true; }
     if (piece == 'r') { this.redkey = true; }
     if (piece == 'safe') { this.showSafe = true; }
-    }
-       
+    }       
     if (piece == 'book'  && this.arrow == true) { this.showBook = true; }
     if (piece == 'scrollclue') { this.scrollclue = true; }
  if (piece == 'lockclue') { this.lockclue = true; }
   this.sound.play();
-
   }
 
 
   hidePiece(piece) {
   
     if (piece == 'y') { this.yellowkey = false; }
-    if (piece == 'g') { this.greenkey = false; }   
-   
+    if (piece == 'g') { this.greenkey = false; }      
       if (piece == 'r') { this.redkey = false; }
       if (piece == 'b') { this.bluekey = false; }
       this.sound.play();
@@ -84,42 +93,112 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
 
   checkCode(code, item){
     if(item == 'safe'){
-      if(code == "5713"){
-       
+      if(code == "5713"){       
       this.success.play();
+      this.gamePage = false;
+        this.endPage = true;
        }else{
-         this.showSafe = false;
-      
+         this.showSafe = false;      
          this.error.play();
        }
     }
-    if(item == 'lock'){
-  
+    if(item == 'lock'){  
       if(code == "ITY" || code == "ity" ){
       this.arrow = true;
-
       this.success.play();
        }else{
-         this.lockclue = false;
-      
+         this.lockclue = false;      
          this.error.play();
        }
     }
     if ( item == 'book'){
-      if(code == "pizza" ||code == "PIZZA"|| code == "Pizza" ){
-       
-        
+      if(code == "pizza" ||code == "PIZZA"|| code == "Pizza" ){  
        this.success.play();
        this.showBook = false;
-       this.bookClue = true;
-  
+       this.bookClue = true;  
        }else{
          this.showBook = false;   
          this.error.play();
        }
     }
+  } 
+
+  checkTeamCode(code, game, c, d,) {
+    var CurrentTime;
+    var now;
+    var isTeam = false;
+    var isPlayer = false;
+    this.indexService.fireservice.collection('player keys').doc(code).valueChanges()
+      .subscribe(result => {
+        console.log(result);
+        if (result == undefined || result == null || result == "") {
+          isTeam = false;
+          this.isError = true;
+          this.err = 'team';
+          console.log('failed auth');
+        }
+        else if (result['exists'] == 'true') {
+          isTeam = true;
+          console.log('team  true');
+          if (result['pthree'] == game) {
+            isPlayer = true;
+            this.isError = false;
+            this.startPage = false;
+            this.gamePage = true;
+            var record = {}
+            if (result['timeset'] == undefined) {
+              now = Date.now();
+              //  record['starttime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
+              record['starttime'] = now;
+              record['timeset'] = 'true';
+              record['gamebox'] = 'classic';
+              this.indexService.fireservice.collection('player keys').doc(code).update(record);
+            }
+          } else {
+            isPlayer = false;
+            this.isError = true;
+            this.err = 'Player 3';
+            console.log('player not available ');
+          }
+        } else {
+          isTeam = false;
+          this.isError = true;
+          this.err = 'team';
+          console.log('failed auth');
+        }
+      }, error => {
+        isTeam = false;
+        this.isError = true;
+        this.err = 'team';
+        console.log('failed auth');
+      })
   }
 
- 
-
+  teamEndTime(teamCode, review, leaderboard, gamebox) {
+    var now;
+    this.indexService.fireservice.collection('player keys').doc(teamCode).valueChanges()
+      .subscribe(result => {
+        if (result == undefined || result == null || result == "") {
+          this.errend = 'Team doesnt exist';
+          this.isEndError = true;
+        } else {
+          if (result['timeset'] != 'done') {
+            var record = {};
+            now = Date.now();
+            //  record['endtime'] = this.pipe.transform(this.now, 'dd-MM-yyyy HH:mm:ss');
+            record['endtime'] = now;
+            record['review1'] = review;
+            record['enterlb'] = leaderboard;
+            record['timeset'] = 'done';
+            this.indexService.fireservice.collection('player keys').doc(teamCode).update(record);
+            }
+          this.errend = 'Thankyou ! Do try our other Boxes';
+          this.isEndError = true;
+         }
+      }, error => {
+        this.errend = 'Team doesnt exist';
+        this.isEndError = true;
+      }
+      )
+  }
 }
