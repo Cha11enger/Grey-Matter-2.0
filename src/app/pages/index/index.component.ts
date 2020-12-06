@@ -26,7 +26,7 @@ export class IndexComponent implements OnInit, OnDestroy {
 
 
   constructor(public indexservice: IndexService) {
-    this.displayLeaderBoard()
+    
   }
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
@@ -34,29 +34,9 @@ export class IndexComponent implements OnInit, OnDestroy {
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("index-page");
-
     var slider = document.getElementById("sliderRegular");
-
-    //  noUiSlider.create(slider, {
-    //   start: 40,
-    //  connect: false,
-    // range: {
-    //     min: 0,
-    //     max: 100
-    //    }
-    //  });
-
     var slider2 = document.getElementById("sliderDouble");
-
-    //  noUiSlider.create(slider2, {
-    //    start: [20, 60],
-    //    connect: true,
-    //    range: {
-    //     min: 0,
-    //     max: 100
-    //   }
-    //  });
-    // this.dbWriteFunction();
+    this.displayLeaderBoard();
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
@@ -95,10 +75,10 @@ export class IndexComponent implements OnInit, OnDestroy {
       .toPromise().then(col => {
         col.forEach(function (val) {
           if (val.exists) {
-            console.log(val.data());
+          
             var value = val.data();
             if (value['timeset'] != undefined && value['timeset'] != null && value['timeset'] != "" && value['timeset'] == 'done') {
-
+///////////////////// ALL CLASSIC BOX
               if (value['enterlb'] == true) {
                 teamname = value['teamname'];
                 d1 = new Date(value['endtime']);
@@ -109,6 +89,7 @@ export class IndexComponent implements OnInit, OnDestroy {
                 var one = { rank: rank, teamname: teamname, time: time };
                 temprow.push(one);
               }
+
             }
           }
         });

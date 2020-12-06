@@ -10,7 +10,7 @@
         placement="bottom"
         [routerLink]="['/home']"
         target="_blank"
-        tooltip="Designed and Coded by Creative Tim"
+        tooltip="Coded by Beneta"
       >
         <span>Grey Matter 2.0 •</span> Online Escape Rooms
       </a>
@@ -35,7 +35,7 @@
     >
       <div class="navbar-collapse-header">
         <div class="row">
-          <div class="col-6 collapse-brand"><a> BLK• </a></div>
+          <div class="col-6 collapse-brand"></div>
           <div class="col-6 collapse-close text-right">
             <button
               aria-controls="navigation-index"
@@ -52,6 +52,7 @@
         </div>
       </div>
       <ul class="navbar-nav">
+        <!--
         <li class="nav-item p-0">
           <a
             class="nav-link"
@@ -75,11 +76,11 @@
             <i class="fab fa-facebook-square"> </i>
             <p class="d-lg-none d-xl-none">Facebook</p>
           </a>
-        </li>
+        </li>  -->
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            href="https://www.instagram.com/CreativeTimOfficial"
+            href="https://www.instagram.com"
             placement="bottom"
             target="_blank"
             tooltip="Follow us on Instagram"
@@ -95,9 +96,17 @@
             dropdownToggle
             href="javascript:void(0)"
           >
-            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Getting started
+            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Contact Us
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+            <p class="dropdown-item" >
+             
+              <i class="tim-icons icon-paper"> </i> greymatterescaperooms@gmail.com
+          </p>
+          <p class="dropdown-item" >
+            <i class="tim-icons icon-single-02"> </i> +91 9019450546
+          </p>
+              <!--
             <a
               class="dropdown-item"
               href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/overview"
@@ -113,9 +122,10 @@
             <a class="dropdown-item" [routerLink]="['/profile']">
               <i class="tim-icons icon-single-02"> </i> Profile Page
             </a>
+          -->
           </div>
         </li>
-        <li class="nav-item">
+        <!--        <li class="nav-item">
           <a
             class="nav-link btn btn-default d-none d-lg-block"
             href="javascript:void(0)"
@@ -124,6 +134,8 @@
             <i class="tim-icons icon-cloud-download-93"> </i> Download
           </a>
         </li>
+      -->
+
       </ul>
     </div>
   </div>
@@ -241,15 +253,15 @@
           <br><br>
           3 player game<br>
           Difficultly level - Medium<br>
-          Rs. 300<br>
+          
           
         </p>
-        <button
-          class="btn btn-danger"
-              data-target="#myModal"
-              (click)="myModal.show()" >
-          Buy Now !
+        <a [routerLink]="['/classicbox']" target="_blank">
+          <button class="btn btn-danger" >
+          Details !
       </button>
+        </a>
+        
       </div>
       <div class="col-lg-6">
         <carousel [showIndicators]="false">
@@ -281,8 +293,8 @@
 </div>
 
 
-
-<div
+<!--
+  <div
       aria-hidden="true"
       aria-labelledby="myModalLabel"
       bsModal
@@ -337,7 +349,7 @@
         </div>
       </div>
 </div>
-
+-->
 <!--
    LEADERBOARD SECTION
 -->
@@ -418,12 +430,17 @@
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfIJwUZbjz6UyYsXl-ftmio4JcY7s5D9bBWCT4_8LHEkTmXwg/viewform?embedded=true" width="600" height="808" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
       </div>
  -->
+
+ <div class="section">
     <div class="container">
-      <div class="row">
+      <div ><h3 class="text-white font-weight-light">Contact Us</h3></div>
+      <div  style="background-color: #1F2251;"   class="row">
+
         <div class="col-md-6">
           <div class="card card-plain">
             <div class="card-header">
-              <h1 class="profile-title text-left">Contact Us</h1>
+              
+              <p class="info-title">Write to us</p>
             </div>
             <div class="card-body">
               <form ngNoForm action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfIJwUZbjz6UyYsXl-ftmio4JcY7s5D9bBWCT4_8LHEkTmXwg/formResponse" 
@@ -437,13 +454,13 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label> Phone </label>
+                      <label> Phone Number</label>
                       <input
                         class="form-control"
                         type="text"
                         name="entry.1166974658"
-                        placeholder="987654321"
-                        required
+                       
+                    
                       />
                      
                     </div>
@@ -455,7 +472,7 @@
                        <label> Email address </label>
                       <input
                         class="form-control"
-                        placeholder="mike@email.com"
+                       
                         type="email"
                         name = "emailAddress"
                         required
@@ -488,7 +505,7 @@
                   </div>
                 </div>
                 <button
-                  class="btn btn-danger btn-round float-right"
+                  class="btn btn-danger mr-1 float-right"   
                   placement="right"
                   type="submit"
                 >
@@ -498,19 +515,42 @@
             </div>
           </div>
         </div>
+        
+        <div style="padding: 75px;">
+          <div class="info" style="padding: 0px;">
+          <div class="icon icon-danger">
+            <i class="tim-icons icon-square-pin"> </i>
+          </div>
+          <div class="description">
+            <p class="info-title">Email us</p>
+            <p>
+              greymatterescaperooms@gmail.com
+            </p>
+          </div>
+        </div>
+          <div class="info" style="padding-top: 20px;">
+          <div class="icon icon-danger">
+            <i class="tim-icons icon-mobile"> </i>
+          </div>
+          <div class="description">
+            <p class="info-title">WhatsApp us</p>
+            <p>
+              +91 9019450546
+            </p>
+          </div>
+        </div>
+
+        </div>
+<!--
         <div class="col-md-4 ml-auto">
           <div class="info info-horizontal">
             <div class="icon icon-danger">
               <i class="tim-icons icon-square-pin"> </i>
             </div>
             <div class="description">
-              <h4 class="info-title">Find us at the office</h4>
+              <h4 class="info-title">Email us</h4>
               <p>
-                Bld Mihail Kogalniceanu, nr. 8, <br />
-
-                7652 Bucharest, <br />
-
-                Romania
+                greymatterescaperooms@gmail.com
               </p>
             </div>
           </div>
@@ -519,19 +559,15 @@
               <i class="tim-icons icon-mobile"> </i>
             </div>
             <div class="description">
-              <h4 class="info-title">Give us a ring</h4>
+              <h4 class="info-title">WhatsApp us</h4>
               <p>
-                Michael Jordan <br />
-
-                +40 762 321 762 <br />
-
-                Mon - Fri, 8:00-22:00
+                +91 9019450546
               </p>
             </div>
           </div>
-        </div>
+        </div>   -->
       </div>
-
+</div>
 
 
 
