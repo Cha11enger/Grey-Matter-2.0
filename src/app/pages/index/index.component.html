@@ -10,7 +10,7 @@
         placement="bottom"
         [routerLink]="['/home']"
         target="_blank"
-        tooltip="Coded by Beneta"
+       
       >
         <span>Grey Matter 2.0 •</span> Online Escape Rooms
       </a>
@@ -190,8 +190,11 @@
                       </ng-template>
                       <p>
                         Grey Matter Escape Rooms bring the excitement & mystery of an escape room straight to your living room. <br />
-                        Our escape boxes bring you an amazing Escape Room experience to play online! <br>
-                        Hop into a zoom call with your friends and get ready for an adrenaline filled ride!
+                        Our escape boxes bring you an amazing Multiplayer Escape Room experience to play with friends online! 
+                        <br><br>
+                        Get you team ready! <br>
+                        Purchase our Escape Box <br>
+                        And hop into a Video Call with your friends to discuss your Game Plan!
                         <br />
                         <br>
                         Let's get your brain cells tingling!
@@ -204,9 +207,10 @@
                       </ng-template>
                       <p>
                         The number of players for each box is mentioned. It is usually in teams of 2-4 players<br />
-                        The Escape box details and login code will be sent to your email id in 2-3 hours, after payment.
-                        <br />
-                        You dont have to download any software, this is a web-browser based game.
+                        Once you choose a box, and make your payment, 
+                        upon payment confirmation, an email with the login codes for all players will be sent to the submitted email in 5-6 hours time.
+                       <br />
+                        You dont have to download any software, this is a web-browser based game.                        
                         <br><br>
                         Play anytime, any where all across the world ! 
                         <br><br>
@@ -217,9 +221,9 @@
                         <i class="tim-icons icon-bag-16"> </i> System Requirements
                       </ng-template>
                       <p>
-                        You dont have to download any software, this is a web-browser based game. <br>
-                        It can be access via Computer, Tablet and Phone, but we recommend using a computer for best gaming experience. <br>
-                        24/7 Access to games & immediate delivery available<br />
+                        You dont have to download any software, this is a web-browser based game. We recommend Laptop/PC with Chrome browser for best experience. <br>
+                        It can be accessed via Computer, Tablet and Phone, but we recommend using a computer for best gaming experience. <br>
+                        You can access the game for 48 hours after your first login<br />
                         <br />
                         Text us for queries!
                         <br /><br />
@@ -252,15 +256,15 @@
           The Classic box consists of a plethora of labyrinths, mazes and puzzles that only the most intelligent and persistent of competitors can survive !<br>
           <br><br>
           3 player game<br>
-          Difficultly level - Medium<br>
-          
+          Difficultly level - Medium<br>     
           
         </p>
-        <a [routerLink]="['/classicbox']" target="_blank">
+        <a [routerLink]="['/classicbox']" [queryParams]="{box: 'classic'}" target="_blank">
           <button class="btn btn-danger" >
           Details !
       </button>
         </a>
+      
         
       </div>
       <div class="col-lg-6">

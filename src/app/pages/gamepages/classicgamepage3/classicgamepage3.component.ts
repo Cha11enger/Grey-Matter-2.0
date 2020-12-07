@@ -66,7 +66,7 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
     body.classList.remove("landing-page");
   }
   expandPiece(piece) {
-    if (piece == 'safe') { this.showSafe = true; }
+  
     //// delete above line later
     if(  this.bookClue == true){   
     if (piece == 'y') { this.yellowkey = true; }  

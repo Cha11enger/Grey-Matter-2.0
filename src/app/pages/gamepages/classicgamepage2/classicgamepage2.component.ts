@@ -75,7 +75,7 @@ sound = new Howl({
 
  
   expandPiece(piece) {   
-    if (piece == 'safe') { this.showSafe = true; }
+    
     //// delete above line later
   if(  this.cardClue == true){
     if (piece == '1') { this.key1 = true; }

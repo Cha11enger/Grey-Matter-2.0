@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, EventEmitter , Output} from "@angular/core";
 import noUiSlider from "nouislider";
 import { IndexService } from './index.service'
 import { DatePipe } from '@angular/common';
@@ -23,7 +23,8 @@ export class IndexComponent implements OnInit, OnDestroy {
 
   //public rows: Array<{rank: '0', teamname: '', time: ''}> = [];
   public rows: Array<any> = [];
-
+ 
+  @Output() touch = new EventEmitter<string>();
 
   constructor(public indexservice: IndexService) {
     
@@ -65,6 +66,8 @@ export class IndexComponent implements OnInit, OnDestroy {
 }   */
 
   displayLeaderBoard() {
+    this.touch.emit('touched');
+
     var temprow = [];
     var rank;
     var teamname;

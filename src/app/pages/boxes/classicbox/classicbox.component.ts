@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { IndexService } from '../../index/index.service'
+import { IndexService } from '../../index/index.service';
 import { DatePipe } from '@angular/common';
+import { IndexComponent } from '../../index/index.component'
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -17,23 +19,38 @@ export class ClassicboxComponent implements OnInit, OnDestroy {
   CurrentTime;
   pipe = new DatePipe('en-US');
   now;
+  boxParam;
+  boxName;
+  isClassic = false;
 
- 
   isVerified: boolean;
-  constructor(private http: HttpClient, public indexservice: IndexService) {
+  constructor(private http: HttpClient, public indexservice: IndexService, private route: ActivatedRoute) {
     this.isVerified = false;
+
+    this.route.queryParams.subscribe(params => {
+      this.boxParam = params['box'];
+  });
+
+
   }
   // var database = firebase.database();
 
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
+  
+    if(this.boxParam == 'classic'){
+      this.boxName = "Classic Box";
+      this.isClassic = true;
+    }
 
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("landing-page");
   }
+
+ 
   /*
   checkPlayerCode(code, player) {
     console.log(code, player);

@@ -5,18 +5,56 @@
     <div class="startPage text-center">
       <h3 style="margin-bottom: 2px;">CLASSIC BOX</h3>
       <i class="text-primary">“If you see the world in black and white, you're missing important Grey Matter”
-      </i>  <br><br>
+      </i> <br><br>
       <h4 style="margin-bottom: 2px;">Player 1</h4>
-      <p>
+
+      <div style="padding: 0px 140px 0px 140px; line-height: 30px;" class="text-left">
         <br><br>
-        instrections all
-        <br>
-        add storyline here
-        <br><br>
-        its editable yo!
-      </p>
+
+        <h4 style="margin-bottom: 2px;">How to Play</h4>
+        <p>
+          ◆ Get you team ready to login at the same time!
+          <br>
+          ◆ Login using your Team Name and the unique Player 1 login code provided via email. We recommend playing in a
+          Laptop/PC.
+          <br>
+          ◆ Get into a Video call with your team to decide your Game Plan!
+          <br>
+          ◆ DO NOT share your screen with your teammates, you can describe it to them though!
+          <br>
+          ◆ The Hints button is available in the bottom right corner of your screen. Use only if absolutely necessary.
+          <br>
+          ◆ If you are stuck at any point, drop us an email or text for hints/issues.
+          <br>
+          ◆ Once any member of your team logs in, the clock starts ticking! Only the top teams will make it into out
+          leader board.
+          <br>
+          <br>
+    
+        </p>
+        <h4 style="margin-bottom: 2px;">Story Line</h4>
+        <p>
+          Three best friends, set out on a road trip, find a huge abandoned mansion in the forest!
+          <br>While exploring the colossal mansion they go separate ways into the Library, Garrage and Kitchen Bar, only
+          to find themselves locked up!<br>
+          Will they open the Safe that holds the Key to Escape ?!
+          <br>
+          <br>
+        </p>
+          
+        <h4 style="margin-bottom: 2px;">You are Player 1</h4>
+          <p>
+          You enter the Kitchen Bar, there is a Safe in the table counter that holds the key to Escape the Box!
+          <br>Find the CODE that opens the Safe!
+          <br><br>
+        </p>
+      </div>
+
+      <br><br>
+
+
     </div>
-    <div style="position: relative;">
+    <div style="position: relative; margin: -2px;">
       <img src="assets/classic/startpagebottom.png" class="room ">
       <div class="container endpage">
         <div style="padding:10px 45px 10px 45px;" class="card card-coin card-plain">
@@ -129,9 +167,9 @@
   <div *ngIf='endPage'>
     <div class="startPage text-center">
       <h3 style="margin-bottom: 2px;">YOU ESCAPED THE BOX !</h3>
-      <i class="text-primary">WE MUST ADMIT ! YOU ARE AMAZING !!</i> 
+      <i class="text-primary">WE MUST ADMIT ! YOU ARE AMAZING !!</i>
     </div>
-    <div style="position: relative;">
+    <div style="position: relative; margin: -2px;">
       <img src="assets/classic/startpagebottom.png" class="room ">
       <div class="container endpage">
         <div style="padding:10px 45px 10px 45px;" class="card card-coin card-plain">
@@ -144,11 +182,11 @@
             Submit Review:
             <input class="form-control" placeholder="Classic Box Review" type="text" (focus)="focus = true"
               (blur)="focus = false" #review />
-              <label class="form-check-label">
-                <input #leaderboard class="form-check-input" type="checkbox" />
-                <span class="form-check-sign"> </span> Publish in Leaderboard
-              </label>
-              <br>
+            <label class="form-check-label">
+              <input #leaderboard class="form-check-input" type="checkbox" />
+              <span class="form-check-sign"> </span> Publish in Leaderboard
+            </label>
+            <br>
             <div class="btn btn-primary btn-simple"
               (click)="teamEndTime(teamname1.value, review.value,  leaderboard.checked , 'classic');">
               <strong>End Game !</strong>

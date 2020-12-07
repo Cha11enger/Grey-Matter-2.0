@@ -1,121 +1,256 @@
-
-  <nav
-  class="navbar navbar-expand-lg fixed-top navbar-transparent"
-  color-on-scroll="100"
-  id="navbar-top"
->
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="100" id="navbar-top">
   <div class="container">
     <div class="navbar-translate">
-      <a
-        class="navbar-brand"
-        [routerLink]="['/home']"
-        placement="bottom"
-        tooltip="Designed and Coded by Creative Tim"
-      >
-        <span> Classic Box • </span> Think inside the Box !
+      <a class="navbar-brand" placement="bottom" [routerLink]="['/home']" target="_blank" tooltip="Coded by Beneta">
+        <span>Grey Matter Escape Rooms •</span> {{boxName}}
       </a>
-      <button
-        aria-controls="navigation-index"
-        aria-label="Toggle navigation"
-        class="navbar-toggler navbar-toggler"
-        [attr.aria-expanded]="!isCollapsed"
-        (click)="isCollapsed = !isCollapsed"
-        id="navigation"
-        type="button"
-      >
+      <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler"
+        [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
         <span class="navbar-toggler-bar bar1"> </span>
         <span class="navbar-toggler-bar bar2"> </span>
         <span class="navbar-toggler-bar bar3"> </span>
       </button>
     </div>
-    <div
-      class="navbar-collapse justify-content-end"
-      [collapse]="isCollapsed"
-      id="navigation"
-    >
+    <div class="navbar-collapse justify-content-end" [collapse]="isCollapsed" id="navigation">
       <div class="navbar-collapse-header">
         <div class="row">
-          <div class="col-6 collapse-brand"><a> Classic• </a></div>
+          <div class="col-6 collapse-brand"></div>
           <div class="col-6 collapse-close text-right">
-            <button
-              aria-controls="navigation-index"
-              aria-label="Toggle navigation"
-              class="navbar-toggler"
-              [attr.aria-expanded]="!isCollapsed"
-              (click)="isCollapsed = !isCollapsed"
-              id="navigation"
-              type="button"
-            >
+            <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler"
+              [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
               <i class="tim-icons icon-simple-remove"> </i>
             </button>
           </div>
         </div>
       </div>
       <ul class="navbar-nav">
+
         <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://twitter.com/CreativeTim"
-            placement="bottom"
-            target="_blank"
-            tooltip="Follow us on Twitter"
-          >
-            <i class="fab fa-twitter"> </i>
-            <p class="d-lg-none d-xl-none">Twitter</p>
-          </a>
-        </li>
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.facebook.com/CreativeTim"
-            placement="bottom"
-            target="_blank"
-            tooltip="Like us on Facebook"
-          >
-            <i class="fab fa-facebook-square"> </i>
-            <p class="d-lg-none d-xl-none">Facebook</p>
-          </a>
-        </li>
-        <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com/CreativeTimOfficial"
-            placement="bottom"
-            target="_blank"
-            tooltip="Follow us on Instagram"
-          >
+          <a class="nav-link" href="https://www.instagram.com" placement="bottom" target="_blank"
+            tooltip="Follow us on Instagram">
             <i class="fab fa-instagram"> </i>
             <p class="d-lg-none d-xl-none">Instagram</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']"> Back to Kit </a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            href="https://github.com/creativetimofficial/blk-design-system-angular/issues"
-          >
-            Have an issue?
+        <li class="dropdown nav-item" dropdown>
+          <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" dropdownToggle
+            href="javascript:void(0)">
+            <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Contact Us
           </a>
+          <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
+            <p class="dropdown-item">
+
+              <i class="tim-icons icon-paper"> </i> greymatterescaperooms@gmail.com
+            </p>
+            <p class="dropdown-item">
+              <i class="tim-icons icon-single-02"> </i> +91 9019450546
+            </p>
+
+          </div>
         </li>
+
       </ul>
     </div>
   </div>
 </nav>
-<div class="wrapper">
-  
 
-  
- 
-  <section class="section section-lg section-coins">
+
+<div class="wrapper">
+
+  <div class="section">
+    <div class="container">
+      <h1 class="text-white text-center font-weight-light">The {{boxName}}</h1>
+
+      <div *ngIf='isClassic'>
+        <div class="row justify-content-between align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <p class="text-white mt-4">
+              <b>Storyline & Game details: </b><br><br>
+              Three best friends, set out on a road trip, find a huge abandoned mansion in the forest!
+              <br>While exploring the colossal mansion they go separate ways into the Library, Garrage and Kitchen Bar, only
+              to find
+              themselves locked up!<br>
+              Will they open the Safe that holds the Key to Escape ?!
+              <br>
+              <br>
+              The Classic box consists of a plethora of labyrinths, mazes and puzzles that only the most intelligent and
+              persistent of competitors can survive !
+              <br><br>
+
+              3 player game<br>
+              Price: INR 300<br>
+              Difficultly level - Medium<br>
+              Time - 60-90 minutes<br>
+              Compatibility - Works best in Laptop/PC (Chrome browser)
+            </p>
+
+          </div>
+          <div class="col-lg-6">
+            <carousel [showIndicators]="false">
+              <slide>
+                <img alt="First slide" class="d-block w-100" src="assets/classic/p1_bar.png" />
+              </slide>
+              <slide>
+                <img alt="Second slide" class="d-block w-100" src="assets/classic/p2_library.png" />
+              </slide>
+              <slide>
+                <img alt="Third slide" class="d-block w-100" src="assets/classic/p3_garrage.png" />
+              </slide>
+            </carousel>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div>
+        <!-- HOW TO PLAY -->
+        
+        <div>
+          <h3 class="text-white font-weight-light">How to Play</h3>
+        </div>
+        <div style="background-color: #1F2251; padding:30px;" class="row">
+          <p>
+            <b>• Get your team ready!</b> <br>
+            This is a 3 Player Game, make sure all of you play at the same time! 
+            Each of the players will have a separate login code provided by us and different puzzles to solve.
+            <br><br>
+            <b>• Purchase your Box! </b> <br>
+            Once you choose a box, you will have to make payment and submit your email id. 
+            Upon payment confirmation, an email with the login codes for all 3 players will be sent to the submitted email in 5-6 hours time.
+            <br><br>
+            <b>  • Escape the Box, together! </b> <br>
+            Once you have your team members and team login code ready (via email), its time to get your Grey Matter working!
+            Get in on a Video Call with your team members, via Zoom, MS Teams, G-Meet or Skype to discuss your game plan! 
+            <br>
+            <b> Important: </b>Each player must use only their respective logins and must not share screen !
+            <br>
+          </p>
+    
+        </div>
+      </div>
+      <br>
+      <div>   
+        <!-- HOW TO BUY -->
+        <div>
+          <h3 class="text-white font-weight-light">Buy our Boxes</h3>
+        </div>
+        <div style="background-color: #1F2251; padding:30px;" class="row">
+          <p>
+            <b>• Scan the QR Code</b> <br>
+            QR CODE
+            <br><br>
+            Send us INR 300 by Google Pay in the above id. <br>
+            Enter the screenshot of your payment or the UPI Transaction ID 
+            (12 digit code, that looks like 03********** ) into the form below.
+            <br><br>
+            <b>• Payment Form </b> <br>
+            FORM
+            <br><br>
+            <b>  • Text/Email us for Payment related Queries! </b> <br>
+            Email ID: greymatterescaperooms@gmail.com  <br>
+            Phone: +91 9019450546  <br>
+            (Drop a message with your name, to recieve a call back)           
+            <br>
+          </p>
+    
+        </div>
+      </div>
+<br><br>
+      <div>
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card card-coin card-plain">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <h4 class="text-uppercase">Player 1</h4>
+                      <span> </span>
+                      <hr class="line-primary" />
+                      <div class="btn btn-primary btn-simple">
+                        <a [routerLink]="['/classicgamepage1']" target="_blank">
+
+                          <strong>Start Game</strong></a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-coin card-plain">
+
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <h4 class="text-uppercase">Player 2</h4>
+                      <span></span>
+                      <hr class="line-success" />
+                      <div class="btn btn-success btn-simple">
+                        <a [routerLink]="['/classicgamepage2']" target="_blank"><strong>Start Game</strong></a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-coin card-plain">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <h4 class="text-uppercase">Player 3</h4>
+                      <span> </span>
+                      <hr class="line-info" />
+                      <div class="btn btn-info btn-simple">
+                        <a [routerLink]="['/classicgamepage3']" target="_blank"><strong>Start Game</strong></a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div>
+        <!--Reviews-->
+        
+
+
+        <div>
+          <h3 class="text-white font-weight-light">Customer Reviews</h3>
+        </div>
+        <div style="background-color: #1F2251; padding:30px;" class="row">
+          <p>
+            <b>• Team Name | Box name</b> <br>
+            Best Game!
+               <br><br>            
+          </p>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!--
     <img class="path" src="assets/img/path3.png" />
 
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <hr class="line-info" />
-
          instructions on zoom
         </div>
         <br><br>
@@ -143,11 +278,9 @@
              
             </div>
            </div>
-         
-
-        
+            
   
-</div>
+       </div>
 
       <div class="row" *ngIf="isApproved">
         <div class="col-md-4">
@@ -167,25 +300,7 @@
               </div>
              
             </div>
-<!--
-            <div class="card-footer text-center ">
 
-              <input
-                class="form-control"
-                placeholder="code"
-                type="text"
-                (focus)="focus = true"
-                (blur)="focus = false"
-                #player1
-               
-              />             
-           
-               <button type="button" (click)="checkPlayerCode(player1.value, 'playerOne');" class="btn btn-primary btn-simple">Play</button>
-               <div *ngIf="isVerified" class="btn btn-primary btn-simple">
-                <a [routerLink]="['/classicgamepage']" target="_blank"><strong>Start Game</strong></a>
-             </div>
-            </div>
-          -->
           </div>
         </div>
         <div class="col-md-4">
@@ -204,23 +319,7 @@
               </div>
              
             </div>
-            <!--
-            <div class="card-footer text-center">
-             
-              <input
-                class="form-control"
-                placeholder="code"
-                type="text"
-                (focus)="focus = false"
-                (blur)="focus = true"
-                #player2
-              
-              />             
-               
-               <button type="button" (click)="checkPlayerCode(player2.value, 'playerTwo');" class="btn btn-success btn-simple">Play</button>
-        
-            </div>
-          -->
+           
           </div>
         </div>
         <div class="col-md-4">
@@ -238,23 +337,7 @@
               </div>
             
             </div>
-             <!--
-            <div class="card-footer text-center">
-             
-              <input
-                class="form-control"
-                placeholder="code"
-                type="text"
-                (focus)="focus = false"
-                (blur)="focus = true"
-                #player3
-             
-              />             
            
-               <button type="button" (click)="checkPlayerCode(player3.value, 'playerThree');" class="btn btn-info btn-simple">Play</button>
-        
-            </div>
-          -->
           </div>
         </div>
       </div>
@@ -262,7 +345,8 @@
         Please enter correct code
       </div>
     </div>
-  </section>
- 
-</div>
 
+  -->
+
+
+</div>

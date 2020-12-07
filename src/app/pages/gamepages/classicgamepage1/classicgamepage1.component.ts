@@ -81,7 +81,7 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
   }
 
   expandPiece(piece) {
-    if (piece == 'safe') { this.showSafe = true; }
+   
     //////////////// delete above lon
 
     if (this.p1_clues == true) {
