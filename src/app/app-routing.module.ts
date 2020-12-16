@@ -12,6 +12,7 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { ClassicboxComponent } from "./pages/boxes/classicbox/classicbox.component";
+import { PyramidboxComponent } from "./pages/boxes/pyramidbox/pyramidbox.component";
 import { ClassicgamepageComponent } from "./pages/gamepages/classicgamepage/classicgamepage.component";
 import { ClassicgamepageComponent1 } from "./pages/gamepages/classicgamepage1/classicgamepage1.component";
 import { ClassicgamepageComponent2 } from "./pages/gamepages/classicgamepage2/classicgamepage2.component";
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: "profile", component: ProfilepageComponent },
   { path: "register", component: RegisterpageComponent },
   { path: "landing", component: LandingpageComponent },
-  { path: "classicbox", component: ClassicboxComponent },
+  { path: "classicbox", component: ClassicboxComponent },  
+  { path: "pyramidbox", component: PyramidboxComponent },
   { path: "classicgamepage", component: ClassicgamepageComponent },
   { path: "classicgamepage1", component: ClassicgamepageComponent1 },
   { path: "classicgamepage2", component: ClassicgamepageComponent2 },

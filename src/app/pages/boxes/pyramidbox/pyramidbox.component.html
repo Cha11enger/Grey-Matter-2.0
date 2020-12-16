@@ -2,7 +2,7 @@
   <div class="container">
     <div class="navbar-translate">
       <a class="navbar-brand" placement="bottom" [routerLink]="['/home']" target="_blank" tooltip="Coded by Beneta">
-        <span>Grey Matter Escape Rooms •</span> Classic Box
+        <span>Grey Matter Escape Rooms •</span> Pyramid Box
       </a>
       <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler"
         [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
@@ -59,21 +59,18 @@
 
   <div class="section">
     <div class="container">
-      <h1 class="text-white text-center font-weight-light">The Classic Box</h1>
+      <h1 class="text-white text-center font-weight-light">The Pyramid Box</h1>
 
       <div >
         <div class="row justify-content-between align-items-center">
           <div class="col-lg-5 mb-5 mb-lg-0">
             <p class="text-white mt-4">
               <b>Storyline & Game details: </b><br><br>
-              Three best friends, set out on a road trip, find a huge abandoned mansion in the forest!
-              <br>While exploring the colossal mansion they go separate ways into the Library, Garrage and Kitchen Bar, only
-              to find
-              themselves locked up!<br>
-              Will they open the Safe that holds the Key to Escape ?!
+              Are you afraid of waking up the evil mummy ? <br>
+              Three archaeologists discover mysterious items during an excavation. Will they inadvertently wake up the spirits locked up underneath ?<br><br>
+                           <br>
               <br>
-              <br>
-              The Classic box consists of a plethora of labyrinths, mazes and puzzles that only the most intelligent and
+              The Pyramid box consists of a plethora of labyrinths, mazes and puzzles that only the most intelligent and
               persistent of competitors can survive !
               <br><br>
 
@@ -88,13 +85,13 @@
           <div class="col-lg-6">
             <carousel [showIndicators]="false">
               <slide>
-                <img alt="First slide" class="d-block w-100" src="assets/classic/p1_bar.png" />
+                <img alt="First slide" class="d-block w-100" src="assets/pyramid/p1.png" />
               </slide>
               <slide>
-                <img alt="Second slide" class="d-block w-100" src="assets/classic/p2_library.png" />
+                <img alt="Second slide" class="d-block w-100" src="assets/pyramid/p2.png" />
               </slide>
               <slide>
-                <img alt="Third slide" class="d-block w-100" src="assets/classic/p3_garrage.png" />
+                <img alt="Third slide" class="d-block w-100" src="assets/pyramid/p3.png" />
               </slide>
             </carousel>
           </div>
@@ -241,113 +238,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-  <!--
-    <img class="path" src="assets/img/path3.png" />
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <hr class="line-info" />
-         instructions on zoom
-        </div>
-        <br><br>
-        
-          <div class="card card-coin card-plain">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h2>
-                    Enter Team Code recieved            
-                  </h2>
-                  <hr class="line-primary" />
-                  <input
-                  class="form-control"
-                  placeholder="teamcode"
-                  type="text"
-                  (focus)="focus = true"
-                  (blur)="focus = false"
-                  #teamcode
-                       />
-                  <button type="button" (click)="checkTeamCode(teamcode.value, 'classic');" class="btn btn-primary btn-simple">Play</button>
-
-                </div>
-              </div>
-             
-            </div>
-           </div>
-            
-  
-       </div>
-
-      <div class="row" *ngIf="isApproved">
-        <div class="col-md-4">
-          <div class="card card-coin card-plain">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase">Player 1</h4>
-                  <span> </span>
-                  <hr class="line-primary" />
-                  <div class="btn btn-primary btn-simple">
-                    <a [routerLink]="['/classicgamepage1']" target="_blank" >
-                      
-                      <strong>Start Game</strong></a>
-                 </div>
-                </div>
-              </div>
-             
-            </div>
-
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-coin card-plain">
-            
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase">Player 2</h4>
-                  <span></span>
-                  <hr class="line-success" />
-                  <div class="btn btn-success btn-simple">
-                    <a [routerLink]="['/classicgamepage2']" target="_blank"><strong>Start Game</strong></a>
-                 </div>
-                </div>
-              </div>
-             
-            </div>
-           
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card card-coin card-plain">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase">Player 3</h4>
-                  <span> </span>
-                  <hr class="line-info" />
-                  <div class="btn btn-info btn-simple">
-                    <a [routerLink]="['/classicgamepage3']" target="_blank"><strong>Start Game</strong></a>
-                 </div>
-                </div>
-              </div>
-            
-            </div>
-           
-          </div>
-        </div>
-      </div>
-      <div class="row" *ngIf="isError"> 
-        Please enter correct code
-      </div>
-    </div>
-
-  -->
 
 
 </div>

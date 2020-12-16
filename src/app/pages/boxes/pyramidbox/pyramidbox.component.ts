@@ -7,10 +7,10 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: "app-classicbox",
-  templateUrl: "classicbox.component.html"
+  selector: "app-pyramidbox",
+  templateUrl: "pyramidbox.component.html"
 })
-export class ClassicboxComponent implements OnInit, OnDestroy {
+export class PyramidboxComponent implements OnInit, OnDestroy {
   isCollapsed = true;
   returnText = 'hi';
   isApproved = false;
@@ -27,24 +27,16 @@ export class ClassicboxComponent implements OnInit, OnDestroy {
   constructor(private http: HttpClient, public indexservice: IndexService, private route: ActivatedRoute) {
     this.isVerified = false;
 
-  //  this.route.queryParams.subscribe(params => {
-   //   this.boxParam = params['box'];
- //    });
 
 
   }
-  // var database = firebase.database();
+ 
 
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
   
-   /*
-    if(this.boxParam == 'classic'){
-      this.boxName = "Classic Box";
-      this.isClassic = true;
-    }
-    */
+
    
   }
   ngOnDestroy() {
@@ -53,24 +45,7 @@ export class ClassicboxComponent implements OnInit, OnDestroy {
   }
 
  
-  /*
-  checkPlayerCode(code, player) {
-    console.log(code, player);
-    if (code !== "") {
-      console.log("check backend");
-
-      if (this.defaultUserCodes.indexOf(code) !== -1) {
-        console.log("player verified ");
-        this.isVerified = true;
-      } else {
-        console.log(" not verified ");
-        this.isVerified = false;
-      }
-      this.backendCall(code, player)
-
-    }
-  }
-*/
+ 
   checkTeamCode(code, game) {
     /// verify code
     this.indexservice.fireservice.collection('player keys').doc(code).valueChanges()
@@ -112,25 +87,5 @@ export class ClassicboxComponent implements OnInit, OnDestroy {
 
   }
 
-
-/*
-  backendCall(code, player) {
-    //console.log(value.message);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    //  let options = new RequestOptions({ headers: headers });
-    let body = JSON.stringify(code, player);
-    this.http.post('127.0.0.1/myProject/callbackend.php', body)
-      .subscribe({
-        next: data => {   ///suceesss
-          //  this.returnText = data;
-        },
-        error: error => {           ////error
-          //  this.returnText = error.message;
-          console.log(this.returnText);
-        }
-      });
-
-  }
-*/
 
 }

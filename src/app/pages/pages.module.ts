@@ -22,6 +22,7 @@ import { ProfilepageComponent } from "./examples/profilepage/profilepage.compone
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { ClassicboxComponent } from "./boxes/classicbox/classicbox.component";
+import { PyramidboxComponent } from "./boxes/pyramidbox/pyramidbox.component";
 import { ClassicgamepageComponent } from "./gamepages/classicgamepage/classicgamepage.component";
 import { ClassicgamepageComponent1 } from "./gamepages/classicgamepage1/classicgamepage1.component";
 import { ClassicgamepageComponent2 } from "./gamepages/classicgamepage2/classicgamepage2.component";
@@ -99,6 +100,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
     RegisterpageComponent,
     LandingpageComponent,
     ClassicboxComponent,
+    PyramidboxComponent,
     ClassicgamepageComponent,
     ClassicgamepageComponent1,
     ClassicgamepageComponent2,
@@ -110,6 +112,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
     RegisterpageComponent,
     LandingpageComponent,
     ClassicboxComponent,
+    PyramidboxComponent,
     ClassicgamepageComponent,
     ClassicgamepageComponent1,
     ClassicgamepageComponent2,

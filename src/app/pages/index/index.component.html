@@ -1,51 +1,23 @@
-<nav
-  class="navbar navbar-expand-lg fixed-top navbar-transparent"
-  color-on-scroll="100"
-  id="navbar-top"
->
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="100" id="navbar-top">
   <div class="container">
     <div class="navbar-translate">
-      <a
-        class="navbar-brand"
-        placement="bottom"
-        [routerLink]="['/home']"
-        target="_blank"
-       
-      >
+      <a class="navbar-brand" placement="bottom" [routerLink]="['/home']" target="_blank">
         <span>Grey Matter 2.0 •</span> Online Escape Rooms
       </a>
-      <button
-        aria-controls="navigation-index"
-        aria-label="Toggle navigation"
-        class="navbar-toggler navbar-toggler"
-        [attr.aria-expanded]="!isCollapsed"
-        (click)="isCollapsed = !isCollapsed"
-        id="navigation"
-        type="button"
-      >
+      <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler"
+        [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
         <span class="navbar-toggler-bar bar1"> </span>
         <span class="navbar-toggler-bar bar2"> </span>
         <span class="navbar-toggler-bar bar3"> </span>
       </button>
     </div>
-    <div
-      class="navbar-collapse justify-content-end"
-      [collapse]="isCollapsed"
-      id="navigation"
-    >
+    <div class="navbar-collapse justify-content-end" [collapse]="isCollapsed" id="navigation">
       <div class="navbar-collapse-header">
         <div class="row">
           <div class="col-6 collapse-brand"></div>
           <div class="col-6 collapse-close text-right">
-            <button
-              aria-controls="navigation-index"
-              aria-label="Toggle navigation"
-              class="navbar-toggler"
-              [attr.aria-expanded]="!isCollapsed"
-              (click)="isCollapsed = !isCollapsed"
-              id="navigation"
-              type="button"
-            >
+            <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler"
+              [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
               <i class="tim-icons icon-simple-remove"> </i>
             </button>
           </div>
@@ -78,35 +50,26 @@
           </a>
         </li>  -->
         <li class="nav-item p-0">
-          <a
-            class="nav-link"
-            href="https://www.instagram.com"
-            placement="bottom"
-            target="_blank"
-            tooltip="Follow us on Instagram"
-          >
+          <a class="nav-link" href="https://www.instagram.com" placement="bottom" target="_blank"
+            tooltip="Follow us on Instagram">
             <i class="fab fa-instagram"> </i>
             <p class="d-lg-none d-xl-none">Instagram</p>
           </a>
         </li>
         <li class="dropdown nav-item" dropdown>
-          <a
-            class="dropdown-toggle nav-link dropdown-toggle"
-            data-toggle="dropdown"
-            dropdownToggle
-            href="javascript:void(0)"
-          >
+          <a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" dropdownToggle
+            href="javascript:void(0)">
             <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Contact Us
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
-            <p class="dropdown-item" >
-             
+            <p class="dropdown-item">
+
               <i class="tim-icons icon-paper"> </i> greymatterescaperooms@gmail.com
-          </p>
-          <p class="dropdown-item" >
-            <i class="tim-icons icon-single-02"> </i> +91 9019450546
-          </p>
-              <!--
+            </p>
+            <p class="dropdown-item">
+              <i class="tim-icons icon-single-02"> </i> +91 9019450546
+            </p>
+            <!--
             <a
               class="dropdown-item"
               href="https://demos.creative-tim.com/blk-design-system-angular/#/documentation/overview"
@@ -151,8 +114,8 @@
     <div class="squares square7"></div>
     <div class="container">
 
-      <div >
-        <img class="titlebox content-center brand cont" src="assets/img/logomain4.png"    />
+      <div>
+        <img class="titlebox content-center brand cont" src="assets/img/logomain4.png" />
       </div>
 
 
@@ -174,130 +137,167 @@
     <div class="section section-basic" id="basic-elements">
       <img class="path" src="assets/img/path1.png" />
 
-        <!-- first desc -->
+      <!-- first desc -->
 
 
       <div class="section section-tabs">
         <div class="container">
-          <div><h3 class="mb-3 text-white font-weight-light">Lets peep inside the box!</h3></div>
+          <div>
+            <h3 class="mb-3 text-white font-weight-light">Lets peep inside the box!</h3>
+          </div>
           <div class="row">
-              <div class="card" >
-                <div class="card-header">
-                  <tabset class="nav-tabs-danger">
-                    <tab>
-                      <ng-template tabHeading>
-                        <i class="tim-icons icon-spaceship"> </i> How to Play
-                      </ng-template>
-                      <p>
-                        Grey Matter Escape Rooms bring the excitement & mystery of an escape room straight to your living room. <br />
-                        Our escape boxes bring you an amazing Multiplayer Escape Room experience to play with friends online! 
-                        <br><br>
-                        Get you team ready! <br>
-                        Purchase our Escape Box <br>
-                        And hop into a Video Call with your friends to discuss your Game Plan!
-                        <br />
-                        <br>
-                        Let's get your brain cells tingling!
-                        <br><br>
-                      </p>
-                    </tab>
-                    <tab>
-                      <ng-template tabHeading>
-                        <i class="tim-icons icon-settings-gear-63"> </i> Teams & Boxes
-                      </ng-template>
-                      <p>
-                        The number of players for each box is mentioned. It is usually in teams of 2-4 players<br />
-                        Once you choose a box, and make your payment, 
-                        upon payment confirmation, an email with the login codes for all players will be sent to the submitted email in 5-6 hours time.
-                       <br />
-                        You dont have to download any software, this is a web-browser based game.                        
-                        <br><br>
-                        Play anytime, any where all across the world ! 
-                        <br><br>
-                      </p>
-                    </tab>
-                    <tab>
-                      <ng-template tabHeading>
-                        <i class="tim-icons icon-bag-16"> </i> System Requirements
-                      </ng-template>
-                      <p>
-                        You dont have to download any software, this is a web-browser based game. We recommend Laptop/PC with Chrome browser for best experience. <br>
-                        It can be accessed via Computer, Tablet and Phone, but we recommend using a computer for best gaming experience. <br>
-                        You can access the game for 48 hours after your first login<br />
-                        <br />
-                        Text us for queries!
-                        <br /><br />
-                      </p>
-                    </tab>
-                  </tabset>
-                </div>
+            <div class="card">
+              <div class="card-header">
+                <tabset class="nav-tabs-danger">
+                  <tab>
+                    <ng-template tabHeading>
+                      <i class="tim-icons icon-spaceship"> </i> How to Play
+                    </ng-template>
+                    <p>
+                      Grey Matter Escape Rooms bring the excitement & mystery of an escape room straight to your living
+                      room. <br />
+                      Our escape boxes bring you an amazing Multiplayer Escape Room experience to play with friends
+                      online!
+                      <br><br>
+                      Get you team ready! <br>
+                      Purchase our Escape Box <br>
+                      And hop into a Video Call with your friends to discuss your Game Plan!
+                      <br />
+                      <br>
+                      Let's get your brain cells tingling!
+                      <br><br>
+                    </p>
+                  </tab>
+                  <tab>
+                    <ng-template tabHeading>
+                      <i class="tim-icons icon-settings-gear-63"> </i> Teams & Boxes
+                    </ng-template>
+                    <p>
+                      The number of players for each box is mentioned. It is usually in teams of 2-4 players<br />
+                      Once you choose a box, and make your payment,
+                      upon payment confirmation, an email with the login codes for all players will be sent to the
+                      submitted email in 5-6 hours time.
+                      <br />
+                      You dont have to download any software, this is a web-browser based game.
+                      <br><br>
+                      Play anytime, any where all across the world !
+                      <br><br>
+                    </p>
+                  </tab>
+                  <tab>
+                    <ng-template tabHeading>
+                      <i class="tim-icons icon-bag-16"> </i> System Requirements
+                    </ng-template>
+                    <p>
+                      You dont have to download any software, this is a web-browser based game. We recommend Laptop/PC
+                      with Chrome browser for best experience. <br>
+                      It can be accessed via Computer, Tablet and Phone, but we recommend using a computer for best
+                      gaming experience. <br>
+                      You can access the game for 48 hours after your first login<br />
+                      <br />
+                      Text us for queries!
+                      <br /><br />
+                    </p>
+                  </tab>
+                </tabset>
               </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- desc 2 = products-->
-  
+
       <div class="space-50"></div>
       <div id="images">
-  
-
-<!-- -->
-
-<div class="section">
-  <div class="container">
-    <div ><h3 class="text-white font-weight-light">Our Boxes</h3></div>
-    <div class="row justify-content-between align-items-center">
-      <div class="col-lg-5 mb-5 mb-lg-0">
-        <h1 class="text-white font-weight-light">The Classic Box</h1>
-        <p class="text-white mt-4">
-          Get ready to tease and torture the grey cells in your brain. <br>
-          Three best friends, separated by time, each an expert in their own fields. Will they get together and save the Queen of Hearts on time?<br>
-          The Classic box consists of a plethora of labyrinths, mazes and puzzles that only the most intelligent and persistent of competitors can survive !<br>
-          <br><br>
-          3 player game<br>
-          Difficultly level - Medium<br>     
-          
-        </p>
-        <a [routerLink]="['/classicbox']" [queryParams]="{box: 'classic'}" target="_blank">
-          <button class="btn btn-danger" >
-          Details !
-      </button>
-        </a>
-      
-        
-      </div>
-      <div class="col-lg-6">
-        <carousel [showIndicators]="false">
-          <slide>
-            <img
-              alt="First slide"
-              class="d-block w-100"
-              src="assets/classic/p1_bar.png"
-            />
-          </slide>
-          <slide>
-            <img
-              alt="Second slide"
-              class="d-block w-100"
-              src="assets/classic/p2_library.png"
-            />
-          </slide>
-          <slide>
-            <img
-              alt="Third slide"
-              class="d-block w-100"
-              src="assets/classic/p3_garrage.png"
-            />
-          </slide>
-        </carousel>
-      </div>
-    </div>
-  </div>
-</div>
 
 
-<!--
+        <!-- -->
+
+        <div class="section">
+          <div class="container">
+            <div>
+              <h3 class="text-white font-weight-light">Our Boxes</h3>
+            </div>
+            <div class="row justify-content-between align-items-center">
+              <div class="col-lg-5 mb-5 mb-lg-0">
+                <h1 class="text-white font-weight-light">The Classic Box</h1>
+                <p class="text-white mt-4">
+                  Get ready to tease and torture the grey cells in your brain. <br>
+                  Three best friends, set out on a road trip, find a huge abandoned mansion in the forest! While exploring the colossal mansion they go separate ways, only to find themselves locked up!<br>
+              Will they open the Safe that holds the Key to Escape ?! <br><br>
+                  The Classic box consists of a plethora of labyrinths, mazes and puzzles that only the most intelligent
+                  and persistent of competitors can survive !<br>
+                  <br><br>
+                  3 player game<br>
+                  Difficultly level - Medium<br>
+
+                </p>
+                <a [routerLink]="['/classicbox']" [queryParams]="{box: 'classic'}" target="_blank">
+                  <button class="btn btn-danger">
+                    Details !
+                  </button>
+                </a>
+
+
+              </div>
+              <div class="col-lg-6">
+                <carousel [showIndicators]="false">
+                  <slide>
+                    <img alt="First slide" class="d-block w-100" src="assets/classic/p1_bar.png" />
+                  </slide>
+                  <slide>
+                    <img alt="Second slide" class="d-block w-100" src="assets/classic/p2_library.png" />
+                  </slide>
+                  <slide>
+                    <img alt="Third slide" class="d-block w-100" src="assets/classic/p3_garrage.png" />
+                  </slide>
+                </carousel>
+              </div>
+            </div>
+
+            <br><br><br>
+            <div class="row justify-content-between align-items-center">
+             
+              <div class="col-lg-6">
+                <carousel [showIndicators]="false">
+                  <slide>
+                    <img alt="First slide" class="d-block w-100" src="assets/pyramid/p1.png" />
+                  </slide>
+                  <slide>
+                    <img alt="Second slide" class="d-block w-100" src="assets/pyramid/p2.png" />
+                  </slide>
+                  <slide>
+                    <img alt="Third slide" class="d-block w-100" src="assets/pyramid/p3.png" />
+                  </slide>
+                </carousel>
+              </div>
+              <div class="col-lg-5 mb-5 mb-lg-0">
+                <h1 class="text-white font-weight-light">The Pyramid Box</h1>
+                <p class="text-white mt-4">
+                  Are you afraid of waking up the evil mummy ? <br>
+                  Three archaeologists discover mysterious items during an excavation. Will they inadvertently wake up the spirits locked up underneath ?<br><br>
+                  The Pyramid box consists of a plethora of labyrinths, mazes and puzzles that only the most intelligent
+                  and persistent of competitors can survive !<br>
+                  <br><br>
+                  3 player game<br>
+                  Difficultly level - Medium<br>
+
+                </p>
+                <a [routerLink]="['/pyramidbox']"  target="_blank">
+                  <button class="btn btn-danger">
+                    Details !
+                  </button>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!--
   <div
       aria-hidden="true"
       aria-labelledby="myModalLabel"
@@ -354,38 +354,41 @@
       </div>
 </div>
 -->
-<!--
+        <!--
    LEADERBOARD SECTION
 -->
 
-      <div class="section section-tabs">
-        <div class="container">
-          <div ><h3 class="text-white font-weight-light">Leaderboard !</h3> <h4>Are you there yet?!</h4> </div>
-          <div class="row">
-              <div class="card" >
+        <div class="section section-tabs">
+          <div class="container">
+            <div>
+              <h3 class="text-white font-weight-light">Leaderboard !</h3>
+              <h4>Are you there yet?!</h4>
+            </div>
+            <div class="row">
+              <div class="card">
                 <div class="card-header">
                   <tabset class="nav-tabs-danger">
                     <tab>
                       <ng-template tabHeading>
-                         The Classic Box
+                        The Classic Box
                       </ng-template>
-                        <div class="container text-center center">
-                        <table class="table table-responsive table-striped scroll text-center  tableformat" >
-                            <tr >
-                              <th>Rank</th>
-                              <th>Team Name</th>
-                              <th>TIme (Minutes)</th>
-                            </tr>
-                         <tr *ngFor="let row of rows ; let i = index " >
-                              
-                              <td>{{i+1}}</td>
-                              <td>{{row.teamname}}</td>
-                              <td>{{row.time}}</td>
-                            </tr>
-                          </table>
-                          </div>
+                      <div class="container text-center center">
+                        <table class="table table-responsive table-striped scroll text-center  tableformat">
+                          <tr>
+                            <th>Rank</th>
+                            <th>Team Name</th>
+                            <th>TIme (Minutes)</th>
+                          </tr>
+                          <tr *ngFor="let row of rows ; let i = index ">
 
-                     <!--  <p>
+                            <td>{{i+1}}</td>
+                            <td>{{row.teamname}}</td>
+                            <td>{{row.time}}</td>
+                          </tr>
+                        </table>
+                      </div>
+
+                      <!--  <p>
                         Grey Matter Escape Rooms bring the excitement & mystery of an escape room straight to your living room. <br />
                         Our escape boxes bring you an amazing Escape Room experience to play online! <br>
                         Hop into a zoom call with your friends and get ready for an adrenaline filled ride!
@@ -397,7 +400,7 @@
                     </tab>
                     <tab>
                       <ng-template tabHeading>
-                       Box-2
+                        Box-2
                       </ng-template>
                       <p>
                         The number of players for each box is mentioned. It is usually in teams of 2-4 players<br />
@@ -405,17 +408,18 @@
                         <br />
                         You dont have to download any software, this is a web-browser based game.
                         <br><br>
-                        Play anytime, any where all across the world ! 
+                        Play anytime, any where all across the world !
                         <br><br>
                       </p>
                     </tab>
                     <tab>
                       <ng-template tabHeading>
-                     Box-3
+                        Box-3
                       </ng-template>
                       <p>
                         You dont have to download any software, this is a web-browser based game. <br>
-                        It can be access via Computer, Tablet and Phone, but we recommend using a computer for best gaming experience. <br>
+                        It can be access via Computer, Tablet and Phone, but we recommend using a computer for best
+                        gaming experience. <br>
                         24/7 Access to games & immediate delivery available<br />
                         <br />
                         Text us for queries!
@@ -425,65 +429,56 @@
                   </tabset>
                 </div>
               </div>
+            </div>
           </div>
         </div>
-      </div>
 
-   <!--    <div class="container text-center">
+        <!--    <div class="container text-center">
 
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfIJwUZbjz6UyYsXl-ftmio4JcY7s5D9bBWCT4_8LHEkTmXwg/viewform?embedded=true" width="600" height="808" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
       </div>
  -->
 
- <div class="section">
-    <div class="container">
-      <div ><h3 class="text-white font-weight-light">Contact Us</h3></div>
-      <div  style="background-color: #1F2251;"   class="row">
-
-        <div class="col-md-6">
-          <div class="card card-plain">
-            <div class="card-header">
-              
-              <p class="info-title">Write to us</p>
+        <div class="section">
+          <div class="container">
+            <div>
+              <h3 class="text-white font-weight-light">Contact Us</h3>
             </div>
-            <div class="card-body">
-              <form ngNoForm action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfIJwUZbjz6UyYsXl-ftmio4JcY7s5D9bBWCT4_8LHEkTmXwg/formResponse" 
-              target="_blank" method="post">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label> Your Name </label>
-                      <input class="form-control" type="text" name="entry.2005620554" required/>
-                    </div>
+            <div style="background-color: #1F2251;" class="row">
+
+              <div class="col-md-6">
+                <div class="card card-plain">
+                  <div class="card-header">
+
+                    <p class="info-title">Write to us</p>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label> Phone Number</label>
-                      <input
-                        class="form-control"
-                        type="text"
-                        name="entry.1166974658"
-                       
-                    
-                      />
-                     
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                       <label> Email address </label>
-                      <input
-                        class="form-control"
-                       
-                        type="email"
-                        name = "emailAddress"
-                        required
-                      />
-                    </div>
-                  </div>
-                 <!--  <div class="col-md-6">
+                  <div class="card-body">
+                    <form ngNoForm
+                      action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfIJwUZbjz6UyYsXl-ftmio4JcY7s5D9bBWCT4_8LHEkTmXwg/formResponse"
+                      target="_blank" method="post">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label> Your Name </label>
+                            <input class="form-control" type="text" name="entry.2005620554" required />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label> Phone Number</label>
+                            <input class="form-control" type="text" name="entry.1166974658" />
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label> Email address </label>
+                            <input class="form-control" type="email" name="emailAddress" required />
+                          </div>
+                        </div>
+                        <!--  <div class="col-md-6">
                     <div class="form-group">
                       <label> Company </label>
                       <input
@@ -493,59 +488,50 @@
                       />
                     </div>
                   </div> -->
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label> Message </label>
-                      <input
-                        class="form-control"
-                        placeholder="Hello there!"
-                        type="text"
-                        name="entry.839337160"
-                        required
-                      />
-                    </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label> Message </label>
+                            <input class="form-control" placeholder="Hello there!" type="text" name="entry.839337160"
+                              required />
+                          </div>
+                        </div>
+                      </div>
+                      <button class="btn btn-danger mr-1 float-right" placement="right" type="submit">
+                        Submit
+                      </button>
+                    </form>
                   </div>
                 </div>
-                <button
-                  class="btn btn-danger mr-1 float-right"   
-                  placement="right"
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-        
-        <div style="padding: 75px;">
-          <div class="info" style="padding: 0px;">
-          <div class="icon icon-danger">
-            <i class="tim-icons icon-square-pin"> </i>
-          </div>
-          <div class="description">
-            <p class="info-title">Email us</p>
-            <p>
-              greymatterescaperooms@gmail.com
-            </p>
-          </div>
-        </div>
-          <div class="info" style="padding-top: 20px;">
-          <div class="icon icon-danger">
-            <i class="tim-icons icon-mobile"> </i>
-          </div>
-          <div class="description">
-            <p class="info-title">WhatsApp us</p>
-            <p>
-              +91 9019450546
-            </p>
-          </div>
-        </div>
+              </div>
 
-        </div>
-<!--
+              <div style="padding: 75px;">
+                <div class="info" style="padding: 0px;">
+                  <div class="icon icon-danger">
+                    <i class="tim-icons icon-square-pin"> </i>
+                  </div>
+                  <div class="description">
+                    <p class="info-title">Email us</p>
+                    <p>
+                      greymatterescaperooms@gmail.com
+                    </p>
+                  </div>
+                </div>
+                <div class="info" style="padding-top: 20px;">
+                  <div class="icon icon-danger">
+                    <i class="tim-icons icon-mobile"> </i>
+                  </div>
+                  <div class="description">
+                    <p class="info-title">WhatsApp us</p>
+                    <p>
+                      +91 9019450546
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+              <!--
         <div class="col-md-4 ml-auto">
           <div class="info info-horizontal">
             <div class="icon icon-danger">
@@ -570,12 +556,12 @@
             </div>
           </div>
         </div>   -->
-      </div>
-</div>
+            </div>
+          </div>
 
 
 
-<!--   <form ngNoForm  action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfIJwUZbjz6UyYsXl-ftmio4JcY7s5D9bBWCT4_8LHEkTmXwg/formResponse">
+          <!--   <form ngNoForm  action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfIJwUZbjz6UyYsXl-ftmio4JcY7s5D9bBWCT4_8LHEkTmXwg/formResponse">
   <label for="fname">First name:</label><br>
   <input type="text" name="entry.2005620554" required><br>
   <label for="lname">Number:</label><br>
@@ -593,7 +579,7 @@
 
 
 
- <!-- <div class="section">
+          <!-- <div class="section">
   <div class="container text-center">
     <div class="title"><h3>Classic Leaderboard !</h3><h4>Are you there yet?!</h4></div>
     
@@ -643,7 +629,8 @@ tr td:first-child:before
   </div>
 </div>
 
- --> --><!--   
+ --> -->
+          <!--   
 
 
 
@@ -985,12 +972,12 @@ tr td:first-child:before
       </div> 
         -->
 
-    </div>
+        </div>
 
-    <div class="section section-navbars">
-      <img class="path" src="assets/img/path3.png" />
+        <div class="section section-navbars">
+          <img class="path" src="assets/img/path3.png" />
 
-       <!-- 
+          <!-- 
 
       <div class="container" id="menu-dropdown">
         <div class="row">
@@ -1537,12 +1524,12 @@ tr td:first-child:before
         </div>
       </div>
        -->
-    </div>
-    <div class="section section-pagination">
-      <img class="path" src="assets/img/path4.png" />
+        </div>
+        <div class="section section-pagination">
+          <img class="path" src="assets/img/path4.png" />
 
-      <img class="path path1" src="assets/img/path5.png" />
-    <!--  
+          <img class="path path1" src="assets/img/path5.png" />
+          <!--  
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -1675,12 +1662,12 @@ tr td:first-child:before
         </alert>
       </div>
       -->
-    </div>
-    <div class="section section-typo">
-      <img class="path" src="assets/img/path1.png" />
+        </div>
+        <div class="section section-typo">
+          <img class="path" src="assets/img/path1.png" />
 
-      <img class="path path1" src="assets/img/path3.png" />
- <!--  
+          <img class="path path1" src="assets/img/path3.png" />
+          <!--  
       <div class="container">
         <h3 class="title">Typography</h3>
         <div id="typography">
@@ -1833,12 +1820,12 @@ tr td:first-child:before
         </div>
       </div>
       -->
-    </div>
-    <div class="section section-javascript" id="javascriptComponents">
-      <img class="path" src="assets/img/path5.png" />
+        </div>
+        <div class="section section-javascript" id="javascriptComponents">
+          <img class="path" src="assets/img/path5.png" />
 
-      <img class="path path1" src="assets/img/path5.png" />
- <!--  
+          <img class="path path1" src="assets/img/path5.png" />
+          <!--  
       <div class="container">
         <h3 class="title mb-5">Javascript components</h3>
         <h4 class="mb-5">Modal</h4>
@@ -2035,10 +2022,10 @@ tr td:first-child:before
         </div>
       </div>
       -->
-    </div>
-    <div class="section section-nucleo-icons">
-      <img class="path" src="assets/img/path3.png" />
- <!--  
+        </div>
+        <div class="section section-nucleo-icons">
+          <img class="path" src="assets/img/path3.png" />
+          <!--  
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-12">
@@ -2192,10 +2179,10 @@ tr td:first-child:before
         </div>
       </div>
       -->
-    </div>
-    <div class="section section-examples" data-background-color="black">
-      <img class="path" src="assets/img/path1.png" />
- <!--  
+        </div>
+        <div class="section section-examples" data-background-color="black">
+          <img class="path" src="assets/img/path1.png" />
+          <!--  
       <div class="space-50"></div>
       <div class="container text-center">
         <div class="row">
@@ -2232,10 +2219,10 @@ tr td:first-child:before
         </div>
       </div>
       -->
-    </div>
-    <div class="section section-download" data-background-color="black" #target>
-      <img class="path" src="assets/img/path1.png" />
- <!-- 
+        </div>
+        <div class="section section-download" data-background-color="black" #target>
+          <img class="path" src="assets/img/path1.png" />
+          <!-- 
       <div class="container">
         <div class="row justify-content-md-center">
           <div class="text-center col-md-12 col-lg-8">
@@ -2497,9 +2484,9 @@ tr td:first-child:before
     </div>
   </div>
     -->
-  <footer class="footer">
-    <div class="container">
-      <!--
+          <footer class="footer">
+            <div class="container">
+              <!--
       <div class="row">
         <div class="col-md-3"><h1 class="title">BLK•</h1></div>
         <div class="col-md-3">
@@ -2570,8 +2557,8 @@ tr td:first-child:before
         </div>
       </div>
       -->
-    </div>
-    
-  </footer>
-   
-</div>
+            </div>
+
+          </footer>
+
+        </div>
