@@ -18,6 +18,10 @@ import { ClassicgamepageComponent1 } from "./pages/gamepages/classicgamepage1/cl
 import { ClassicgamepageComponent2 } from "./pages/gamepages/classicgamepage2/classicgamepage2.component";
 import { ClassicgamepageComponent3 } from "./pages/gamepages/classicgamepage3/classicgamepage3.component";
 
+import { CursedgamepageComponent1 } from "./pages/gamepages/cursedgamepage1/cursedgamepage1.component";
+import { CursedgamepageComponent2 } from "./pages/gamepages/cursedgamepage2/cursedgamepage2.component";
+import { CursedgamepageComponent3 } from "./pages/gamepages/cursedgamepage3/cursedgamepage3.component";
+
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
@@ -27,11 +31,14 @@ const routes: Routes = [
   { path: "register", component: RegisterpageComponent },
   { path: "landing", component: LandingpageComponent },
   { path: "classicbox", component: ClassicboxComponent },  
-  { path: "pyramidbox", component: PyramidboxComponent },
+  { path: "cursedbox", component: PyramidboxComponent },
   { path: "classicgamepage", component: ClassicgamepageComponent },
   { path: "classicgamepage1", component: ClassicgamepageComponent1 },
   { path: "classicgamepage2", component: ClassicgamepageComponent2 },
-  { path: "classicgamepage3", component: ClassicgamepageComponent3 }
+  { path: "classicgamepage3", component: ClassicgamepageComponent3 },
+  { path: "cursedgamepage1", component: CursedgamepageComponent1 },
+  { path: "cursedgamepage2", component: CursedgamepageComponent2 },
+  { path: "cursedgamepage3", component: CursedgamepageComponent3 }
 ];
 
 @NgModule({

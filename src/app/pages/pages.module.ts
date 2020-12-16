@@ -28,6 +28,10 @@ import { ClassicgamepageComponent1 } from "./gamepages/classicgamepage1/classicg
 import { ClassicgamepageComponent2 } from "./gamepages/classicgamepage2/classicgamepage2.component";
 import { ClassicgamepageComponent3 } from "./gamepages/classicgamepage3/classicgamepage3.component";
 
+import { CursedgamepageComponent1 } from "./gamepages/cursedgamepage1/cursedgamepage1.component";
+import { CursedgamepageComponent2 } from "./gamepages/cursedgamepage2/cursedgamepage2.component";
+import { CursedgamepageComponent3 } from "./gamepages/cursedgamepage3/cursedgamepage3.component";
+
 import { HttpClientModule } from '@angular/common/http';
 
 import {A11yModule} from '@angular/cdk/a11y';
@@ -104,7 +108,10 @@ import {OverlayModule} from '@angular/cdk/overlay';
     ClassicgamepageComponent,
     ClassicgamepageComponent1,
     ClassicgamepageComponent2,
-    ClassicgamepageComponent3
+    ClassicgamepageComponent3,
+    CursedgamepageComponent1,
+    CursedgamepageComponent2,
+    CursedgamepageComponent3
   ],
   exports: [
     IndexComponent,
@@ -117,6 +124,9 @@ import {OverlayModule} from '@angular/cdk/overlay';
     ClassicgamepageComponent1,
     ClassicgamepageComponent2,
     ClassicgamepageComponent3,
+    CursedgamepageComponent1,
+    CursedgamepageComponent2,
+    CursedgamepageComponent3,
     A11yModule,
     ClipboardModule,
     CdkStepperModule,

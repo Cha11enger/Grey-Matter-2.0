@@ -33,7 +33,7 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
   hint2 = false;
   hint3 = false;
   hintsection = false;
-
+  teamName = "";
   showSafe = false;
   constructor(private http: HttpClient, public indexService:IndexService) {
 
@@ -132,6 +132,7 @@ export class ClassicgamepageComponent3 implements OnInit, OnDestroy {
       if (doc.exists) {
         console.log("Document data:", doc.data());
           isTeam = true;
+          this.teamName = code;
       var result = doc.data();
           if (result['pthree'] == game) {
             isPlayer = true;

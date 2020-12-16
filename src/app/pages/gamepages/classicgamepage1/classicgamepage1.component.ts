@@ -43,7 +43,7 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
   hint3 = false;
   hintsection = false;
   arrow = false;
-  
+  teamName = "";  
 
   constructor(private http: HttpClient, public indexService: IndexService) {
 
@@ -108,19 +108,19 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
 
   // Added for Delay
 
-  async delay_off(ms: number) {
-    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.showBulb = false);
-  }
-  async delay_on(ms: number) {
-    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.showBulb = true);
-  }
+ // async delay_off(ms: number) {
+ //   await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.showBulb = false);
+//  }
+ // async delay_on(ms: number) {
+ //   await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.showBulb = true);
+//  }
 
   // Delay function ends here
 
   p1_sequence(seq) {
     this.sound.play();
     this.showBulb = true;
-    this.delay_off(200);
+   // this.delay_off(200);
     if (this.arrow == true) {
       if (seq == "6") { this.sequence = 1; }
       if (seq == "2") {
@@ -149,7 +149,7 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
       }
     }
     if (this.sequence == 6) {
-      this.delay_on(200);
+    //  this.delay_on(200);
       this.showBulb = true;
     }
   }
@@ -185,6 +185,7 @@ export class ClassicgamepageComponent1 implements OnInit, OnDestroy {
       if (doc.exists) {
         console.log("Document data:", doc.data());
           isTeam = true;
+          this.teamName = code;
           console.log(doc.data['pone']);
           console.log(doc.data()['pone']);
       var result = doc.data();

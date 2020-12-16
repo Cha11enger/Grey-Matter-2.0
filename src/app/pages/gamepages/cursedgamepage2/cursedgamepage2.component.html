@@ -1,0 +1,208 @@
+<div class="wrapper">
+
+  <div *ngIf='startPage'>
+    <!-- <img src="assets/classic/startpagetop.png" class="room ">
+   -->
+    <div class="startPage text-center">
+      <h3 style="margin-bottom: 2px;">CURSED BOX</h3>
+      <i class="text-primary">“It's hard to replace the Grey Matter that is inherent in every human being. No computer can do it quite that well yet.”
+      </i>  <br><br>
+      <h4 style="margin-bottom: 2px;">Player 2</h4>
+      
+      <div style="padding: 0px 140px 0px 140px; line-height: 30px;" class="text-left">
+        <br><br>
+
+        <h4 style="margin-bottom: 2px;">How to Play</h4>
+        <p>
+          ◆ Get you team ready to login at the same time!
+          <br>
+          ◆ Login using your Team Name and the unique Player 2 login code provided via email. We recommend playing in a
+          Laptop/PC.
+          <br>
+          ◆ Get into a Video call with your team to decide your Game Plan!
+          <br>
+          ◆ DO NOT share your screen with your teammates, you can describe it to them though!
+          <br>
+          ◆ The Hints button is available in the bottom left corner of your screen. Use only if absolutely necessary.
+          <br>
+          ◆ If you are stuck at any point, drop us an email or text for hints/issues.
+          <br>
+          ◆ Once any member of your team logs in, the clock starts ticking! Only the top teams will make it into out
+          leader board.
+          <br>
+          <br>
+    
+        </p>
+        <h4 style="margin-bottom: 2px;">Story Line</h4>
+        <p>
+          Three archaeologists discover mysterious items during an excavation.
+          As they explore the 2500 year old tomb of the great Amenemhat II, they find themselves locked in the chambers!
+          <br>
+          Will they escape the Pyramid or will they be cursed ?!
+          <br>
+          <br>
+        </p>
+          
+        <h4 style="margin-bottom: 2px;">You are Player 2</h4>
+          <p>
+          You enter the Kings Chamber, there is a Treasure Chest in the room that holds the key to Escape the Box!
+          <br>Find the CODE that opens the Treasure Chest!
+          <br><br>
+        </p>
+      </div>
+
+      <br><br>
+      
+    </div>
+    <div style="position: relative; margin: -2px;">
+      <img src="assets/classic/startpagebottom.png" class="room ">
+      <div class="container endpage">
+        <div style="padding:10px 45px 10px 45px;" class="card card-coin card-plain">
+          <div class="text-center">
+            <p> Enter Team Name and Player 2 Code recieved </p>
+            <hr class="line-primary" />
+            <input class="form-control" placeholder="Team Name" type="text" (focus)="focus = true"
+              (blur)="focus = false" #teamname2 />
+            <input class="form-control" placeholder="Player 2 code" type="text" (focus)="focus = true"
+              (blur)="focus = false" #playerTwo />
+            <div class="btn btn-primary btn-simple"
+              (click)="checkTeamCode(teamname2.value, playerTwo.value, 'two' ,'cursed');">
+              <strong>Start Game</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="isError">
+          <h3>Please enter correct {{err}} code </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div  *ngIf='gamePage'  class="area text-center">
+
+    <div class="level0 " id="level0">
+
+      <img src="assets/pyramid/p2_room.png" class="room ">
+      <div class="topbar progress-container progress-danger">
+        <span class="toptext"> GREY MATTER ESCAPE ROOMS • Cursed Box • Player 2 • {{teamName}} </span>        
+      </div>
+
+      <div class=" one" (click)="expandPiece('1')"></div>
+      <div class=" two" (click)="expandPiece('2')"></div>
+      <div class=" three" (click)="expandPiece('3')"></div>
+      <div class=" four" (click)="expandPiece('4')"></div>
+      <div class=" five" (click)="expandPiece('5')"></div>
+      <div class=" six" (click)="expandPiece('6')"></div>
+      <div class=" seven" (click)="expandPiece('7')"></div>
+      <div class=" eight" (click)="expandPiece('8')"></div>
+
+
+      <div *ngIf='key1' class="one1" (click)="hidePiece('1')"></div>
+      <div *ngIf='key2' class="two2" (click)="hidePiece('2')"></div>
+      <div *ngIf='key3' class="three3" (click)="hidePiece('3')"></div>
+      <div *ngIf='key4' class="four4" (click)="hidePiece('4')"></div>
+      <div *ngIf='key5' class="five5" (click)="hidePiece('5')"></div>
+      <div *ngIf='key6' class="six6" (click)="hidePiece('6')"></div>
+      <div *ngIf='key7' class="seven7" (click)="hidePiece('7')"></div>
+      <div *ngIf='key8' class="eight8" (click)="hidePiece('8')"></div>
+
+      <div class="books" (click)="expandPiece('books')"></div>
+      <div *ngIf='books' class="books1" (click)="hidePiece('books')"></div>
+
+      <div class="bottle" (click)="expandPiece('bottle')"></div>
+      <div *ngIf='cardClue' class="bottle2" ></div>
+      <div *ngIf='bottle' class="bottle1" >
+    
+           <input #bottlecode id="bottlecode" class="inputbtl w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+           <div class="bttnbtl"  (click)="checkCode(bottlecode.value, 'bottle')"></div>
+                                                                        
+    </div>
+    
+          <div class="safecode"  (click)="expandPiece('safe')"></div>            
+      <div *ngIf='showSafe' class=" safecode1">
+           <input #finalcode id="finalcode" class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+           <div class="bttnans"  (click)="checkCode(finalcode.value, 'safe')"></div> 
+      </div>
+
+      <div class="scrollclue" (click)="expandPiece('scrollclue')"></div>
+<div *ngIf='scrollclue' class="scrollclue1"></div>    
+
+<div class="lockclue" (click)="expandPiece('lockclue')"></div>
+<div *ngIf='lockclue' class="lockclue1">
+  <input #lockcode id="lockcode" class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+     <div class="bttnlock"  (click)="checkCode(lockcode.value, 'lock')"></div> 
+</div>  
+<div *ngIf='arrow'class="arrow" ></div>
+<div class="hints" (click)="hintsection=!hintsection"></div>
+
+
+<div *ngIf='hintsection' class="hintsection card card-coin card-plain">
+  <div class="">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button class="btn btn-danger mr-1">Spoiler Alert !</button>          
+        <hr class="line-primary" />
+
+        <button type="button" (click)="hint1=!hint1" class="btn btn-primary btn-sm mr-1">Hint 1</button>
+        <p *ngIf='hint1' >
+          The Symbols are shaped as letters!
+        </p>
+        <button type="button" (click)="hint2=!hint2;" class="btn btn-primary btn-sm mr-1">Hint 2</button>
+        <p *ngIf='hint2' >
+          Enter 4-digit code, according to liquid level, from bottles in another room! 
+        </p>
+        <button type="button" (click)="hint3=!hint3;" class="btn btn-primary btn-sm mr-1">Hint 3</button>
+        <p *ngIf='hint3' >
+          The Roman Numerals in the cards give the Final Answer. Find the order from other rooms!
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    </div>
+
+  </div>
+  <div *ngIf='endPage'>
+    <div class="startPage text-center">
+      <h3 style="margin-bottom: 2px;">YOU ESCAPED THE BOX !</h3>
+      <i class="text-primary">WE MUST ADMIT ! YOU ARE AMAZING !!</i> 
+    </div>
+    <div style="position: relative; margin: -2px;">
+      <img src="assets/classic/startpagebottom.png" class="room ">
+      <div class="container endpage">
+        <div style="padding:10px 45px 10px 45px;" class="card card-coin card-plain">
+          <div class="text-center">
+            <p> Grey Matter, matters ! </p>
+            <hr class="line-primary" />
+            Enter Team Name:
+            <input class="form-control" placeholder="Team Name" type="text" (focus)="focus = true"
+              (blur)="focus = false" #teamname12 />
+            Submit Review:
+            <input class="form-control" placeholder="Cursed Box Review" type="text" (focus)="focus = true"
+              (blur)="focus = false" #review2 />
+              <label class="form-check-label">
+                <input #leaderboard2 class="form-check-input" type="checkbox" />
+                <span class="form-check-sign"> </span> Publish in Leaderboard
+              </label>
+              <br>
+            <div class="btn btn-primary btn-simple"
+              (click)="teamEndTime(teamname12.value, review2.value,  leaderboard2.checked , 'cursed');">
+              <strong>End Game !</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="isEndError">
+          <h3>{{errend}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+ 

@@ -39,6 +39,7 @@ export class ClassicgamepageComponent2 implements OnInit, OnDestroy {
   hint2 = false;
   hint3 = false;
   hintsection = false;
+  teamName ="";
   constructor(private http: HttpClient, public indexService:IndexService) {
   
   }
@@ -149,6 +150,7 @@ this.sound.play();
     .toPromise().then(doc => {
       if (doc.exists) {
             isTeam = true;
+            this.teamName = code;
       var result = doc.data();
           if (result['ptwo'] == game) {
             isPlayer = true;
