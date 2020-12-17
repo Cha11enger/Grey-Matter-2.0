@@ -433,8 +433,6 @@
     height: 10%;
     cursor: pointer;
   z-index: 3;
-  background: transparent url(/assets/pyramid/redblock.png) no-repeat;
-  background-size: contain;
 }
 
 .paperclue{
