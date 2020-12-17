@@ -85,6 +85,39 @@
       <div class="topbar progress-container progress-danger">
         <span class="toptext"> GREY MATTER ESCAPE ROOMS • Cursed Box • Player 1 • {{teamName}} </span>
       </div>
+
+      <div class="pyramid" (click)="expandPiece('pyr')"></div>
+      <div *ngIf='pyramidclue' class="pyramidclue">
+        <input #pyr1 id="pyr1"
+          class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+        <div class="bttnlock" (click)="checkCode(pyr1.value, 'pyr1')"></div>
+      </div>
+      
+      <div *ngIf='scorpionclue' class="scorpionclue1" ></div>
+      <div *ngIf='scorpionclue' class="scorpionclue2" (click)="expandPiece('')"  >
+           <div  class="blue1" (click)="blue1=true" ></div>
+            <div *ngIf='blue1' class="blue11" (click)="blue1=false" ></div>
+            <div  class="blue2" (click)="blue2=true" ></div>
+            <div *ngIf='blue2' class="blue21" (click)="blue2=false" ></div>
+            <div  class="blue3" (click)="blue3=true" ></div>
+            <div *ngIf='blue3' class="blue31" (click)="blue3=false" ></div>
+            <div  class="blue4" (click)="blue4=true" ></div>
+            <div *ngIf='blue4' class="blue41" (click)="blue4=false" ></div>
+            <div  class="blue5" (click)="blue5=true" ></div>
+            <div *ngIf='blue5' class="blue51" (click)="blue5=false" ></div>
+
+            <div  class="red1" (click)="red1=true" ></div>
+            <div *ngIf='red1' class="red11" (click)="red1=false" ></div>
+            <div  class="red2" (click)="red2=true" ></div>
+            <div *ngIf='red2' class="red21" (click)="red2=false" ></div>
+            <div  class="red3" (click)="red3=true" ></div>
+            <div *ngIf='red3' class="red31" (click)="red3=false" ></div>
+            <div  class="red4" (click)="red4=true" ></div>
+            <div *ngIf='red4' class="red41" (click)="red4=false" ></div>
+            <div  class="red5" (click)="red5=true" ></div>
+            <div *ngIf='red5' class="red51" (click)="red5=false" ></div>
+    </div>
+
       <div class="piece1" (click)="expandPiece('r')"></div>
       <div class="piece2" (click)="expandPiece('y')"></div>
       <div class="piece3" (click)="expandPiece('g')"></div>

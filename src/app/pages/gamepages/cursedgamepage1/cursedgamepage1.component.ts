@@ -16,9 +16,11 @@ import { snapshotChanges } from '@angular/fire/database';
 export class CursedgamepageComponent1 implements OnInit, OnDestroy {
 
 
-  startPage = true;
-  gamePage = false;
+  startPage = false;
+  gamePage = true;
   endPage = false;
+
+  //// change later
   isError = false;
   err = "";
   errend = "";
@@ -43,7 +45,22 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
   hint3 = false;
   hintsection = false;
   arrow = false;
+
+
   teamName = "";
+  pyramidclue = false;
+  scorpionclue = false;
+  blue1= false;
+  blue2= false;
+  blue3= false;
+  blue4= false;
+  blue5= false;
+  red1= false;
+  red2= false;
+  red3= false;
+  red4= false;
+  red5= false;
+  
 
   constructor(private http: HttpClient, public indexService: IndexService) {
 
@@ -91,9 +108,8 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
       if (piece == 'b') { this.bluekey = true; }
       if (piece == 'g') { this.greenkey = true; }
     }
-    if (piece == 'bottle') { this.bottle = true; }
-    if (piece == 'scrollclue') { this.scrollclue = true; }
-    if (piece == 'lockclue') { this.lockclue = true; }
+    if (piece == 'pyr') { this.pyramidclue = true; }
+    
     this.sound.play();
   }
 
@@ -106,16 +122,7 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
     this.sound.play();
   }
 
-  // Added for Delay
-/*
-  async delay_off(ms: number) {
-    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.showBulb = false);
-  }
-  async delay_on(ms: number) {
-    await new Promise(resolve => setTimeout(() => resolve(), ms)).then(() => this.showBulb = true);
-  }
-*/
-  // Delay function ends here
+
 
   p1_sequence(seq) {
     this.sound.play();
@@ -165,12 +172,12 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
         this.error.play();
       }
     }
-    if (item == 'lock') {
-      if (code == "IUT" || code == "iut") {
-        this.arrow = true;
+    if (item == 'pyr1') {
+      if (code == "BRAVE" || code == "brave") {
+      this.scorpionclue = true;
         this.success.play();
       } else {
-        this.lockclue = false;
+        this.pyramidclue = false;
         this.error.play();
       }
     }
