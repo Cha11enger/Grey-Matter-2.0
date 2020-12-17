@@ -205,7 +205,7 @@
 
 
 .blue2{
-  left: 1%;
+  left: 21%;
   top: 0.5%;
   position: absolute;
   width: 17%;
@@ -215,7 +215,7 @@
  
 }
 .blue21{
-  left: 1%;
+  left: 21%;
     top: 0.5%;
     position: absolute;
     width: 17%;
@@ -227,7 +227,7 @@
 }
 
 .blue3{
-  left: 1%;
+  left: 41.5%;
   top: 0.5%;
   position: absolute;
   width: 17%;
@@ -237,7 +237,7 @@
  
 }
 .blue31{
-  left: 1%;
+  left: 41.5%;
     top: 0.5%;
     position: absolute;
     width: 17%;
@@ -249,7 +249,7 @@
 }
 
 .blue4{
-  left: 1%;
+  left: 61.75%;
   top: 0.5%;
   position: absolute;
   width: 17%;
@@ -259,7 +259,7 @@
  
 }
 .blue41{
-  left: 1%;
+  left: 61.75%;
     top: 0.5%;
     position: absolute;
     width: 17%;
@@ -271,7 +271,7 @@
 }
 
 .blue5{
-  left: 1%;
+  right: 1%;
   top: 0.5%;
   position: absolute;
   width: 17%;
@@ -281,7 +281,7 @@
  
 }
 .blue51{
-  left: 1%;
+  right: 1%;
     top: 0.5%;
     position: absolute;
     width: 17%;
@@ -294,7 +294,7 @@
 
 .red1{
   left: 1%;
-  top: 0.5%;
+  bottom: 0.5%;
   position: absolute;
   width: 17%;
   height: 50%;
@@ -304,7 +304,7 @@
 }
 .red11{
   left: 1%;
-    top: 0.5%;
+  bottom: 0.5%;
     position: absolute;
     width: 17%;
     height: 50%;
@@ -316,8 +316,8 @@
 
 
 .red2{
-  left: 1%;
-  top: 0.5%;
+  left: 21%;
+  bottom: 0.5%;
   position: absolute;
   width: 17%;
   height: 50%;
@@ -326,8 +326,8 @@
  
 }
 .red21{
-  left: 1%;
-    top: 0.5%;
+  left: 21%;
+  bottom: 0.5%;
     position: absolute;
     width: 17%;
     height: 50%;
@@ -338,8 +338,8 @@
 }
 
 .red3{
-  left: 1%;
-  top: 0.5%;
+  left: 41.5%;
+  bottom: 0.5%;
   position: absolute;
   width: 17%;
   height: 50%;
@@ -348,8 +348,8 @@
  
 }
 .red31{
-  left: 1%;
-    top: 0.5%;
+  left: 41.5%;
+  bottom: 0.5%;
     position: absolute;
     width: 17%;
     height: 50%;
@@ -360,8 +360,8 @@
 }
 
 .red4{
-  left: 1%;
-  top: 0.5%;
+  left: 61.75%;
+  bottom: 0.5%;
   position: absolute;
   width: 17%;
   height: 50%;
@@ -370,8 +370,8 @@
  
 }
 .red41{
-  left: 1%;
-    top: 0.5%;
+  left: 61.75%;
+  bottom: 0.5%;
     position: absolute;
     width: 17%;
     height: 50%;
@@ -382,8 +382,8 @@
 }
 
 .red5{
-  left: 1%;
-  top: 0.5%;
+  right: 1%;
+  bottom: 0.5%;
   position: absolute;
   width: 17%;
   height: 50%;
@@ -392,13 +392,58 @@
  
 }
 .red51{
-  left: 1%;
-    top: 0.5%;
+  right: 1%;
+  bottom: 0.5%;
     position: absolute;
     width: 17%;
     height: 50%;
   cursor: pointer;
   z-index: 10;
   background: transparent url(/assets/pyramid/redblock.png) no-repeat;
+  background-size: contain;
+}
+.mapsmall{
+  left: 68%;
+  top: 55.5%;
+  position: absolute;
+  width: 6%;
+  height: 7%;
+  cursor: pointer;
+  z-index: 3;
+  background: transparent url(/assets/pyramid/mapsmall.png) no-repeat;
+  background-size: contain;
+}
+
+.mapbig{
+  left: 7%;
+    top: 11.5%;
+    position: absolute;
+    width: 70%;
+    height: 79%;
+  z-index: 20;
+  background: transparent url(/assets/pyramid/mapbig.png) no-repeat;
+  background-size: contain;
+}
+
+.paper{
+  left: 88%;
+    top: 17%;
+    position: absolute;
+    width: 5%;
+    height: 10%;
+    cursor: pointer;
+  z-index: 3;
+  background: transparent url(/assets/pyramid/redblock.png) no-repeat;
+  background-size: contain;
+}
+
+.paperclue{
+  left: 78%;
+    top: 12.5%;
+    position: absolute;
+    width: 20%;
+    height: 39%;
+    z-index: 5;
+  background: transparent url(/assets/pyramid/paperclue.png) no-repeat;
   background-size: contain;
 }

@@ -94,7 +94,7 @@
       </div>
       
       <div *ngIf='scorpionclue' class="scorpionclue1" ></div>
-      <div *ngIf='scorpionclue' class="scorpionclue2" (click)="expandPiece('')"  >
+      <div *ngIf='scorpionclue' class="scorpionclue2" (click)="expandPiece('colour')"  >
            <div  class="blue1" (click)="blue1=true" ></div>
             <div *ngIf='blue1' class="blue11" (click)="blue1=false" ></div>
             <div  class="blue2" (click)="blue2=true" ></div>
@@ -117,29 +117,14 @@
             <div  class="red5" (click)="red5=true" ></div>
             <div *ngIf='red5' class="red51" (click)="red5=false" ></div>
     </div>
+    <div *ngIf='mapsmall' class="mapsmall" (click)="expandPiece('mapsmall')"></div>
+    <div *ngIf='mapbig' class="mapbig" (click)="hidePiece('mapbig')"></div>
+    
+    <div class="paper" (click)="expandPiece('paper')"></div>
+    <div *ngIf='paperclue' class="paperclue" (click)="hidePiece('paper')"></div>
 
-      <div class="piece1" (click)="expandPiece('r')"></div>
-      <div class="piece2" (click)="expandPiece('y')"></div>
-      <div class="piece3" (click)="expandPiece('g')"></div>
-      <div class="piece4" (click)="expandPiece('b')"></div>
+      
 
-      <div *ngIf='redkey' class="piece11" (click)="hidePiece('r')"></div>
-      <div *ngIf='yellowkey' class="piece22" (click)="hidePiece('y')"></div>
-      <div *ngIf='greenkey' class="piece33" (click)="hidePiece('g')"></div>
-      <div *ngIf='bluekey' class="piece44" (click)="hidePiece('b')"></div>
-      <div *ngIf='bottle' class="piece55" (click)="hidePiece('bottle')"></div>
-
-      <div *ngIf='p1_clues' class="scroll"></div>
-
-      <div class="hex1" (click)="p1_sequence('1')"></div>
-      <div class="hex2" (click)="p1_sequence('2')"></div>
-      <div class="hex3" (click)="p1_sequence('3')"></div>
-      <div class="hex4" (click)="p1_sequence('4')"></div>
-      <div class="hex5" (click)="p1_sequence('5')"></div>
-      <div class="hex6" (click)="p1_sequence('6')"></div>
-
-      <div class="bulb"></div>
-      <div *ngIf='showBulb' class="bulbon"></div>
 
       <div class="safecode" (click)="expandPiece('safe')"></div>
   
@@ -149,16 +134,9 @@
           class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
         <div class="bttnans" (click)="checkCode(finalcode.value, 'safe')"></div>
       </div>
-      <div class="scrollclue" (click)="expandPiece('scrollclue')"></div>
-      <div *ngIf='scrollclue' class="scrollclue1"></div>
 
-      <div class="lockclue" (click)="expandPiece('lockclue')"></div>
-      <div *ngIf='lockclue' class="lockclue1">
-        <input #lockcode id="lockcode"
-          class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-        <div class="bttnlock" (click)="checkCode(lockcode.value, 'lock')"></div>
-      </div>
-      <div *ngIf='arrow' class="arrow"></div>
+
+      
       <div class="hints" (click)="hintsection=!hintsection"></div>
 
 

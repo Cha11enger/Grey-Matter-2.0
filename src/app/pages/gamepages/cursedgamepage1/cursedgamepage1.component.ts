@@ -60,7 +60,9 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
   red3= false;
   red4= false;
   red5= false;
-  
+  mapsmall = false;
+  mapbig = false;
+  paperclue = false;
 
   constructor(private http: HttpClient, public indexService: IndexService) {
 
@@ -99,26 +101,32 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
 
   expandPiece(piece) {
    
-    //////////////// delete above lon
+    
+    if(  piece == 'mapsmall' && this.mapsmall == true){
+      this.mapbig=true;
+      
+    }  
 
-    if (this.p1_clues == true) {
-      if (piece == 'safe') { this.showSafe = true; }
-      if (piece == 'r') { this.redkey = true; }
-      if (piece == 'y') { this.yellowkey = true; }
-      if (piece == 'b') { this.bluekey = true; }
-      if (piece == 'g') { this.greenkey = true; }
-    }
     if (piece == 'pyr') { this.pyramidclue = true; }
+    if (piece == 'paper') { this.paperclue = true; }
     
     this.sound.play();
+    if (piece == 'colour') {
+    if( this.red1 && this.red3 && this.red5 && this.blue4 && this.blue5){
+      
+      if(   !this.red2 && !this.red4 && !this.blue1 && !this.blue2 && !this.blue3 ){
+        this.success.play();
+        this.mapsmall = true;
+      }
+
+    }
+  }
   }
 
   hidePiece(piece) {
-    if (piece == 'r') { this.redkey = false; }
-    if (piece == 'y') { this.yellowkey = false; }
-    if (piece == 'b') { this.bluekey = false; }
-    if (piece == 'g') { this.greenkey = false; }
-    if (piece == 'bottle') { this.bottle = false; }
+    if (piece == 'mapbig') { this.mapbig = false; }
+    if (piece == 'paper') { this.paperclue = false; }
+   
     this.sound.play();
   }
 
