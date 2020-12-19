@@ -128,10 +128,10 @@
 
 .pyramidclue{
   left: 41.5%;
-    top: 70%;
-    position: absolute;
-    width: 16%;
-    height: 10%;
+  top: 70%;
+  position: absolute;
+  width: 16%;
+  height: 13%;
     background: transparent url(/assets/pyramid/answerenter.png) no-repeat;
     z-index: 3;
     background-size: contain;
@@ -444,4 +444,16 @@
     z-index: 5;
   background: transparent url(/assets/pyramid/paperclue.png) no-repeat;
   background-size: contain;
+}
+.firearrow{
+  left: 15%;
+  top: 50.5%;
+  position: absolute;
+  width: 24%;
+  height: 24%;
+    z-index: 5;
+  background: transparent url(/assets/img/fireright.gif) no-repeat;
+  background-size: contain;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }

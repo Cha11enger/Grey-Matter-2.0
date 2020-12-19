@@ -63,7 +63,7 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
   mapsmall = false;
   mapbig = false;
   paperclue = false;
-
+  firearrow = false;
   constructor(private http: HttpClient, public indexService: IndexService) {
 
   }
@@ -183,6 +183,7 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
     if (item == 'pyr1') {
       if (code == "BRAVE" || code == "brave") {
       this.scorpionclue = true;
+      this.firearrow =true;
         this.success.play();
       } else {
         this.pyramidclue = false;
