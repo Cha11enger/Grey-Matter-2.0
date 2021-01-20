@@ -126,16 +126,15 @@
     <div class="paper" (click)="expandPiece('paper')"></div>
     <div *ngIf='paperclue' class="paperclue" (click)="hidePiece('paper')"></div>
     <div *ngIf='firearrow'  class="firearrow" ></div>
-      
+    <div *ngIf='firearrowright'  class="firearrowright" ></div> 
 
 
       <div class="safecode" (click)="expandPiece('safe')"></div>
   
-      <div *ngIf='showSafe' class=" safecode1">
-   
-        <input #finalcode id="finalcode"
-          class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-        <div class="bttnans" (click)="checkCode(finalcode.value, 'safe')"></div>
+      <div *ngIf='showSafe' class=" safecode1">   
+        <input #finalcursedcode id="finalcursedcode"
+        class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow"  type="text">
+        <div class="bttnlock" (click)="checkCode(finalcursedcode.value, 'safe')"></div>
       </div>
 
 

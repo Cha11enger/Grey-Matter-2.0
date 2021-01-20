@@ -64,6 +64,7 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
   mapbig = false;
   paperclue = false;
   firearrow = false;
+  firearrowright = false;
   constructor(private http: HttpClient, public indexService: IndexService) {
 
   }
@@ -99,12 +100,10 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
     body.classList.remove("landing-page");
   }
 
-  expandPiece(piece) {
-   
+  expandPiece(piece) {   
     
     if(  piece == 'mapsmall' && this.mapsmall == true){
-      this.mapbig=true;
-      
+      this.mapbig=true;      
     }  
 
     if (piece == 'pyr') { this.pyramidclue = true; }
@@ -117,10 +116,14 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
       if(   !this.red2 && !this.red4 && !this.blue1 && !this.blue2 && !this.blue3 ){
         this.success.play();
         this.mapsmall = true;
+        this.firearrowright = true;
       }
 
     }
   }
+  if(  piece == 'safe' && this.mapbig == true){
+    this.showSafe=true;      
+  }  
   }
 
   hidePiece(piece) {
@@ -130,48 +133,9 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
     this.sound.play();
   }
 
-
-
-  p1_sequence(seq) {
-    this.sound.play();
-    this.showBulb = true;
-   // this.delay_off(200);
-    if (this.arrow == true) {
-      if (seq == "6") { this.sequence = 1; }
-      if (seq == "2") {
-        if (this.sequence == 1) { this.sequence = 2; }
-        else this.sequence = 0;
-      }
-      if (seq == "5") {
-        if (this.sequence == 2) { this.sequence = 3; }
-        else this.sequence = 0;
-      }
-      if (seq == "1") {
-        if (this.sequence == 3) { this.sequence = 4; }
-        else this.sequence = 0;
-      }
-      if (seq == "4") {
-        if (this.sequence == 4) { this.sequence = 5; }
-        else this.sequence = 0;
-      }
-      if (seq == "3") {
-        if (this.sequence == 5) {
-          this.sequence = 6;
-          this.p1_clues = true;
-          this.success.play();
-        }
-        else this.sequence = 0;
-      }
-    }
-    if (this.sequence == 6) {
-     // this.delay_on(200);
-      this.showBulb = true;
-    }
-  }
-
   checkCode(code, item) {
     if (item == 'safe') {
-      if (code == "5713") {
+      if (code == "1794") {
         this.success.play();
         this.gamePage = false;
         this.endPage = true;
