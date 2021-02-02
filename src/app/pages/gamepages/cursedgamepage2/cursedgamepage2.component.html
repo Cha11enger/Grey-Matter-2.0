@@ -93,54 +93,53 @@
 <!--
   
 -->
+<section>
 
 
-      <div class=" one" (click)="expandPiece('1')"></div>
-      <div class=" two" (click)="expandPiece('2')"></div>
-      <div class=" three" (click)="expandPiece('3')"></div>
-      <div class=" four" (click)="expandPiece('4')"></div>
-      <div class=" five" (click)="expandPiece('5')"></div>
-      <div class=" six" (click)="expandPiece('6')"></div>
-      <div class=" seven" (click)="expandPiece('7')"></div>
-      <div class=" eight" (click)="expandPiece('8')"></div>
-
-
-      <div *ngIf='key1' class="one1" (click)="hidePiece('1')"></div>
-      <div *ngIf='key2' class="two2" (click)="hidePiece('2')"></div>
-      <div *ngIf='key3' class="three3" (click)="hidePiece('3')"></div>
-      <div *ngIf='key4' class="four4" (click)="hidePiece('4')"></div>
-      <div *ngIf='key5' class="five5" (click)="hidePiece('5')"></div>
-      <div *ngIf='key6' class="six6" (click)="hidePiece('6')"></div>
-      <div *ngIf='key7' class="seven7" (click)="hidePiece('7')"></div>
-      <div *ngIf='key8' class="eight8" (click)="hidePiece('8')"></div>
-
-      <div class="books" (click)="expandPiece('books')"></div>
-      <div *ngIf='books' class="books1" (click)="hidePiece('books')"></div>
-
-      <div class="bottle" (click)="expandPiece('bottle')"></div>
-      <div *ngIf='cardClue' class="bottle2" ></div>
-      <div *ngIf='bottle' class="bottle1" >
-    
-           <input #bottlecode id="bottlecode" class="inputbtl w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-           <div class="bttnbtl"  (click)="checkCode(bottlecode.value, 'bottle')"></div>
-                                                                        
-    </div>
-    
-          <div class="safecode"  (click)="expandPiece('safe')"></div>            
-      <div *ngIf='showSafe' class=" safecode1">
-           <input #finalcode id="finalcode" class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-           <div class="bttnans"  (click)="checkCode(finalcode.value, 'safe')"></div> 
+<div class="pyramid" (click)="expandPiece('pyr')"></div>
+      <div *ngIf='pyramidclue' class="pyramidclue">
+        <input #pyr2 id="pyr2"
+          class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+        <div class="bttnlock" (click)="checkCode(pyr2.value, 'pyr2')"></div>
       </div>
 
-      <div class="scrollclue" (click)="expandPiece('scrollclue')"></div>
-<div *ngIf='scrollclue' class="scrollclue1"></div>    
+      <div *ngIf='firearrowright'  class="firearrowright" ></div> 
+      <div *ngIf='firearrow'  class="firearrow" ></div> 
+      <div class="piece1" (click)="expandPiece('piece1')"></div>
+      <div class="piece2" (click)="expandPiece('piece2')"></div>
+      <div class="piece3" (click)="expandPiece('piece3')"></div>
+      <div class="piece4" (click)="expandPiece('piece4')"></div>
 
-<div class="lockclue" (click)="expandPiece('lockclue')"></div>
-<div *ngIf='lockclue' class="lockclue1">
-  <input #lockcode id="lockcode" class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-     <div class="bttnlock"  (click)="checkCode(lockcode.value, 'lock')"></div> 
-</div>  
-<div *ngIf='arrow'class="arrow" ></div>
+      <div *ngIf='piece1' class="piece11 example-box1" cdkDragBoundary=".section" cdkDrag ></div>
+      <div *ngIf='piece2' class="piece22 example-box1" cdkDragBoundary=".section" cdkDrag ></div>
+      <div *ngIf='piece3' class="piece33 example-box1" cdkDragBoundary=".section" cdkDrag></div>
+      <div *ngIf='piece4' class="piece44 example-box1" cdkDragBoundary=".section" cdkDrag ></div>
+
+      <div *ngIf='firearrowright' class="pyramidclue2">
+        <input #pyr22 id="pyr22"
+          class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+        <div class="bttnlock" (click)="checkCode(pyr22.value, 'pyr22')"></div>
+      </div>
+
+      <div class=" card1" (click)="expandPiece('card1')"></div>
+      <div class=" card2" (click)="expandPiece('card2')" ></div>
+      <div class=" card3" (click)="expandPiece('card3')" ></div>
+      <div class=" card4" (click)="expandPiece('card4')" ></div>
+
+      <div *ngIf='card1'  class="cardbig cardbig1" (click)="hidePiece('card1')" ></div>
+      <div *ngIf='card2'  class="cardbig cardbig2" (click)="hidePiece('card2')"></div>
+      <div *ngIf='card3'  class="cardbig cardbig3" (click)="hidePiece('card3')" ></div>
+      <div *ngIf='card4'  class="cardbig cardbig4" (click)="hidePiece('card4')" ></div>
+
+      <div class="safecode" (click)="expandPiece('safe')"></div>
+  
+      <div *ngIf='showSafe' class=" safecode1">   
+        <input #finalcursedcode2 id="finalcursedcode2"
+        class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow"  type="text">
+        <div class="bttnlock" (click)="checkCode(finalcursedcode2.value, 'safe')"></div>
+      </div>
+
+    </section>
 <div class="hints" (click)="hintsection=!hintsection"></div>
 
 

@@ -1,27 +1,9 @@
-.example-box {
-    width: 200px;
-    height: 200px;
-    border: solid 1px #ccc;
-    color: rgba(0, 0, 0, 0.87);
+.example-box1 {    
     cursor: move;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: #fff;
-    border-radius: 4px;
+    display: flex;    
     position: relative;
-    z-index: 1;
+    z-index: 5;
     transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-                0 2px 2px 0 rgba(0, 0, 0, 0.14),
-                0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  }
-  
-  .example-box:active {
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-                0 8px 10px 1px rgba(0, 0, 0, 0.14),
-                0 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
 
   .topbar{
@@ -42,26 +24,6 @@
     font-size: 12.5px;    
   }
 
-  .one{
-    left: 16%;
-    top: 73%;
-    position: absolute;
-    width: 7%;
-    height: 4%;
-    cursor: pointer;
-    z-index: 2;
-  }
-  .one1{
-    left: 16%;
-    top: 64%;
-    position: absolute;
-    width: 13%;
-    height: 37%;
-    cursor: pointer;
-    background: transparent url(/assets/classic/p2_cg.jpg) no-repeat; 
-    z-index: 2;
-    background-size: contain;
-  }
 
   #level0{
     position: absolute;
@@ -114,4 +76,261 @@
     top: 5%;
     position: absolute;
     width: 40%;
+}
+
+.pyramid{
+  left: 13.5%;
+    top: 18%;
+    position: absolute;
+    width: 6%;
+    height: 7%;
+  cursor: pointer;
+  z-index: 2;
+
+}
+
+
+
+.pyramidclue{
+  border-radius: 2px;
+    left: 9.5%;
+    top: 64%;
+  position: absolute;
+  width: 16%;
+  height: 8%;
+    background: transparent url(/assets/pyramid/answerenter.png) no-repeat;
+    z-index: 3;
+    background-size: contain;
+}
+
+.inputlock{
+ 
+  border: sandybrown;
+  left: 9.5%;
+  top: 15%;
+  position: absolute;
+  width: 59%;
+  height: 57%;
+  z-index: 3;
+}
+
+.bttnlock{
+  left: 72%;
+    top: 20%;
+  position: absolute;
+  width: 21%;
+  height: 56%;
+  cursor: pointer;
+  z-index: 3;
+}
+
+
+.firearrow{
+  left: 35.5%;
+  top: 45.5%;
+  position: absolute;
+  width: 12%;
+  height: 11%;
+    z-index: 3;
+  background: transparent url(/assets/img/fireright.gif) no-repeat;
+  background-size: contain;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.firearrowright{
+  left: 80%;
+  top: 31.5%;
+    position: absolute;
+    width: 16%;
+    height: 18%;
+    z-index: 3;
+  background: transparent url(/assets/img/fireright.gif) no-repeat;
+  background-size: contain;
+}
+
+.piece1{
+  left: 84%;
+    top: 13%;
+    position: absolute;
+    width: 9%;
+    height: 13%;
+  cursor: pointer;
+  z-index: 5;
+  
+}
+.piece2{
+  left: 41%;
+    top: 61%;
+    position: absolute;
+    width: 9%;
+    height: 13%;
+  cursor: pointer;
+  z-index: 3;
+}
+.piece3{
+  left: 69%;
+  top: 73%;
+  position: absolute;
+  width: 9%;
+  height: 13%;
+  cursor: pointer;
+  z-index: 3;
+}
+.piece4{
+  left: 2%;
+  top: 52%;
+  position: absolute;
+  width: 9%;
+  height: 13%;
+  cursor: pointer;
+  z-index: 3;
+}
+
+
+.piece11{
+  left: 84%;
+    top: 13%;
+    position: absolute;
+    width: 9%;
+    height: 13%;
+  cursor: pointer;
+  z-index: 5;
+  background: transparent url(/assets/pyramid/piece2.png) no-repeat;
+  background-size: contain;
+  
+}
+.piece22{
+  left: 41%;
+    top: 61%;
+    position: absolute;
+    width: 9%;
+    height: 13%;
+  cursor: pointer;
+  z-index: 3;
+  background: transparent url(/assets/pyramid/piece3.png) no-repeat;
+  background-size: contain;
+}
+.piece33{
+  left: 69%;
+  top: 73%;
+  position: absolute;
+  width: 9%;
+  height: 13%;
+  cursor: pointer;
+  z-index: 3;
+  background: transparent url(/assets/pyramid/piece4.png) no-repeat;
+  background-size: contain;
+}
+.piece44{
+  left: 2%;
+  top: 52%;
+  position: absolute;
+  width: 9%;
+  height: 13%;
+  cursor: pointer;
+  z-index: 3;
+  background: transparent url(/assets/pyramid/piece1.png) no-repeat;
+  background-size: contain;
+}
+.pyramidclue2{
+  border-radius: 2px;
+  right: 0.2%;
+  top: 46%;
+position: absolute;
+width: 16%;
+height: 8%;
+  background: transparent url(/assets/pyramid/answerenter.png) no-repeat;
+  z-index: 3;
+  background-size: contain;
+}
+
+
+.card1{
+  position: absolute;
+  width: 3%;
+  height: 7%;
+  cursor: pointer;
+  z-index: 4;
+  left: 39%;
+  top: 48%;
+}
+.card2{
+  position: absolute;
+  width: 3%;
+  height: 7%;
+  cursor: pointer;
+  z-index: 4;
+  left: 49%;
+    top: 49%;
+ 
+}
+.card3{
+  position: absolute;
+  width: 3%;
+  height: 7%;
+  cursor: pointer;
+  z-index: 4;
+  left: 64%;
+    top: 54%;
+}
+.card4{
+  position: absolute;
+  width: 3%;
+  height: 7%;
+  cursor: pointer;
+  z-index: 4;
+  left: 25%;
+  top: 55%;
+}
+
+.cardbig{
+  position: absolute;
+  width: 21%;
+  height: 51%;
+  cursor: pointer;
+  z-index: 5;  
+}
+.cardbig1{
+  left: 27%;
+    top: 15%;
+  background: transparent url(/assets/pyramid/card1.png) no-repeat;
+  background-size: contain;
+}
+.cardbig2{
+  left: 42%;
+    top: 40%;
+  background: transparent url(/assets/pyramid/card2.png) no-repeat;
+  background-size: contain;
+}
+.cardbig3{
+  left: 61%;
+    top: 13%;
+  background: transparent url(/assets/pyramid/card3.png) no-repeat;
+  background-size: contain;
+}
+.cardbig4{
+  left: 9%;
+    top: 36%;
+  background: transparent url(/assets/pyramid/card4.png) no-repeat;
+  background-size: contain;
+}
+
+.safecode{
+  left: 81%;
+    top: 73%;
+    position: absolute;
+    width: 11%;
+    height: 16%;
+    cursor: pointer;
+}
+.safecode1{
+  left: 78%;
+    top: 79.5%;
+    position: absolute;
+    width: 20%;
+    height: 13.5%;
+    z-index: 5;
+  background: transparent url(/assets/pyramid/finalanswer.png) no-repeat;
+  background-size: contain;
 }

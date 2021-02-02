@@ -12,23 +12,23 @@ import { IndexService } from '../../index/index.service'
 export class CursedgamepageComponent3 implements OnInit, OnDestroy {
   isCollapsed = true;
 
-  startPage = true;
-  gamePage = false;
+  startPage = false;
+  gamePage = true;
   endPage = false;
   isError = false;
   err = "";
   errend = "";
   isEndError = false;
 
-  redkey = false;
-  bluekey = false;
-  yellowkey = false;
-  greenkey = false;
-  showBook = false;
-  bookClue = false;
-  lockclue = false;
-  arrow = false;
-  scrollclue = false;
+  pyramidclue = false;
+  paperclue = false;
+  firearrow = false;
+  firearrowright = false;
+  sunclue = false;
+ 
+ reddot = false;
+
+
   hint1 = false;
   hint2 = false;
   hint3 = false;
@@ -59,36 +59,56 @@ export class CursedgamepageComponent3 implements OnInit, OnDestroy {
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("landing-page");
-
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
     body.classList.remove("landing-page");
   }
   expandPiece(piece) {
-  
-    //// delete above line later
-    if(  this.bookClue == true){   
-    if (piece == 'y') { this.yellowkey = true; }  
-    if (piece == 'g') { this.greenkey = true; }
-    if (piece == 'b') { this.bluekey = true; }
-    if (piece == 'r') { this.redkey = true; }
-    if (piece == 'safe') { this.showSafe = true; }
-    }       
-    if (piece == 'book'  && this.arrow == true) { this.showBook = true; }
-    if (piece == 'scrollclue') { this.scrollclue = true; }
- if (piece == 'lockclue') { this.lockclue = true; }
+    if (piece == 'pyr') { this.pyramidclue = true; }
+    if (piece == 'paper') { this.paperclue = true; }
   this.sound.play();
+
   }
 
-
   hidePiece(piece) {
-  
-    if (piece == 'y') { this.yellowkey = false; }
-    if (piece == 'g') { this.greenkey = false; }      
-      if (piece == 'r') { this.redkey = false; }
-      if (piece == 'b') { this.bluekey = false; }
+    if (piece == 'paper') { this.paperclue = false; }
       this.sound.play();
+  }
+
+  togglesun(num){
+    var a,b,c,d,e,f,g,h,i,j,k,l;
+    var ele = document.getElementById(num);   
+    if(ele.classList.contains('sunred')){
+     ele.classList.remove('sunred');           
+      }else{
+        ele.classList.add('sunred');
+      
+    }
+    if(document.getElementById('sun2').classList.contains('sunred') &&
+    document.getElementById('sun4').classList.contains('sunred') &&
+    document.getElementById('sun6').classList.contains('sunred') &&
+    document.getElementById('sun8').classList.contains('sunred') &&
+    document.getElementById('sun11').classList.contains('sunred') 
+    ){
+
+      if(!document.getElementById('sun1').classList.contains('sunred') &&
+    !document.getElementById('sun3').classList.contains('sunred') &&
+    !document.getElementById('sun5').classList.contains('sunred') &&
+    !document.getElementById('sun7').classList.contains('sunred') &&
+    !document.getElementById('sun9').classList.contains('sunred') &&
+    !document.getElementById('sun10').classList.contains('sunred') &&
+    !document.getElementById('sun12').classList.contains('sunred') 
+    ){
+      this.success.play();
+      this.reddot = true;
+    }
+
+    }
+
+
+    this.sound.play();    
+   // document.getElementById('sun1').style.transform = "rotate("+deg+"deg)";
   }
 
   checkCode(code, item){
@@ -102,25 +122,17 @@ export class CursedgamepageComponent3 implements OnInit, OnDestroy {
          this.error.play();
        }
     }
-    if(item == 'lock'){  
-      if(code == "ITY" || code == "ity" ){
-      this.arrow = true;
-      this.success.play();
-       }else{
-         this.lockclue = false;      
-         this.error.play();
-       }
+    if (item == 'pyr3') {
+      if (code == "VALOR" || code == "valor") {
+      this.sunclue = true;
+      this.firearrow =true;
+        this.success.play();
+      } else {
+        this.pyramidclue = false;
+        this.error.play();
+      }
     }
-    if ( item == 'book'){
-      if(code == "pizza" ||code == "PIZZA"|| code == "Pizza" ){  
-       this.success.play();
-       this.showBook = false;
-       this.bookClue = true;  
-       }else{
-         this.showBook = false;   
-         this.error.play();
-       }
-    }
+
   } 
 
   checkTeamCode(code, game, c, d,) {

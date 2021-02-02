@@ -16,8 +16,8 @@ import { snapshotChanges } from '@angular/fire/database';
 export class CursedgamepageComponent1 implements OnInit, OnDestroy {
 
 
-  startPage = false;
-  gamePage = true;
+  startPage = true;
+  gamePage = false ;
   endPage = false;
 
   //// change later
@@ -26,25 +26,13 @@ export class CursedgamepageComponent1 implements OnInit, OnDestroy {
   errend = "";
   isEndError = false;
 
-  isCollapsed = true;
-  redkey = false;
-  bluekey = false;
-  yellowkey = false;
-  greenkey = false;
-  bottle = false;
+  
   showSafe = false;
-  showBulb = false;
-  scrollclue = false;
-  sequence = 0;
-  p1_clues = false;
-  correctCode = "Open!";
-  finalcode = "";
-  lockclue = false;
   hint1 = false;
   hint2 = false;
   hint3 = false;
   hintsection = false;
-  arrow = false;
+  
 
 
   teamName = "";

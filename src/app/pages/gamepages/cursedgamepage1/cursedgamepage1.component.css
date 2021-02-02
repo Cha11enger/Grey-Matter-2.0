@@ -100,17 +100,6 @@
 }
 
 
-.piece44{
-  left: 2%;
-  top: 86%;
-  position: absolute;
-  width: 8%;
-  height: 9%;
-  cursor: pointer;
-  background: transparent url(/assets/classic/p1_bluedot.png) no-repeat; 
-  z-index: 2;
-  background-size: contain;
-}
 
 
 .pyramid{

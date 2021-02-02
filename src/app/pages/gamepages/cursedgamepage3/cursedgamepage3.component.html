@@ -88,40 +88,34 @@
       <div class="topbar progress-container progress-danger">
         <span class="toptext"> GREY MATTER ESCAPE ROOMS • Cursed Box • Player 3 • {{teamName}} </span>        
       </div>
-      <div class="piece1" (click)="expandPiece('r')"></div>
-      <div class="piece2" (click)="expandPiece('y')"></div>
-        <div class="piece3" (click)="expandPiece('g')" ></div>
-        <div class="piece4"  (click)="expandPiece('b')"></div> 
-        <div *ngIf='redkey' class="piece11" (click)="hidePiece('r')"></div>
-        <div *ngIf='yellowkey' class="piece22" (click)="hidePiece('y')"></div>
-        <div *ngIf='greenkey' class="piece33" (click)="hidePiece('g')"></div>
-        <div *ngIf='bluekey' class="piece44" (click)="hidePiece('b')"></div>
 
-        <div class="safecode"  (click)="expandPiece('safe')"></div>            
-      <div *ngIf='showSafe' class=" safecode1">
-           <input #finalcode id="finalcode" class="inputans w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-           <div class="bttnans"  (click)="checkCode(finalcode.value, 'safe')"></div> 
+      <div class="pyramid" (click)="expandPiece('pyr')"></div>
+      <div *ngIf='pyramidclue' class="pyramidclue">
+        <input #pyr3 id="pyr3"
+          class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
+        <div class="bttnlock" (click)="checkCode(pyr3.value, 'pyr3')"></div>
       </div>
+      <div *ngIf='firearrowright'  class="firearrowright" ></div> 
+      <div *ngIf='firearrow'  class="firearrow" ></div> 
+      <div class="paper" (click)="expandPiece('paper')"></div>
+    <div *ngIf='paperclue' class="paperclue" (click)="hidePiece('paper')"></div>
 
-      <div class="book" (click)="expandPiece('book')"></div>
-
-      <div *ngIf='bookClue' class="book2" ></div>
-      <div *ngIf='showBook' class="book1" >
+    <div id="sun1" class="sun1" (click)="togglesun('sun1')"></div>
+    <div id="sun2" class="sun2" (click)="togglesun('sun2')"></div>
+    <div id="sun3" class="sun3" (click)="togglesun('sun3')"></div>
+    <div id="sun4" class="sun4" (click)="togglesun('sun4')"></div>
+    <div id="sun5" class="sun5" (click)="togglesun('sun5')"></div>
+    <div id="sun6" class="sun6" (click)="togglesun('sun6')"></div>
+    <div id="sun7" class="sun7" (click)="togglesun('sun7')"></div>
+    <div id="sun8" class="sun8" (click)="togglesun('sun8')"></div>
+    <div id="sun9" class="sun9" (click)="togglesun('sun9')"></div>
+    <div id="sun10" class="sun10" (click)="togglesun('sun10')"></div>
+    <div id="sun11" class="sun11" (click)="togglesun('sun11')"></div>
+    <div id="sun12" class="sun12" (click)="togglesun('sun12')"></div>
     
-           <input #bookcode id="bookcode" class="inputbtl w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-           <div class="bttnbtl"  (click)="checkCode(bookcode.value, 'book')"></div>
-                                                                        
-    </div>
+    <div *ngIf='reddot' class="reddot" ></div>
 
-    <div class="scrollclue" (click)="expandPiece('scrollclue')"></div>
-    <div *ngIf='scrollclue' class="scrollclue1"></div>    
-    
-    <div class="lockclue" (click)="expandPiece('lockclue')"></div>
-    <div *ngIf='lockclue' class="lockclue1">
-      <input #lockcode id="lockcode" class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow" type="text">
-         <div class="bttnlock"  (click)="checkCode(lockcode.value, 'lock')"></div> 
-    </div>  
-    <div *ngIf='arrow'class="arrow" ></div>
+
     <div class="hints" (click)="hintsection=!hintsection"></div>
 
 
