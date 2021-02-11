@@ -36,19 +36,19 @@
             <i class="fab fa-twitter"> </i>
             <p class="d-lg-none d-xl-none">Twitter</p>
           </a>
-        </li>
+        </li>-->
         <li class="nav-item p-0">
           <a
             class="nav-link"
-            href="https://www.facebook.com/CreativeTim"
+            href="https://www.facebook.com/Grey-Matter-Escape-Rooms-102207368531542"
             placement="bottom"
             target="_blank"
-            tooltip="Like us on Facebook"
+            tooltip="Follow us on Facebook"
           >
             <i class="fab fa-facebook-square"> </i>
             <p class="d-lg-none d-xl-none">Facebook</p>
           </a>
-        </li>  -->
+        </li>  
         <li class="nav-item p-0">
           <a class="nav-link" href="https://www.instagram.com" placement="bottom" target="_blank"
             tooltip="Follow us on Instagram">
@@ -403,29 +403,27 @@
                       <ng-template tabHeading>
                         The Cursed Box
                       </ng-template>
-                      <p>
-                        The number of players for each box is mentioned. It is usually in teams of 2-4 players<br />
-                        The Escape box details and login code will be sent to your email id in 2-3 hours, after payment.
-                        <br />
-                        You dont have to download any software, this is a web-browser based game.
-                        <br><br>
-                        Play anytime, any where all across the world !
-                        <br><br>
-                      </p>
+                      <div class="container text-center center">
+                        <table class="table table-responsive table-striped scroll text-center  tableformat">
+                          <tr>
+                            <th>Rank</th>
+                            <th>Team Name</th>
+                            <th>TIme (Minutes)</th>
+                          </tr>
+                          <tr *ngFor="let row of rows ; let i = index ">
+
+                            <td>{{i+1}}</td>
+                            <td>{{row.teamname}}</td>
+                            <td>{{row.time}}</td>
+                          </tr>
+                        </table>
+                      </div>
                     </tab>
                     <tab>
                       <ng-template tabHeading>
-                        Box-3
+                        Coming Soon!
                       </ng-template>
-                      <p>
-                        You dont have to download any software, this is a web-browser based game. <br>
-                        It can be access via Computer, Tablet and Phone, but we recommend using a computer for best
-                        gaming experience. <br>
-                        24/7 Access to games & immediate delivery available<br />
-                        <br />
-                        Text us for queries!
-                        <br /><br />
-                      </p>
+                     
                     </tab>
                   </tabset>
                 </div>
@@ -630,7 +628,7 @@ tr td:first-child:before
   </div>
 </div>
 
- --> -->
+ --> 
           <!--   
 
 
@@ -971,14 +969,14 @@ tr td:first-child:before
           </div>
         </div>
       </div> 
-        -->
+      
 
         </div>
 
         <div class="section section-navbars">
           <img class="path" src="assets/img/path3.png" />
 
-          <!-- 
+          
 
       <div class="container" id="menu-dropdown">
         <div class="row">
@@ -1524,13 +1522,13 @@ tr td:first-child:before
           </div>
         </div>
       </div>
-       -->
+      
         </div>
         <div class="section section-pagination">
           <img class="path" src="assets/img/path4.png" />
 
           <img class="path path1" src="assets/img/path5.png" />
-          <!--  
+         
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -1662,13 +1660,13 @@ tr td:first-child:before
           </span>
         </alert>
       </div>
-      -->
+    
         </div>
         <div class="section section-typo">
           <img class="path" src="assets/img/path1.png" />
 
           <img class="path path1" src="assets/img/path3.png" />
-          <!--  
+        
       <div class="container">
         <h3 class="title">Typography</h3>
         <div id="typography">
@@ -1820,13 +1818,13 @@ tr td:first-child:before
           </div>
         </div>
       </div>
-      -->
+    
         </div>
         <div class="section section-javascript" id="javascriptComponents">
           <img class="path" src="assets/img/path5.png" />
 
           <img class="path path1" src="assets/img/path5.png" />
-          <!--  
+          
       <div class="container">
         <h3 class="title mb-5">Javascript components</h3>
         <h4 class="mb-5">Modal</h4>
@@ -2022,11 +2020,11 @@ tr td:first-child:before
           </div>
         </div>
       </div>
-      -->
+      
         </div>
         <div class="section section-nucleo-icons">
           <img class="path" src="assets/img/path3.png" />
-          <!--  
+         
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-12">
@@ -2179,11 +2177,11 @@ tr td:first-child:before
           </div>
         </div>
       </div>
-      -->
+  
         </div>
         <div class="section section-examples" data-background-color="black">
           <img class="path" src="assets/img/path1.png" />
-          <!--  
+          
       <div class="space-50"></div>
       <div class="container text-center">
         <div class="row">
@@ -2219,11 +2217,11 @@ tr td:first-child:before
           </div>
         </div>
       </div>
-      -->
+    
         </div>
         <div class="section section-download" data-background-color="black" #target>
           <img class="path" src="assets/img/path1.png" />
-          <!-- 
+          
       <div class="container">
         <div class="row justify-content-md-center">
           <div class="text-center col-md-12 col-lg-8">
@@ -2485,9 +2483,10 @@ tr td:first-child:before
     </div>
   </div>
     -->
+    <!--  
           <footer class="footer">
-            <div class="container">
-              <!--
+           <div class="container">
+             
       <div class="row">
         <div class="col-md-3"><h1 class="title">BLK•</h1></div>
         <div class="col-md-3">
@@ -2557,9 +2556,11 @@ tr td:first-child:before
           </div>
         </div>
       </div>
-      -->
+     
             </div>
+             
 
           </footer>
+          -->
 
         </div>

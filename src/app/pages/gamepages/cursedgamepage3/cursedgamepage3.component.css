@@ -156,8 +156,8 @@
 }
 
 .firearrowright{
-  left: 80%;
-  top: 31.5%;
+  left: 52.5%;
+  top: 55.5%;
     position: absolute;
     width: 16%;
     height: 18%;
@@ -306,5 +306,95 @@
   height: 12%;
   z-index: 4;
   background: transparent url(/assets/pyramid/reddot.png) no-repeat;
+  background-size: contain;
+}
+
+
+.card1{
+  position: absolute;
+  width: 7%;
+  height: 8%;
+  cursor: pointer;
+  z-index: 4;
+  left: 61.5%;
+  top: 62%;
+}
+.card2{
+  position: absolute;
+  width: 7%;
+  height: 7%;
+  cursor: pointer;
+  z-index: 4;
+  left: 6%;
+    top: 64%;
+ 
+}
+.card3{
+  position: absolute;
+  width: 7%;
+  height: 7%;
+  cursor: pointer;
+  z-index: 4;
+  left: 37%;
+  top: 58%;
+}
+.card4{
+  position: absolute;
+  width: 3%;
+  height: 7%;
+  cursor: pointer;
+  z-index: 4;
+  left: 84%;
+  top: 59%;
+}
+
+.cardbig{
+  position: absolute;
+  width: 39%;
+  height: 43%;
+  cursor: pointer;
+  z-index: 5;  
+}
+.cardbig1{
+  left: 44%;
+  top: 52%;
+  background: transparent url(/assets/pyramid/name1.png) no-repeat;
+  background-size: contain;
+}
+.cardbig2{
+  left: 2%;
+    top: 45%;
+  background: transparent url(/assets/pyramid/name2.png) no-repeat;
+  background-size: contain;
+}
+.cardbig3{
+  left: 26%;
+  top: 9%;
+  background: transparent url(/assets/pyramid/name3.png) no-repeat;
+  background-size: contain;
+}
+.cardbig4{
+  right: 1%;
+  top: 12%;
+  background: transparent url(/assets/pyramid/name4.png) no-repeat;
+  background-size: contain;
+}
+
+.safecode{
+  left: 81%;
+    top: 73%;
+    position: absolute;
+    width: 11%;
+    height: 16%;
+    cursor: pointer;
+}
+.safecode1{
+  left: 78%;
+    top: 79.5%;
+    position: absolute;
+    width: 20%;
+    height: 13.5%;
+    z-index: 5;
+  background: transparent url(/assets/pyramid/finalanswer.png) no-repeat;
   background-size: contain;
 }

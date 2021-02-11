@@ -115,6 +115,25 @@
     
     <div *ngIf='reddot' class="reddot" ></div>
 
+    <div class=" card1" (click)="expandPiece('card1')"></div>
+    <div class=" card2" (click)="expandPiece('card2')" ></div>
+    <div class=" card3" (click)="expandPiece('card3')" ></div>
+    <div class=" card4" (click)="expandPiece('card4')" ></div>
+
+    <div *ngIf='card1'  class="cardbig cardbig1" (click)="hidePiece('card1')" ></div>
+    <div *ngIf='card2'  class="cardbig cardbig2" (click)="hidePiece('card2')"></div>
+    <div *ngIf='card3'  class="cardbig cardbig3" (click)="hidePiece('card3')" ></div>
+    <div *ngIf='card4'  class="cardbig cardbig4" (click)="hidePiece('card4')" ></div>
+
+    <div class="safecode" (click)="expandPiece('safe')"></div>
+
+    <div *ngIf='showSafe' class=" safecode1">   
+      <input #finalcursedcode3 id="finalcursedcode3"
+      class="inputlock w3-input w3-round-large w3-border w3-light-grey w3-hover-pale-yellow"  type="text">
+      <div class="bttnlock" (click)="checkCode(finalcursedcode3.value, 'safe')"></div>
+    </div>
+
+
 
     <div class="hints" (click)="hintsection=!hintsection"></div>
 

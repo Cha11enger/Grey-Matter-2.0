@@ -12,8 +12,8 @@ import { IndexService } from '../../index/index.service'
 export class CursedgamepageComponent3 implements OnInit, OnDestroy {
   isCollapsed = true;
 
-  startPage = false;
-  gamePage = true;
+  startPage = true;
+  gamePage = false;
   endPage = false;
   isError = false;
   err = "";
@@ -27,6 +27,12 @@ export class CursedgamepageComponent3 implements OnInit, OnDestroy {
   sunclue = false;
  
  reddot = false;
+ 
+  cardclues = false;
+  card1 = false;
+  card2 = false;
+  card3 = false;
+  card4 = false;
 
 
   hint1 = false;
@@ -67,17 +73,34 @@ export class CursedgamepageComponent3 implements OnInit, OnDestroy {
   expandPiece(piece) {
     if (piece == 'pyr') { this.pyramidclue = true; }
     if (piece == 'paper') { this.paperclue = true; }
+    if( this.cardclues == true){
+      if (piece == 'card1') { this.card1 = true; }
+      if (piece == 'card2') { this.card2 = true; }
+      if (piece == 'card3') { this.card3 = true; }
+      if (piece == 'card4') { this.card4 = true; }
+    }
+    if(  piece == 'safe' && this.cardclues == true){
+      this.showSafe=true;      
+    }
   this.sound.play();
 
   }
 
   hidePiece(piece) {
     if (piece == 'paper') { this.paperclue = false; }
+    if( this.cardclues == true){
+      if (piece == 'card1') { this.card1 = false; }
+      if (piece == 'card2') { this.card2 = false; }
+      if (piece == 'card3') { this.card3 = false; }
+      if (piece == 'card4') { this.card4 = false; }
+    }
       this.sound.play();
   }
 
   togglesun(num){
-    var a,b,c,d,e,f,g,h,i,j,k,l;
+
+    if(this.sunclue == true){
+    
     var ele = document.getElementById(num);   
     if(ele.classList.contains('sunred')){
      ele.classList.remove('sunred');           
@@ -85,6 +108,7 @@ export class CursedgamepageComponent3 implements OnInit, OnDestroy {
         ele.classList.add('sunred');
       
     }
+
     if(document.getElementById('sun2').classList.contains('sunred') &&
     document.getElementById('sun4').classList.contains('sunred') &&
     document.getElementById('sun6').classList.contains('sunred') &&
@@ -102,25 +126,28 @@ export class CursedgamepageComponent3 implements OnInit, OnDestroy {
     ){
       this.success.play();
       this.reddot = true;
+      this.firearrowright = true;
+      this.cardclues = true;
     }
 
     }
+  }
 
-
-    this.sound.play();    
+     this.sound.play();
+    
    // document.getElementById('sun1').style.transform = "rotate("+deg+"deg)";
   }
 
   checkCode(code, item){
-    if(item == 'safe'){
-      if(code == "5713"){       
-      this.success.play();
-      this.gamePage = false;
+    if (item == 'safe') {
+      if (code == "1794") {
+        this.success.play();
+        this.gamePage = false;
         this.endPage = true;
-       }else{
-         this.showSafe = false;      
-         this.error.play();
-       }
+      } else {
+        this.showSafe = false;
+        this.error.play();
+      }
     }
     if (item == 'pyr3') {
       if (code == "VALOR" || code == "valor") {
